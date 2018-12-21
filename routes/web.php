@@ -10,8 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\User;
 Route::get('/', function () {
+    // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
     return view('welcome');
 });
 
@@ -20,4 +21,5 @@ Auth::routes();
 //the are the url's that needs auth and user stat of 1
 Route::middleware('auth', 'user_stat')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/user-lists', 'UserController@lists')->name('user-lists');
 });

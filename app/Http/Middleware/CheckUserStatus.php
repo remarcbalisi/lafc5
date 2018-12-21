@@ -23,7 +23,7 @@ class CheckUserStatus
          * suspended - 3
          */
 
-        $user = User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['id'=>1])->first();
+        $user = User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->first();
         if( $user && $user->status_id == 1 ){
             return $next($request);
         }
