@@ -11,9 +11,14 @@ class DepartmentTableSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('department')->insert([
+        DB::table('department')->insert([
             'name' => 'Information Technology',
             'slug' => 'it',
+        ]);
+
+        DB::table('department')->insert([
+            'name' => 'Human Resource',
+            'slug' => 'human-resource',
         ]);
     }
 }
