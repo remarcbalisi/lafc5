@@ -1,4 +1,4 @@
-SUPER ADMIN
+#SUPER ADMIN
 - can add any type of user
 - can view all users
 - can delete user
@@ -12,7 +12,7 @@ SUPER ADMIN
 - can suspend
 
 
-HR MANAGER:
+#HR MANAGER:
 - can add user except admin user
 - can view all users
 - can delete user
@@ -28,22 +28,22 @@ HR MANAGER:
 - can disapprove approved leave
 - can suspend (exclude admin)
 
-PROJECT MANAGER
+#PROJECT MANAGER
 - can approve/disapprove leave requests
 - can view leave requests
 
-TEAM LEADER
+#TEAM LEADER
 - can approve/disapprove leave requests
 
 
-REGULAR USER
+#REGULAR USER
 - can view account details
 - can update account details
 - can apply leave
 - can view all his/her leave requests
 
 
-Notes:
+#Notes:
 - Applying of leave is 5 days before
 
 
@@ -53,13 +53,12 @@ sick ( due is 10 days after )
 paternity/maternity (due is 10 days after)
 
 
+#UI:
 
-UI:
-
-HR
-- viewing of leave requests
-- printing of leave requests
+    HR
+    - viewing of leave requests
+    - printing of leave requests
 
 
-TEAM LEADER
-- viewing of leave requests under him/her
+    TEAM LEADER
+    - viewing of leave requests under him/her
