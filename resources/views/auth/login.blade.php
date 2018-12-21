@@ -43,7 +43,7 @@
                                 <button type="submit" class="btn btn-primary btn-link btn-wd btn-lg">Log In</button>
                             </div>
                         </form>
-                        <div class="create"><a href="#">Or create Account</a></div>
+                        <div class="create"><a href="{{ route('register') }}">Or create Account</a></div>
                     </div>
                 </div>
             </div>

@@ -111,6 +111,7 @@ class RegisterController extends Controller
         $user_status = new UserStatus;
         $user_status->user_id = $new_user->id;
         $user_status->status_id = 2;
+        $user_status->save();
 
         foreach( $contact_types as $contact_type ){
             $new_contact = new Contact;

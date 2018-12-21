@@ -35,4 +35,8 @@ class User extends Authenticatable
     public function gender(){
         return $this->belongsTo('App\Gender', 'gender_id');
     }
+
+    public function user_status(){
+        return $this->hasMany('App\UserStatus', 'user_id', 'id');
+    }
 }
