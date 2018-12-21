@@ -30,7 +30,7 @@
 
                             <div class="signUp">
                                 <span>
-                                    <input type="text" class="form" name="email" placeholder="Username" autocomplete="off" style="cursor: auto;">
+                                    <input type="text" class="form" name="email" placeholder="Email/Username" autocomplete="off" style="cursor: auto;">
                                     <span class="underline"></span>
                                 </span>
                                 <span>
