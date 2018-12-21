@@ -7,6 +7,21 @@
             <div class="col-md-4 col-sm-6 ml-auto mr-auto">
                 <div class="card">
                     <div class="card-body">
+                        @if (session('success_msg'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success_msg') }}
+                        </div>
+                        @endif
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
                             <div class="glowBox">

@@ -23,12 +23,15 @@ class CheckUserStatus
          * suspended - 3
          */
 
-        if( User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['id'=>1])->first()->status_id == 1  ){
+        $user = User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['id'=>1])->first();
+        if( $user && $user->status_id == 1 ){
             return $next($request);
         }
 
         Auth::logout();
-        return redirect('login');
+        return redirect('login')->withErrors([
+            'not_activated' => 'Your account is not activated yet.'
+        ]);
         
     }
 }
