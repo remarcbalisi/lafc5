@@ -22,4 +22,5 @@ Auth::routes();
 Route::middleware('auth', 'user_stat')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/user-lists', 'UserController@lists')->name('user-lists');
+    Route::get('/leave-lists', 'UserController@lists')->name('leave-lists');
 });
