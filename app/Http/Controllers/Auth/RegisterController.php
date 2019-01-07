@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewUserRegistration;
 
 use App\Gender;
 use App\ContactType;
@@ -134,6 +136,8 @@ class RegisterController extends Controller
             $new_address->user_id = $new_user->id;
             $new_address->save();
         }
+
+        Mail::to('remarc.balisi@gmail.com')->send(new NewUserRegistration($new_user));
 
         return redirect()->back()->with([
             'success_msg' => 'Successfuly registered!'
