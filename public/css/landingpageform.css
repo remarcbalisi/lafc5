@@ -12,7 +12,7 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
-  padding: 0;
+  padding:0;
   border: 0;
   font: inherit;
   font-size: 100%;
@@ -119,6 +119,7 @@ header h3 a a:hover {
 
 .form-group {
   margin-bottom: 20px;
+  padding: 50px;
 }
 
 h2.heading {
@@ -135,6 +136,7 @@ h2.heading {
 .controls {
   text-align: left;
   position: relative;
+
 }
 .controls input[type="text"],
 .controls input[type="email"],
