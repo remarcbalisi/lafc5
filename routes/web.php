@@ -18,6 +18,7 @@ Route::get('/', function () {
     // return view('welcome');
 
     $auth_user = Auth::user();
+    $auth_user->roles()->where(['role_id'=>1])->first();
 
     $roles = Role::where([
         'id' => 1
@@ -43,7 +44,7 @@ Route::get('/', function () {
 Auth::routes();
 
 //the are the url's that needs auth and user stat of 1
-Route::middleware('auth', 'user_stat')->group(function () {
+Route::middleware('auth', 'user_stat', 'admin_acc')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/user-lists', 'UserController@lists')->name('user-lists');
     Route::get('/leave-lists', 'UserController@lists')->name('leave-lists');

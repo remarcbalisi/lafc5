@@ -26,7 +26,7 @@ class AdminAcc
             return $next($request);
         }
         
-        return redirect()->back();
+        abort(403, 'Unauthorized action.');
         
     }
 }
