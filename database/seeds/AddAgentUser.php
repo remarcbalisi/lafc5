@@ -55,10 +55,24 @@ class AddAgentUser extends Seeder
     			'role_id'=>4
     		]);
 
-    		DB::table('user_status')->insert([
-    			'user_id' => $latest_id,
-    			'status_id' => rand(1,3)
-    		]);
+			$status_id = rand(1,3);
+
+			if( $status_id == 3 ){
+				DB::table('user_status')->insert([
+					'user_id' => $latest_id,
+					'status_id' => $status_id
+				]);
+				DB::table('user_status')->insert([
+					'user_id' => $latest_id,
+					'status_id' => 1
+				]);
+			}else{
+				DB::table('user_status')->insert([
+					'user_id' => $latest_id,
+					'status_id' => $status_id
+				]);
+			}
+
     	}
     }
 }
