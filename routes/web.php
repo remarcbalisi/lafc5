@@ -16,7 +16,7 @@ use App\Role;
 Route::get('/', function () {
     // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
     // return view('welcome');
-
+    
     $auth_user = Auth::user();
 
     $roles = Role::where([

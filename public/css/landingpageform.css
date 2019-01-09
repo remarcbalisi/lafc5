@@ -240,10 +240,7 @@ h2.heading {
   background-color: #08ccb7;
 }
 
-label{
-  color: white;
-  fon
-}
+
 
 
 
@@ -252,7 +249,7 @@ label{
   @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 @keyframes onLoad {
  from {
-    background: #22292B;
+    background: #f7fdff45;
   }
   to {
     background:#f7fdff;

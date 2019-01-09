@@ -31,12 +31,15 @@
 <div class="controls">
       <i class="fa fa-sort"></i>
       <select class="floatLabel">
-        <option value="blank"></option>
-        <option value="Apple">Sick Leave</option>
-        <option value="Banana">Vacation Leave</option>
-        <option value="Kiwi">Leave without Pay</option>
-        <option value="Orange">Parental</option>
-        <option value="Watermelon">Watermelon</option>
+        <?php
+        foreach($leavetypes as $leave){
+        ?>
+            <option value='{{$leave->id}}'>{{$leave->name}}</option>
+
+
+        <?php
+        }
+        ?>
       </select>
       <label for="fruit">Type of Leave</label>
     </div>
