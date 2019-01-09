@@ -10,4 +10,8 @@ class UserStatus extends Model
     protected $fillable = [
         'user_id', 'status_id'
     ];
+
+    public function status(){
+        return $this->belongsTo('App\Status', 'status_id');
+    }
 }
