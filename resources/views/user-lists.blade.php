@@ -1,6 +1,6 @@
 <h1>User List</h1>
 
-<ul>
+<ol>
 @foreach( $users as $user )
 <a href="#">
   <li> 
@@ -11,4 +11,4 @@
   </li>
 </a>
 @endforeach
-</ul>
+</ol>
