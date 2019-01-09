@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AddressTypeTableSeeder::class);
         $this->call(StatusTableSeeder::class);
         $this->call(UserStatusTableSeeder::class);
+        $this->call(AdminAddInfo::class);
+        $this->call(AddLeaveStatusValues::class);
         
     }
 }
