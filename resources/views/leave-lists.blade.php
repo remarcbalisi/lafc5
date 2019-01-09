@@ -7,11 +7,17 @@
        <p>Floated labels allow us to design cleaner forms, in addition to adding some nice interaction!</p>
      </header>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
 
 
         <h1>Hello  world!</h1>
      
-    </div>
+    </div> -->
+
+
+</div>
+
+
+    
 </div>
 @endsection

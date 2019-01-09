@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landingpage.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landingpageform.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/table.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,6 +25,7 @@
 
 </head>
 <body>
+
 
 
 
@@ -204,6 +206,22 @@ $(function () {
     bindDateRangeValidation($("#form"), 'startDate', 'endDate');
 });
 </script>
+
+<!-- hide animation -->
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+
+<script type="text/javascript" src="{{ asset('js/table.js') }}"></script>
 
 </body>
 </html>
