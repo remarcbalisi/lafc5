@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserStatusTableSeeder::class);
         $this->call(AdminAddInfo::class);
         $this->call(AddLeaveStatusValues::class);
-        
+        $this->call(AddAgentUser::class);
+        $this->call(AddLeaveTypeValues::class);
     }
 }
