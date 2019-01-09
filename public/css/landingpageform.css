@@ -249,7 +249,9 @@ h2.heading {
   @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 @keyframes onLoad {
  from {
-    background: #f7fdff45;
+
+    background: #f7fdff;
+
   }
   to {
     background:#f7fdff;

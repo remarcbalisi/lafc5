@@ -1,12 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <header>
-<h1><i class="fa fa-cloud" style="color: blue"></i> Lorem Ipsum <i class="fa fa-cloud"></i></h1>
-<p>Floated labels allow us to design cleaner forms, in addition to adding some nice interaction!</p>
-</header> -->
-<!-- 
-<h1>User Lists Table</h1> -->
+
+<style>
+
+  #myDIV .wrapper > .container{
+    display: none;
+  }
+
+
+  /* table */
+  .wrapper > .list{
+    margin-top: -15%;
+  }
+  /* table end */
+
+</style>
 
 <div class="wrapper">
   <div class="list">
@@ -142,10 +151,11 @@
   </div>
 </div>
 <div class="overlay" ></div>
+
 <div class="sidebar" id="myform">
   <div class="sidebar__header">
     <div class="sidebar__title">Driver information</div>
-    <button class="button button-close">
+    <button class="button button--close">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10"></circle>
         <line x1="15" y1="9" x2="9" y2="15"></line>
@@ -155,6 +165,7 @@
     
   </div>
   <div class="sidebar__body"></div>
+  </div>
 
 
 

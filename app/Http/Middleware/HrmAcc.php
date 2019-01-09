@@ -7,7 +7,7 @@ use Closure;
 use Auth;
 use App\User;
 
-class AdminAcc
+class HrmAcc
 {
     /**
      * Handle an incoming request.
@@ -22,11 +22,18 @@ class AdminAcc
             'id' => Auth::user()->id
         ])->first();
 
-        if( $user && $user->roles()->where(['role_id'=>1])->first() ){
+        if( $user && $user->roles()->where(['role_id'=>2])->first() ){
             return $next($request);
         }
         
-        abort(403, 'Unauthorized action.');
+        /**
+         *  abort(404);
+         *  return view('errors.forbidden');
+         *  return response('Unauthorized.', 401);
+         *  return redirect()->back();
+         */
         
+        abort(403, 'Unauthorized action.');
+
     }
 }
