@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AddLeaveStatusValues::class);
         $this->call(AddAgentUser::class);
         $this->call(AddLeaveTypeValues::class);
+        $this->call(AddTeamLeaderUser::class);
     }
 }
