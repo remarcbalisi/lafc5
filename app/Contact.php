@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-protected $table = 'contact';
+    protected $table = 'contact';
 
-protected $fillable = [
-    'number','contact_type_id','user_id','country_code'
-];
+    protected $fillable = [
+        'number','contact_type_id','user_id','country_code'
+    ];
+
+    public function contact_type(){
+        return $this->belongsTo('App\ContactType', 'contact_type_id');
+    }
 }
