@@ -36,12 +36,24 @@ class User extends Authenticatable
         return $this->belongsTo('App\Gender', 'gender_id');
     }
 
+    public function department(){
+        return $this->belongsTo('App\Department', 'department_id');
+    }
+
     public function user_status(){
         return $this->hasMany('App\UserStatus', 'user_id', 'id');
     }
 
     public function user_roles(){
         return $this->hasMany('App\UserRole', 'user_id', 'id');
+    }
+
+    public function contacts(){
+        return $this->hasMany('App\Contact', 'user_id', 'id');
+    }
+
+    public function address(){
+        return $this->hasMany('App\Address', 'user_id', 'id');
     }
 
     public function hasRole($role){
