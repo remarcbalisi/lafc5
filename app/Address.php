@@ -13,4 +13,9 @@ class Address extends Model
         'postal_code','province','address_type_id',
         'user_id'
     ];
+
+    public function address_type(){
+        return $this->belongsTo('App\AddressType', 'address_type_id');
+    }
+
 }
