@@ -22,7 +22,7 @@ class HrmAcc
             'id' => Auth::user()->id
         ])->first();
 
-        if( $user && $user->roles()->where(['role_id'=>2])->first() ){
+        if( $user && $user->user_roles()->where(['role_id'=>2])->first() ){
             return $next($request);
         }
         

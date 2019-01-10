@@ -22,7 +22,7 @@ class AdminAcc
             'id' => Auth::user()->id
         ])->first();
 
-        if( $user && $user->roles()->where(['role_id'=>1])->first() ){
+        if( $user && $user->user_roles()->where(['role_id'=>1])->first() ){
             return $next($request);
         }
         
