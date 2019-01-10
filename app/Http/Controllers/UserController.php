@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Gender;
+use App\UserRole;
+use App\AddressType;
+use App\ContactType;
+use App\Role;
+use App\Department;
 use Auth;
 
 class UserController extends Controller
@@ -30,4 +36,16 @@ class UserController extends Controller
         }
 
     }
+
+    public function createUser(){
+        return view('user-create')->with([
+            'gender' => Gender::get(),
+            'team_leaders' => UserRole::where(['role_id' => 3])->get(),
+            'address_types' => AddressType::get(),
+            'contact_types' => ContactType::get(),
+            'roles' => Role::get(),
+            'departments' => Department::get()
+        ]);
+    }
+
 }

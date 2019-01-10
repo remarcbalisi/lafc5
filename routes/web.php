@@ -51,4 +51,5 @@ Route::middleware('auth', 'user_stat', 'admin_acc')->group(function () {
     Route::get('/user-lists', 'UserController@lists')->name('user-lists');
     Route::get('/leave-lists', 'UserController@lists')->name('leave-lists');
     Route::get('/view-user/{user_id}', 'UserController@viewSingleUser')->name('view-single-user');
+    Route::get('/user-create', 'UserController@createUser')->name('create-new-user');
 });
