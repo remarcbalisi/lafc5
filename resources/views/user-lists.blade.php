@@ -2,7 +2,7 @@
 
 <ol>
 @foreach( $users as $user )
-<a href="#">
+<a href="{{ route('view-single-user', ['user_id' => $user->id]) }}">
   <li> 
     {{$user->fname . ' ' . $user->lname}} (
     @foreach( $user->user_status()->get() as $u_status )
