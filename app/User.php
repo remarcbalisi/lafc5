@@ -40,7 +40,19 @@ class User extends Authenticatable
         return $this->hasMany('App\UserStatus', 'user_id', 'id');
     }
 
-    public function roles(){
+    public function user_roles(){
         return $this->hasMany('App\UserRole', 'user_id', 'id');
+    }
+
+    public function hasRole($role){
+
+        foreach( $this->user_roles()->get() as $user_role ){
+            if( $user_role->role_id == $role->id ){
+                return true;
+            }
+        }
+
+        return false;
+
     }
 }
