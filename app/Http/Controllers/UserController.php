@@ -22,7 +22,9 @@ class UserController extends Controller
 
         $selected_user = User::where(['id'=>$id])->first();
         if( Auth::user()->can('view', $selected_user ) ){
-            return $selected_user;
+            return view('single-user')->with([
+                'user' => $selected_user
+            ]);
         }else{
             abort(403, 'Unauthorized action.');
         }
