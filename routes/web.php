@@ -60,7 +60,7 @@ Route::group(
     ],
     
     function () {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('admin-home');
     Route::get('/user-lists', 'UserController@lists')->name('user-lists');
     Route::get('/leave-lists', 'UserController@lists')->name('leave-lists');
     Route::get('/view-user/{user_id}', 'UserController@viewSingleUser')->name('view-single-user');
