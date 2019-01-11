@@ -36,7 +36,12 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        //
+        $super_admin = Role::where(['id' => 1])->first();
+        if( $user->hasRole($super_admin) ){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
