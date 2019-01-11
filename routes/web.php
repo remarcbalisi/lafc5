@@ -17,6 +17,8 @@ Route::get('/', function () {
     // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
     // return view('welcome');
     // $user->hasRole($super_admin);
+    // $roles = Role::where(['id'=>2, 'id'=>3, 'id'=>4])->get();
+    return $roles;
     $super_admin = Role::where(['id' => 2])->first();
     return Auth::user()->hasRole($super_admin) ? 'True' : 'False';
     $auth_user = Auth::user();
@@ -45,11 +47,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//the are the url's that needs auth and user stat of 1
-Route::middleware('auth', 'user_stat', 'admin_acc')->group(function () {
+Route::group(
+    
+    [   
+        'prefix' => 'admin',
+        'middleware' => [
+            'auth',
+            'user_stat',
+            'admin_acc',
+        ]
+
+    ],
+    
+    function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/user-lists', 'UserController@lists')->name('user-lists');
     Route::get('/leave-lists', 'UserController@lists')->name('leave-lists');
     Route::get('/view-user/{user_id}', 'UserController@viewSingleUser')->name('view-single-user');
     Route::get('/user-create', 'UserController@createUser')->name('create-new-user');
+    Route::post('/user-store','UserController@storeUser')->name('store-new-user');
+
 });

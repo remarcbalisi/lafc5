@@ -1,5 +1,25 @@
 <h1>Create User</h1>
 
+
+@if (session('success_msg'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success_msg') }}
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+<form action="{{route('store-new-user')}}" method="POST">
+{{ csrf_field() }}
 <input type="text" name="fname" value="{{ old('fname') }}" class="form-control" placeholder="First Name *" required /><br>
 <input type="text" class="form-control" name="mname" value="{{ old('mname') }}" placeholder="Middle Name *" value="" /><br>
 <input type="text" name="lname" value="{{ old('lname') }}" class="form-control" placeholder="Last Name *" required /><br>
@@ -65,3 +85,5 @@
 <button type="submit" class="btn btn-primary">
     {{ __('Register') }}
 </button>
+
+</form>
