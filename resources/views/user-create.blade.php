@@ -34,10 +34,10 @@
     @endforeach
 </select>
 <br>
-<select class="form-control">
+<select name="team_leader" class="form-control">
     <option class="hidden" selected disabled>Team Leader *</option>
     @foreach( $team_leaders as $team_leader )
-    <option>{{$team_leader->user->fname . ' ' . $team_leader->user->lname }}</option>
+    <option value="{{$team_leader->id}}" >{{$team_leader->user->fname . ' ' . $team_leader->user->lname }}</option>
     @endforeach
 </select>
 <br>
