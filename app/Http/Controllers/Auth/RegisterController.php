@@ -108,11 +108,11 @@ class RegisterController extends Controller
         $address_types = AddressType::get();
 
         /**
-         * adding of user status; default is inactive (id: 2)
+         * adding of user status; default is pending (id: 4)
          */
         $user_status = new UserStatus;
         $user_status->user_id = $new_user->id;
-        $user_status->status_id = 2;
+        $user_status->status_id = 4;
         $user_status->save();
 
         foreach( $contact_types as $contact_type ){
