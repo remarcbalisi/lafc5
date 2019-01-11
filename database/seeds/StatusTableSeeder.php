@@ -25,5 +25,11 @@ class StatusTableSeeder extends Seeder
             'name' => 'Suspended',
             'slug' => 'suspended',
         ]);
+
+        DB::table('status')->insert([
+            'name' => 'Pending',
+            'slug' => 'pending',
+        ]);
+
     }
 }
