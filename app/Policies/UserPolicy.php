@@ -53,7 +53,12 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        //
+        $super_admin = Role::where(['id' => 1])->first();
+        if( $user->hasRole($super_admin) ){
+            return true;
+        }else{
+            return $user->id === $model->id;
+        }
     }
 
     /**
