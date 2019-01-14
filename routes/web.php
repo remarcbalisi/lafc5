@@ -66,5 +66,7 @@ Route::group(
     Route::get('/view-user/{user_id}', 'UserController@viewSingleUser')->name('view-single-user');
     Route::get('/user-create', 'UserController@createUser')->name('create-new-user');
     Route::post('/user-store','UserController@storeUser')->name('store-new-user');
+    Route::get('/user-edit/{user_id}/', 'UserController@editUser')->name('edit-user');
+    Route::put('/user-edit/{user_id}/', 'UserController@updateUser')->name('update-user');
 
 });

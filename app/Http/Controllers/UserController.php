@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 use App\User;
 use App\Gender;
@@ -56,6 +57,24 @@ class UserController extends Controller
         ]);
     }
 
+    public function editUser($user_id){
+
+        $edit_user = User::find($user_id);
+        if( !Auth::user()->can('update', $edit_user) )
+            abort(403, 'Unauthorized action.');
+
+        return view('user-edit')->with([
+            'user' => $edit_user,
+            'gender' => Gender::get(),
+            'team_leaders' => UserRole::where(['role_id' => 3])->get(),
+            'address_types' => AddressType::get(),
+            'contact_types' => ContactType::get(),
+            'roles' => Role::get(),
+            'departments' => Department::get()
+        ]);
+
+    }
+
     public function storeUser(Request $request){
 
         $validatedData = $request->validate([
@@ -98,6 +117,11 @@ class UserController extends Controller
         $new_user->password = Hash::make($request->input('password'));
         $new_user->save();
 
+        $new_user_role = new UserRole;
+        $new_user_role->user_id = $new_user->id;
+        $new_user_role->role_id = $request->input('role');
+        $new_user_role->save();
+
         /**
          * adding of user status; default is pending (id: 4)
          */
@@ -135,6 +159,75 @@ class UserController extends Controller
             'success_msg' => 'Successfuly Added ' . $new_user->fname
         ]);
 
+
+    }
+
+    public function updateUser(Request $request, $user_id){
+
+        $updated_user = User::find($user_id);
+
+        $validatedData = $request->validate([
+            'fname' => ['required', 'string', 'max:45'],
+            'mname' => ['required', 'string', 'max:45'],
+            'lname' => ['required', 'string', 'max:45'],
+            'b_day' => ['required'],
+            'date_hired' => ['required'],
+            'employee_id' => [Rule::unique('users')->ignore($updated_user->id),'required', 'string', 'max:45'],
+            // 'team_leader' => ['required'],
+            'username' => ['required', 'string', 'max:45', Rule::unique('users')->ignore($updated_user->id),],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($updated_user->id),],
+            // 'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        /**
+         * Check if user change fname || mname || lname
+         */
+        if( $updated_user->fname != $request->input('fname')
+            || $updated_user->mname != $request->input('mname')
+            || $updated_user->lname != $request->input('lname')
+        ){
+
+            /**
+             * check if user already exist with given fname, mname,lname
+             * then return user exist if true.
+             */
+            $check_user = User::where([
+                'fname' => $request->input('fname'),
+                'mname' => $request->input('mname'),
+                'lname' => $request->input('lname'),
+            ])->get();
+    
+            if( count($check_user) > 0 ){
+                return redirect()->back()->withErrors([
+                    'user_exist' => "User Already Exist!"
+                ]);
+            }
+
+        }
+
+
+        $updated_user->fname = $request->input('fname');
+        $updated_user->mname = $request->input('mname');
+        $updated_user->lname = $request->input('lname');
+        $updated_user->b_day = $request->input('b_day');
+        $updated_user->gender_id = $request->input('gender');
+        $updated_user->date_hired = $request->input('date_hired');
+        $updated_user->employee_id = $request->input('employee_id');
+        $updated_user->team_leader = $request->input('team_leader');
+        $updated_user->department_id = $request->input('department_id');
+        $updated_user->username = $request->input('username');
+        $updated_user->email = $request->input('email');
+        $updated_user->password = ( $request->input('password') ? Hash::make($request->input('password')) : $updated_user->password );
+        $updated_user->save();
+        
+        $new_user_role = new UserRole;
+        $updated_user->user_id = $new_user->id;
+        $updated_user->role_id = $request->input('role');
+        $updated_user->save();
+
+        return redirect()->back()->with([
+            'success_msg' => 'Successfuly Updated ' . $updated_user->fname
+        ]);
 
     }
 
