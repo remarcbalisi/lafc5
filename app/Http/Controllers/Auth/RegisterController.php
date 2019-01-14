@@ -15,6 +15,7 @@ use App\Gender;
 use App\ContactType;
 use App\AddressType;
 use App\Role;
+use App\UserRole;
 use App\Department;
 use App\Contact;
 use App\Address;
@@ -103,6 +104,10 @@ class RegisterController extends Controller
         $new_user->password = Hash::make($request->input('password'));
         $new_user->save();
 
+        $new_user_role = new UserRole;
+        $new_user_role->user_id = $new_user->id;
+        $new_user_role->role_id = $request->input('role');
+        $new_user_role->save();
 
         $contact_types = ContactType::get();
         $address_types = AddressType::get();
