@@ -220,10 +220,10 @@ class UserController extends Controller
         $updated_user->password = ( $request->input('password') ? Hash::make($request->input('password')) : $updated_user->password );
         $updated_user->save();
         
-        $new_user_role = new UserRole;
-        $updated_user->user_id = $new_user->id;
-        $updated_user->role_id = $request->input('role');
-        $updated_user->save();
+        // $new_user_role = new UserRole;
+        // $updated_user->user_id = $new_user->id;
+        // $updated_user->role_id = $request->input('role');
+        // $updated_user->save();
 
         return redirect()->back()->with([
             'success_msg' => 'Successfuly Updated ' . $updated_user->fname

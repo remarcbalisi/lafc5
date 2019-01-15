@@ -6,8 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Profile
-                
+                <a href="{{route('edit-user', ['user_id'=>$user->id])}}">
                 <button style="align:right" type="button" class="btn btn-warning btn-sm">Edit</button>
+                </a>
                 </div>
 
                 <div class="panel-body">
