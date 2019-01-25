@@ -28,6 +28,17 @@ class UserPolicy
         
     }
 
+    public function view_user_list(User $user)
+    {
+        $super_admin = Role::where(['id' => 1])->first();
+        if( $user->hasRole($super_admin) ){
+            return true;
+        }
+
+        return false;
+        
+    }
+
     /**
      * Determine whether the user can create models.
      *

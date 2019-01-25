@@ -27,6 +27,18 @@ Route::group([
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+    // Route::post('me', 'AuthController@me');
+
+});
+
+Route::group([
+
+    'middleware' => 'api',
+
+], function ($router) {
+    
+    //user
+    Route::get('me', 'Api\UserController@me');
+    Route::get('user-list', 'Api\UserController@userList');
 
 });
