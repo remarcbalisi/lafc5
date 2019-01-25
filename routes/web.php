@@ -52,7 +52,7 @@ Route::group(
     [   
         'prefix' => 'admin',
         'middleware' => [
-            'auth',
+            'auth:web',
             'user_stat',
             'admin_acc',
         ]
