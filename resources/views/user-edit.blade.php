@@ -32,16 +32,6 @@
                             </ul>
                         </div>
                     @endif
-                    
-                    <div data-dynamic-form>
-        <div data-dynamic-form-template="single">
-            <label>
-                <input type="checkbox" name="test[ID]" data-dynamic-form-input-id-template="ID"/>
-                <button type="button" data-dynamic-form-add>Add</button>
-                <button type="button" data-dynamic-form-remove>Remove</button>
-            </label>
-        </div>
-    </div>
 
                     <form action="{{route('update-user', ['user_id'=>$user->id])}}" method="POST">
                     {{ csrf_field() }}
@@ -65,16 +55,32 @@
                     </select>
                     <br>
 
-                    <select name="team_leader" class="form-control">
+                    <br>
+                    <br>
+                    ------ Job Title ------
+                    <select name="team_leader" class="form-control" style="display:{{ ($user->user_roles()->where('role_id', '=', 3)->first()) ? 'none;' : '' }}" id="team_leader_select">
                         <option class="hidden" selected disabled>Team Leader *</option>
                         @foreach( $team_leaders as $team_leader )
                             @if( $user->team_leader == $team_leader->id )
                             <option value="{{$team_leader->id}}" selected >{{$team_leader->user->fname . ' ' . $team_leader->user->lname }}</option>
                             @else
-                            <option value="{{$team_leader->id}}" >{{$team_leader->user->fname . ' ' . $team_leader->user->lname }}</option>
+                            <option value="{{$team_leader->id}}">{{$team_leader->user->fname . ' ' . $team_leader->user->lname }}</option>
                             @endif
                         @endforeach
                     </select>
+
+                    <div class="form-group form-check">
+                    @foreach( $roles as $role )
+                        @if( $user->user_roles()->where('role_id','=',$role->id)->get()->count() > 0  )
+                        <input type="checkbox" name="role[]" value="{{$role->id}}" class="form-check-input" onclick="toggleJobTitle(this)" checked>
+                        <label class="form-check-label">{{$role->name}}</label>
+                        @else
+                        <input type="checkbox" name="role[]" value="{{$role->id}}" class="form-check-input" onclick="toggleJobTitle(this)">
+                        <label class="form-check-label">{{$role->name}}</label>
+                        @endif
+                    @endforeach
+                    </div>
+
                     <br>
                     <br>
                     ------ Address ------
@@ -102,16 +108,6 @@
 
                     <input type="text" name="employee_id" value="{{ $user->employee_id }}" class="form-control" placeholder="Employee ID *" required /><br>
                     <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="date_hired" value="{{ $user->date_hired }}" class="form-control" placeholder="Date Hired *" required /><br>
-                    <select name="role" class="form-control" required>
-                        <option class="hidden" selected disabled>Job Title *</option>
-                        @foreach( $roles as $role )
-                            @if( $user->user_roles()->where('role_id','!=',4)->first()->role_id == $role->id  )
-                            <option value="{{$role->id}}" selected>{{ucfirst($role->name)}}</option>
-                            @else
-                            <option value="{{$role->id}}">{{ucfirst($role->name)}}</option>
-                            @endif
-                        @endforeach
-                    </select>
                     <br>
                     <select name="department_id" class="form-control" required>
                         <option class="hidden" selected disabled>Department</option>

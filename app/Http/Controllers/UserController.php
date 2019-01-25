@@ -165,6 +165,8 @@ class UserController extends Controller
     public function updateUser(Request $request, $user_id){
 
         $updated_user = User::find($user_id);
+        if( !Auth::user()->can('update', $updated_user) )
+            abort(403, 'Unauthorized action.');
 
         $validatedData = $request->validate([
             'fname' => ['required', 'string', 'max:45'],
@@ -220,10 +222,41 @@ class UserController extends Controller
         $updated_user->password = ( $request->input('password') ? Hash::make($request->input('password')) : $updated_user->password );
         $updated_user->save();
         
-        // $new_user_role = new UserRole;
-        // $updated_user->user_id = $new_user->id;
-        // $updated_user->role_id = $request->input('role');
-        // $updated_user->save();
+        $delete_team_leader_role = false;
+        $restore_team_leader_role = false;
+        foreach( $request->input('role') as $role_input ){
+            /**
+             * this means the the currently updated user
+             * is NOT selected as team leader
+             * 
+             * if the role team leader is NOT selected,
+             * the updated user is required to have team leader.
+             */
+            if( $role_input != 3 ){
+                $request->validate([
+                    'team_leader' => ['required'],
+                ]);
+            }
+
+            if( $role_input == 3 ){
+                $restore_team_leader_role = true;
+            }
+        }
+
+        /**
+         * deletion and restoration of user roles
+         */
+        if( $delete_team_leader_role == true ){
+            $updated_user->user_roles()->where('role_id', '=', 3)->first()->delete();
+        }
+        
+        if( $restore_team_leader_role == true ){
+            if ($updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->trashed()) {
+                $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->restore();
+            }
+        }
+
+        
 
         return redirect()->back()->with([
             'success_msg' => 'Successfuly Updated ' . $updated_user->fname
