@@ -40,5 +40,6 @@ Route::group([
     //user
     Route::get('me', 'Api\UserController@me');
     Route::get('user-list', 'Api\UserController@userList');
+    Route::get('user-info/{id}', 'Api\UserController@viewInfo');
 
 });
