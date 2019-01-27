@@ -61,6 +61,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo('App\Department', 'department_id');
     }
 
+    public function team_leader(){
+        return $this->belongsTo(self::class, 'team_leader');
+    }
+
     public function user_status(){
         return $this->hasMany('App\UserStatus', 'user_id', 'id');
     }
