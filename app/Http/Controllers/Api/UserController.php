@@ -26,7 +26,13 @@ class UserController extends Controller
 
     public function viewInfo($user_id){
         $selected_user = User::where(['id'=>$user_id])->first();
+
         $selected_user["contacts"] = $selected_user->contacts()->get();
+        foreach($selected_user["contacts"] as $contact){
+            $contact["contact_type"] = $contact->contact_type;
+        }
+
+        $selected_user["team_leader_info"] = $selected_user->team_leader()->first();
 
         $selected_user["department"] = $selected_user->department;
 
