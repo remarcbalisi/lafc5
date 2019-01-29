@@ -77,6 +77,9 @@ class UserController extends Controller
 
     public function storeUser(Request $request){
 
+        if( !Auth::user()->can('create', User::class) )
+            abort(403, 'Unauthorized action.');
+
         $validatedData = $request->validate([
             'fname' => ['required', 'string', 'max:45'],
             'mname' => ['required', 'string', 'max:45'],
@@ -84,7 +87,7 @@ class UserController extends Controller
             'b_day' => ['required'],
             'date_hired' => ['required'],
             'employee_id' => ['unique:users','required', 'string', 'max:45'],
-            'team_leader' => ['required'],
+            'gender' => ['required'],
             'username' => ['required', 'string', 'max:45', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
@@ -117,17 +120,19 @@ class UserController extends Controller
         $new_user->password = Hash::make($request->input('password'));
         $new_user->save();
 
-        $new_user_role = new UserRole;
-        $new_user_role->user_id = $new_user->id;
-        $new_user_role->role_id = $request->input('role');
-        $new_user_role->save();
+        foreach( $request->input('role') as $r ){
+            $new_user_role = new UserRole;
+            $new_user_role->user_id = $new_user->id;
+            $new_user_role->role_id = $r;
+            $new_user_role->save();
+        }
 
         /**
          * adding of user status; default is pending (id: 4)
          */
         $user_status = new UserStatus;
         $user_status->user_id = $new_user->id;
-        $user_status->status_id = 4;
+        $user_status->status_id = 1;
         $user_status->save();
 
         $contact_types = ContactType::get();
@@ -255,38 +260,7 @@ class UserController extends Controller
                 }
             }
 
-            // if( $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', $role_input)->get()->count() > 0 ){
-            //     $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', $role_input)->first()->restore();
-            // }
-
-        }
-
-        // return $roles_to_be_remove;
-
-        /**
-         * deletion and restoration of user roles
-         */
-        // foreach( $roles_to_be_remove as $rtr ){
-        //     $updated_user->user_roles()->where('role_id', '=', $rtr)->first()->delete();
-        // }  
-        // if( $restore_team_leader_role == true ){
-        //     if( $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->get()->count() > 0 ){
-        //         if ( $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->trashed() ) {
-        //             $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->restore();
-        //         }
-        //     }else{
-        //         //do nothing..
-        //     }
-            
-        // }
-        // else{
-        //     $updated_user->user_roles()->where('role_id', '=', 3)->first()->delete();
-        //     $request->validate([
-        //         'team_leader' => ['required'],
-        //     ]);
-        // }
-
-        
+        }      
 
         return redirect()->back()->with([
             'success_msg' => 'Successfuly Updated ' . $updated_user->fname

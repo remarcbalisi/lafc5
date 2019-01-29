@@ -48,7 +48,7 @@
 
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{{route('view-single-user', ['user_id'=>Auth::user()->id])}}">Create</a>
+                                    <a href="{{route('create-new-user')}}">Add New</a>
                                 </li>
                                 <li>
                                     <a href="{{route('user-lists')}}">
