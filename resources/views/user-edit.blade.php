@@ -7,7 +7,6 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 <h3>{{$user->fname . ' ' . $user->lname}}</h3>
-                <button>Make Team Leader</button>
                 </div>
 
                 <div class="panel-body">
