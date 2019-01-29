@@ -175,11 +175,16 @@ class UserController extends Controller
             'b_day' => ['required'],
             'date_hired' => ['required'],
             'employee_id' => [Rule::unique('users')->ignore($updated_user->id),'required', 'string', 'max:45'],
-            // 'team_leader' => ['required'],
             'username' => ['required', 'string', 'max:45', Rule::unique('users')->ignore($updated_user->id),],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($updated_user->id),],
-            // 'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'role' => ['required'],
         ]);
+
+        if( $request->input('password') ){
+            $request->validate([
+                'password' => ['required', 'string', 'min:6', 'confirmed'],
+            ]);
+        }
 
         /**
          * Check if user change fname || mname || lname
@@ -222,39 +227,64 @@ class UserController extends Controller
         $updated_user->password = ( $request->input('password') ? Hash::make($request->input('password')) : $updated_user->password );
         $updated_user->save();
         
-        $delete_team_leader_role = false;
-        $restore_team_leader_role = false;
         foreach( $request->input('role') as $role_input ){
-            /**
-             * this means the the currently updated user
-             * is NOT selected as team leader
-             * 
-             * if the role team leader is NOT selected,
-             * the updated user is required to have team leader.
-             */
-            if( $role_input != 3 ){
-                $request->validate([
-                    'team_leader' => ['required'],
-                ]);
+
+            if( $updated_user->user_roles()->where('role_id', '=', $role_input)->get()->count() == 0 ){
+                $new_user_role = new UserRole;
+                $new_user_role->user_id = $updated_user->id;
+                $new_user_role->role_id = $role_input;
+                $new_user_role->save();
+            }
+            foreach( $updated_user->user_roles()->get() as $ur ){
+                if( in_array($ur->role_id, $request->input('role')) ){
+                    //do nothing..
+                }else{
+                    $updated_user->user_roles()->where('role_id', '=', $ur->role_id)->first()->delete();
+                }
             }
 
-            if( $role_input == 3 ){
-                $restore_team_leader_role = true;
+            foreach( $updated_user->user_roles()->onlyTrashed()->get() as $ur ){
+                if( in_array($ur->role_id, $request->input('role')) ){
+                    $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', $ur->role_id)->first()->restore();
+                    if( $ur->role_id == 3 ){
+                        $updated_user->team_leader = null;
+                        $updated_user->save();
+                    }
+                }else{
+                    //do nothing...
+                }
             }
+
+            // if( $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', $role_input)->get()->count() > 0 ){
+            //     $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', $role_input)->first()->restore();
+            // }
+
         }
+
+        // return $roles_to_be_remove;
 
         /**
          * deletion and restoration of user roles
          */
-        if( $delete_team_leader_role == true ){
-            $updated_user->user_roles()->where('role_id', '=', 3)->first()->delete();
-        }
-        
-        if( $restore_team_leader_role == true ){
-            if ($updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->trashed()) {
-                $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->restore();
-            }
-        }
+        // foreach( $roles_to_be_remove as $rtr ){
+        //     $updated_user->user_roles()->where('role_id', '=', $rtr)->first()->delete();
+        // }  
+        // if( $restore_team_leader_role == true ){
+        //     if( $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->get()->count() > 0 ){
+        //         if ( $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->trashed() ) {
+        //             $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->restore();
+        //         }
+        //     }else{
+        //         //do nothing..
+        //     }
+            
+        // }
+        // else{
+        //     $updated_user->user_roles()->where('role_id', '=', 3)->first()->delete();
+        //     $request->validate([
+        //         'team_leader' => ['required'],
+        //     ]);
+        // }
 
         
 
