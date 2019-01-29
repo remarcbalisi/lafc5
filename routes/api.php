@@ -43,3 +43,7 @@ Route::group([
     Route::get('user-info/{id}', 'Api\UserController@viewInfo');
 
 });
+
+
+Route::get('roles', 'Api\RoleController@get');
+Route::get('gender', 'Api\GenderController@get');
