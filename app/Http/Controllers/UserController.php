@@ -42,6 +42,34 @@ class UserController extends Controller
 
     }
 
+    public function updateUserStatus(Request $request){
+
+        switch ($request->input('status')) {
+            case 'suspend':
+                $user_status = new UserStatus;
+                $user_status->user_id = $request->input('user_id');
+                $user_status->status_id = 3;
+                $user_status->save();
+                break;
+
+            case 'unsuspend':
+                $user_status = UserStatus::where(
+                    [
+                        'user_id'=>$request->input('user_id'),
+                        'status_id' => 3
+                    ]
+                );
+                $user_status->delete();
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+        return redirect()->back();
+    }
+
     public function createUser(){
 
         if( !Auth::user()->can('create', User::class) )
