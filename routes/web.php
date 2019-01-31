@@ -70,5 +70,7 @@ Route::group(
     Route::put('/user-edit/{user_id}/', 'UserController@updateUser')->name('update-user');
     Route::put('/user-update-status', 'UserController@updateUserStatus')->name('update-user-status');
     Route::put('/user-update-leave-credits-increment/{user_id}', 'UserController@update_leave_credits')->name('update-user-leave-credits-increment');
+    Route::get('/apply-leave', 'LeaveController@apply')->name('apply-leave');
+    Route::post('/store-apply-leave', 'LeaveController@store')->name('store-apply-leave');
 
 });

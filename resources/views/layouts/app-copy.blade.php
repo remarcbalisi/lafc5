@@ -58,6 +58,23 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                Leave <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{route('apply-leave')}}">Apply</a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        View Lists
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
