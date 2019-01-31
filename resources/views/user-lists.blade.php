@@ -37,6 +37,19 @@
                           <a href="{{route('view-single-user', ['user_id'=>$user->id])}}">
                           <button type="button" class="btn btn-primary btn-sm">Preview</button>
                           </a>
+                        
+                          <a href="#"
+                                onclick="event.preventDefault();
+                                            document.getElementById('user-status-form-{{$user->id}}').submit();">
+                          <button type="button" class="btn btn-primary btn-sm">{{( $user->user_status()->where(['user_id'=>$user->id, 'status_id'=>3])->first() ) ? 'Unsuspend' : 'Suspend'}}</button>
+                          </a>
+                            <form id="user-status-form-{{$user->id}}" action="{{route('update-user-status')}}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('PUT') }}
+                                <input name="user_id" type="hidden" value="{{$user->id}}">
+                                <input name="status" type="hidden" value="{{( $user->user_status()->where(['user_id'=>$user->id, 'status_id'=>3])->first() ) ? 'unsuspend' : 'suspend'}}">
+                            </form>
+
                           </td>
                         </tr>
                         @endforeach

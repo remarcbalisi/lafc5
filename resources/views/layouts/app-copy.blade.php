@@ -41,8 +41,38 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('user-lists')}}">View Users <span class="sr-only">(current)</span></a>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                Users <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{route('create-new-user')}}">Add New</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('user-lists')}}">
+                                    View Users
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                Leave <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{route('apply-leave')}}">Apply</a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        View Lists
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                     </ul>
@@ -60,6 +90,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{route('view-single-user', ['user_id'=>Auth::user()->id])}}">Profile</a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

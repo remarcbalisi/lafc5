@@ -42,6 +42,34 @@ class UserController extends Controller
 
     }
 
+    public function updateUserStatus(Request $request){
+
+        switch ($request->input('status')) {
+            case 'suspend':
+                $user_status = new UserStatus;
+                $user_status->user_id = $request->input('user_id');
+                $user_status->status_id = 3;
+                $user_status->save();
+                break;
+
+            case 'unsuspend':
+                $user_status = UserStatus::where(
+                    [
+                        'user_id'=>$request->input('user_id'),
+                        'status_id' => 3
+                    ]
+                );
+                $user_status->delete();
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+        return redirect()->back();
+    }
+
     public function createUser(){
 
         if( !Auth::user()->can('create', User::class) )
@@ -77,6 +105,9 @@ class UserController extends Controller
 
     public function storeUser(Request $request){
 
+        if( !Auth::user()->can('create', User::class) )
+            abort(403, 'Unauthorized action.');
+
         $validatedData = $request->validate([
             'fname' => ['required', 'string', 'max:45'],
             'mname' => ['required', 'string', 'max:45'],
@@ -84,7 +115,7 @@ class UserController extends Controller
             'b_day' => ['required'],
             'date_hired' => ['required'],
             'employee_id' => ['unique:users','required', 'string', 'max:45'],
-            'team_leader' => ['required'],
+            'gender' => ['required'],
             'username' => ['required', 'string', 'max:45', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
@@ -117,17 +148,19 @@ class UserController extends Controller
         $new_user->password = Hash::make($request->input('password'));
         $new_user->save();
 
-        $new_user_role = new UserRole;
-        $new_user_role->user_id = $new_user->id;
-        $new_user_role->role_id = $request->input('role');
-        $new_user_role->save();
+        foreach( $request->input('role') as $r ){
+            $new_user_role = new UserRole;
+            $new_user_role->user_id = $new_user->id;
+            $new_user_role->role_id = $r;
+            $new_user_role->save();
+        }
 
         /**
          * adding of user status; default is pending (id: 4)
          */
         $user_status = new UserStatus;
         $user_status->user_id = $new_user->id;
-        $user_status->status_id = 4;
+        $user_status->status_id = 1;
         $user_status->save();
 
         $contact_types = ContactType::get();
@@ -175,11 +208,16 @@ class UserController extends Controller
             'b_day' => ['required'],
             'date_hired' => ['required'],
             'employee_id' => [Rule::unique('users')->ignore($updated_user->id),'required', 'string', 'max:45'],
-            // 'team_leader' => ['required'],
             'username' => ['required', 'string', 'max:45', Rule::unique('users')->ignore($updated_user->id),],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($updated_user->id),],
-            // 'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'role' => ['required'],
         ]);
+
+        if( $request->input('password') ){
+            $request->validate([
+                'password' => ['required', 'string', 'min:6', 'confirmed'],
+            ]);
+        }
 
         /**
          * Check if user change fname || mname || lname
@@ -222,46 +260,59 @@ class UserController extends Controller
         $updated_user->password = ( $request->input('password') ? Hash::make($request->input('password')) : $updated_user->password );
         $updated_user->save();
         
-        $delete_team_leader_role = false;
-        $restore_team_leader_role = false;
         foreach( $request->input('role') as $role_input ){
-            /**
-             * this means the the currently updated user
-             * is NOT selected as team leader
-             * 
-             * if the role team leader is NOT selected,
-             * the updated user is required to have team leader.
-             */
-            if( $role_input != 3 ){
-                $request->validate([
-                    'team_leader' => ['required'],
-                ]);
+
+            if( $updated_user->user_roles()->where('role_id', '=', $role_input)->get()->count() == 0 ){
+                $new_user_role = new UserRole;
+                $new_user_role->user_id = $updated_user->id;
+                $new_user_role->role_id = $role_input;
+                $new_user_role->save();
+            }
+            foreach( $updated_user->user_roles()->get() as $ur ){
+                if( in_array($ur->role_id, $request->input('role')) ){
+                    //do nothing..
+                }else{
+                    $updated_user->user_roles()->where('role_id', '=', $ur->role_id)->first()->delete();
+                }
             }
 
-            if( $role_input == 3 ){
-                $restore_team_leader_role = true;
+            foreach( $updated_user->user_roles()->onlyTrashed()->get() as $ur ){
+                if( in_array($ur->role_id, $request->input('role')) ){
+                    $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', $ur->role_id)->first()->restore();
+                    if( $ur->role_id == 3 ){
+                        $updated_user->team_leader = null;
+                        $updated_user->save();
+                    }
+                }else{
+                    //do nothing...
+                }
             }
-        }
 
-        /**
-         * deletion and restoration of user roles
-         */
-        if( $delete_team_leader_role == true ){
-            $updated_user->user_roles()->where('role_id', '=', 3)->first()->delete();
-        }
-        
-        if( $restore_team_leader_role == true ){
-            if ($updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->trashed()) {
-                $updated_user->user_roles()->onlyTrashed()->where('role_id', '=', 3)->first()->restore();
-            }
-        }
-
-        
+        }      
 
         return redirect()->back()->with([
             'success_msg' => 'Successfuly Updated ' . $updated_user->fname
         ]);
 
+    }
+
+    public function update_leave_credits(Request $request, $user_id){
+        if( !Auth::user()->can('update_leave_credits', User::class) )
+            abort(403, 'Unauthorized action.');
+
+        $validatedData = $request->validate([
+            'leave_credits' => ['required'],
+            'leave_increment' => ['required'],
+        ]);
+
+        $user = User::find($user_id);
+        $user->leave_credits = $request->input('leave_credits');
+        $user->leave_increment = $request->input('leave_increment');
+        $user->save();
+
+        return redirect()->back()->with([
+            'success_msg' => 'Successfuly Updated ' . $user->fname . ' leave credits/increment'
+        ]);
     }
 
 }

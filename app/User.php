@@ -92,4 +92,13 @@ class User extends Authenticatable implements JWTSubject
         return false;
 
     }
+
+    public function concatAddress(){
+        $address_arr = [];
+        foreach($this->address()->get() as $addr){
+            $to_string = ucfirst($addr->barangay) . ' ' . ucfirst($addr->street) . ' ' . ucfirst($addr->unit_no) . ' ' . ucfirst($addr->city) . ' ' . ucfirst($addr->province) . ' ' . ucfirst($addr->postal_code);
+            array_push($address_arr, $to_string);
+        }
+        return $address_arr;
+    }
 }
