@@ -96,6 +96,7 @@ body {
 }
 .topnav-right {
   background:#09A603;
+  color:white;
 }
 .logo {
   position: absolute;
