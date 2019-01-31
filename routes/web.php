@@ -13,6 +13,40 @@
 use App\User;
 use App\Role;
 
+Route::get('/adminpage-sample', function () {
+    return view('adminpage-sample');
+});
+
+
+Route::get('/userlists-sample', function () {
+    return view('userlists-sample');
+});
+
+Route::get('/apply-leave-sample', function () {
+    return view('apply-leave-sample');
+});
+
+Route::get('/leave-request-sample', function () {
+    return view('leave-request-sample');
+});
+
+Route::get('/frontpage-sample', function () {
+    return view('frontpage-sample');
+});
+
+Route::get('/employeepage-sample', function () {
+    return view('employeepage-sample');
+});
+
+Route::get('/user-info-sample', function () {
+    return view('user-info-sample');
+});
+
+Route::get('/admin-info-sample', function () {
+    return view('admin-info-sample');
+});
+
+
 Route::get('/', function () {
     // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
     // return view('welcome');
@@ -44,6 +78,8 @@ Route::get('/', function () {
     return $array_of_users;
 
 });
+
+
 
 Auth::routes();
 
