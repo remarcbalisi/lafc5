@@ -296,4 +296,23 @@ class UserController extends Controller
 
     }
 
+    public function update_leave_credits(Request $request, $user_id){
+        if( !Auth::user()->can('update_leave_credits', User::class) )
+            abort(403, 'Unauthorized action.');
+
+        $validatedData = $request->validate([
+            'leave_credits' => ['required'],
+            'leave_increment' => ['required'],
+        ]);
+
+        $user = User::find($user_id);
+        $user->leave_credits = $request->input('leave_credits');
+        $user->leave_increment = $request->input('leave_increment');
+        $user->save();
+
+        return redirect()->back()->with([
+            'success_msg' => 'Successfuly Updated ' . $user->fname . ' leave credits/increment'
+        ]);
+    }
+
 }

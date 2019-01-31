@@ -69,5 +69,6 @@ Route::group(
     Route::get('/user-edit/{user_id}/', 'UserController@editUser')->name('edit-user');
     Route::put('/user-edit/{user_id}/', 'UserController@updateUser')->name('update-user');
     Route::put('/user-update-status', 'UserController@updateUserStatus')->name('update-user-status');
+    Route::put('/user-update-leave-credits-increment/{user_id}', 'UserController@update_leave_credits')->name('update-user-leave-credits-increment');
 
 });

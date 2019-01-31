@@ -83,4 +83,13 @@ class UserPolicy
     {
         //
     }
+
+    public function update_leave_credits(User $user){
+        $super_admin = Role::where(['id' => 1])->first();
+        if( $user->hasRole($super_admin) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

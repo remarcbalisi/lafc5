@@ -76,4 +76,59 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
+                    Leave Credits
+
+                </div>
+
+                <div class="panel-body">
+
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        @if (session('success_msg'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success_msg') }}
+                            </div>
+                        @endif
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <form method="POST" action="{{route('update-user-leave-credits-increment', ['user_id'=>$user->id])}}">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
+                            <div class="form-group">
+                                <label for="leave_credits">Credits</label>
+                                <input type="number" name="leave_credits" value="{{$user->leave_credits}}" class="form-control" id="leave_credits" placeholder="Credits">
+                            </div>
+                            <div class="form-group">
+                                <label for="leave_increment">Increment</label>
+                                <input type="number" name="leave_increment" value="{{$user->leave_increment}}" class="form-control" id="leave_increment" placeholder="Increment">
+                            </div>
+                            <button type="submit" class="btn btn-warning">Update Now</button>
+                        </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
