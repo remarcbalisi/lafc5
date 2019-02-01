@@ -101,4 +101,8 @@ class User extends Authenticatable implements JWTSubject
         }
         return $address_arr;
     }
+
+    public function notifications(){
+        return $this->hasMany('App\Notification', 'user_id', 'id');
+    }
 }

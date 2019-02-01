@@ -68,7 +68,7 @@
                                     <a href="{{route('apply-leave')}}">Apply</a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="{{route('leave-lists')}}">
                                         View Lists
                                     </a>
                                 </li>
@@ -86,12 +86,18 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->fname }} <span class="caret"></span>
+                                    {{ Auth::user()->fname }} <span class="badge badge-success">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{route('view-single-user', ['user_id'=>Auth::user()->id])}}">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Notifications
+                                            <span class="badge badge-success">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span>
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"

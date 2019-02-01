@@ -27,7 +27,7 @@ class AddAgentUser extends Seeder
     			'email' => $faker->unique()->email,
     			'password' => bcrypt('12345'),
     			'gender_id' => 1,
-    			'department_id' => 1
+    			'department_id' => rand(1,2)
     		]);
     	$latest_id = User::all()->last()->id;
 
