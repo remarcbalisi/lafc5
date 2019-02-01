@@ -4,7 +4,8 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+ <!-- Styles -->
+ <link href="{{ asset('css/employee-page.css') }}" rel="stylesheet">
 <style>
 body {
   margin: 0;
@@ -96,7 +97,7 @@ body {
   background-size: cover;
   height: calc(100vh - 120px);
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .img .black-img {

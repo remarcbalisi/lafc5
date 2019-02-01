@@ -101,18 +101,10 @@ body {
   background-size: cover;
   /* height: calc(100vh - 120px); */
   width: 100vw;
-  overflow: scroll;
+  overflow-x: hidden;
   
 } 
-/* .black-img {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-} */
+
 .black-bar {
   position: absolute;
   width: 50%;
@@ -148,6 +140,7 @@ body {
     text-align: left;
     background-color: #4CAF50;
     color: white;
+    
     
   }
 

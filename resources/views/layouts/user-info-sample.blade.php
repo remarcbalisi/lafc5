@@ -105,7 +105,7 @@ body {
   background-size: cover;
   /* height: calc(100vh - 120px); */
   width: 100vw;
-  overflow: scroll;
+  overflow-x: hidden;
   
 }
 

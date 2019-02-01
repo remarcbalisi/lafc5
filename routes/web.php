@@ -46,6 +46,10 @@ Route::get('/admin-info-sample', function () {
     return view('admin-info-sample');
 });
 
+Route::get('/aboutus-page-sample', function () {
+    return view('aboutus-page-sample');
+});
+
 
 Route::get('/', function () {
     // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();

@@ -1,13 +1,13 @@
 <html>
 <head>
-    <title>First page</title>
+    <title>About Us page</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
       <!-- Styles -->
       <!-- Styles -->
-    <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/aboutus.css') }}" rel="stylesheet">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,8 @@ body {
 }
 .topnav {
   overflow: hidden;
-  position: relative;
+  position:sticky;
+  top:0;
   width: 100%;
 }
 .bottomnav {
@@ -102,33 +103,8 @@ body {
   width: auto;
   vertical-align: center;
 }
-.img {
-  background: black url("https://finoraconsulting.com/wp-content/uploads/2018/09/cropped-shutterstock_368205530-5386x2693-1.jpg") no-repeat center;
-  background-size: cover;
-  height: calc(100vh - 120px);
-  width: 100vw;
-  overflow-x: hidden;
-  
-}
 
-.img .black-img {
-	font-size: 10em;
-	line-height: 1em;
-	margin-left: 50px;
-	mix-blend-mode: overlay;
-	text-align: center;
-	text-transform: uppercase;
-}
 
-.black-img {
-  height: 100%;
-  width: 100%;
-  /* background-color: rgba(255, 255, 255, 0.3); */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-}
 .black-bar {
   position: absolute;
   width: 50%;
