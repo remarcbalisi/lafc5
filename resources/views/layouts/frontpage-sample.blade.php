@@ -100,7 +100,7 @@ body {
   display: inline-block;
   height: 80px;
   width: auto;
-  vertical-align: center;
+  vertical-align: center; 
 }
 .img {
   background: black url("https://finoraconsulting.com/wp-content/uploads/2018/09/cropped-shutterstock_368205530-5386x2693-1.jpg") no-repeat center;
@@ -114,7 +114,7 @@ body {
 .img .black-img {
 	font-size: 10em;
 	line-height: 1em;
-	margin-left: 50px;
+	margin-left: 1%;
 	mix-blend-mode: overlay;
 	text-align: center;
 	text-transform: uppercase;
