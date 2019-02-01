@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Leave;
 use App\LeaveType;
+use App\Notification;
 use App\Role;
 use App\UserLeave;
 use App\User;
@@ -60,6 +61,14 @@ class LeaveController extends Controller
                     $new_user_leave->leave_id = $new_leave->id;
                     $new_user_leave->is_owner = false;
                     $new_user_leave->save();
+
+                    $new_notification = new Notification;
+                    $new_notification->title = "New Leave Request";
+                    $new_notification->body = "Leave Request from " . $new_leave->getOwner($new_leave->id)->fname . ' ' . $new_leave->getOwner($new_leave->id)->lname;
+                    $new_notification->row_id = $new_leave->id;
+                    $new_notification->table_name = 'leave';
+                    $new_notification->user_id = $ur->user->id;
+                    $new_notification->save();
 
                 }
                 elseif ( $ur->user->department_id == Auth::user()->department_id && $ur->user->id == Auth::user()->id ){
