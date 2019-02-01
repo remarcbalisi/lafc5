@@ -10,8 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <!-- Styles -->
+    <link href="{{ asset('cs s/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
