@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="end_date">End Date</label>
-                                        <input type="date" name="start_date" class="form-control" id="end_date" placeholder="End Date">
+                                        <input type="date" name="end_date" class="form-control" id="end_date" placeholder="End Date">
                                     </div>
                                 </div>
                                 <div class="form-group">
