@@ -108,7 +108,7 @@ body {
 .img .black-img {
 	font-size: 10em;
 	line-height: 1em;
-	margin-left: 50px;
+	margin-left:1%;
 	mix-blend-mode: overlay;
 	text-align: center;
 	text-transform: uppercase;
