@@ -31,6 +31,16 @@
                             </div>
                         @endif
 
+                        <p><strong>Approved by: </strong>
+                            @foreach($leave_request->user_leave()->where('approved_by', '!=', null)->get() as $user_leave)
+                            <span class="badge badge-secondary">{{$user_leave->direct_approver->fname}} {{$user_leave->direct_approver->lname}}</span>
+                            @endforeach
+                        </p>
+                        <p><strong>Disapproved by: </strong>
+                            @foreach($leave_request->user_leave()->where('disapproved_by', '!=', null)->get() as $user_leave)
+                                <span class="badge badge-secondary">{{$user_leave->direct_approver->fname}} {{$user_leave->direct_approver->lname}}</span>
+                            @endforeach
+                        </p>
                         <p><strong>Requestor: </strong>{{$leave_request->getOwner($leave_request->id)->fname}} {{$leave_request->getOwner($leave_request->id)->lname}}</p>
                         <p><strong>Department: </strong>{{$leave_request->getOwner($leave_request->id)->department->name}}</p>
                         <p><strong>Type: </strong>{{$leave_request->leave_type->name}}</p>
@@ -76,7 +86,9 @@
                         </form>
 
                         <!-- Approve/Disapprove Modal -->
-                        <form>
+                        <form action="{{route('leave-approve-disapprove', ['leave_request_id'=>$leave_request->id])}}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div class="modal fade" id="approve-disapprove" tabindex="-1" role="dialog" aria-labelledby="Approve/Disapprove" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -88,12 +100,16 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" value="approve" id="approved_dis-1" name="leave_status" class="custom-control-input">
+                                                <input type="radio" value="1" id="approved_dis-1" name="approve_disapprove" class="custom-control-input">
                                                 <label class="custom-control-label" for="approved_dis-1">Approve</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" value="disapprove" id="approved_dis-2" name="leave_status" class="custom-control-input">
+                                                <input type="radio" value="0" id="approved_dis-2" name="approve_disapprove" class="custom-control-input">
                                                 <label class="custom-control-label" for="approved_dis-2">Disapprove</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="note">Note</label>
+                                                <textarea class="form-control" id="note" name="note" rows="3"></textarea>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
