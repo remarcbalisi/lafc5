@@ -122,34 +122,76 @@ body {
   z-index: -1;
 }
 
-#user-table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 70%;
-    box-shadow:  0 30px 40px 0 rgba(0,0,0,0.25);
-    background-color:white;
-    margin-left:15%;
-    margin-top:7%;
-    margin-bottom:10%;
-
-  }
-  
-  #user-table td, #user-table th {
-    padding: 15px;
-  }
-  
-  #user-table tr:hover {
+  tbody tr:hover {
       background-color: #ddd;
     }
-  
-  #user-table th {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-   
-  }
+
+  table.greenTable {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  border: 10px solid #4CAF50;
+  background-color:white;
+  width: 70%;
+  height: 80%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-left:15%;
+  margin-top:7%;
+  margin-bottom:10%;
+  box-shadow:  0 30px 40px 0 rgba(0,0,0,0.25);
+}
+table.greenTable td, table.greenTable th {
+  padding: 10px 5px;
+}
+table.greenTable tbody td {
+  font-size: 15px;
+}
+table.greenTable thead {
+  background: #4CAF50;
+  border-bottom: 0px solid #444444;
+}
+table.greenTable thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #F0F0F0;
+  text-align: center;
+  border-left: 0px solid #4CAF50;
+}
+table.greenTable thead th:first-child {
+  border-left: none;
+}
+
+table.greenTable tfoot {
+  font-size: 14px;
+  font-weight: normal;
+  color: #F0F0F0;
+  background: #4CAF50;
+  /* background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%); */
+  border-top: 0px solid #24943A;
+}
+table.greenTable tfoot td {
+  font-size: 14px;
+}
+table.greenTable tfoot .links {
+  text-align: right;
+  margin-top:2%;
+  margin-bottom:2%;
+
+}
+table.greenTable tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #24943A;
+  padding: 2px 8px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+table.greenTable tfoot .links a:hover{
+  background-color: #24EDA0;
+  color:white;
+
+}
 
   .dropbtn {
   /* background-color: #4CAF50; */

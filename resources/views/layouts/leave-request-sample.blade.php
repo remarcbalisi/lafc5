@@ -89,7 +89,7 @@ body {
   top: 20px;
   left: 5%;
 }
-.logo img {
+.logo img {+.+36
   display: inline-block;
   height: 80px;
   width: auto;
