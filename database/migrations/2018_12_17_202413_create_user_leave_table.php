@@ -16,7 +16,7 @@ class CreateUserLeaveTable extends Migration
         Schema::create('user_leave', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('direct_approver_id');
+            $table->unsignedInteger('direct_approver_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('direct_approver_id')->references('id')->on('users');
