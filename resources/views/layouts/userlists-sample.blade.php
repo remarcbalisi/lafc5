@@ -21,9 +21,11 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .topnav {
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top:0px;
   width: 100%;
 }
 .bottomnav {
@@ -108,7 +110,7 @@ body {
   background-size: cover;
   /* height: calc(100vh - 120px); */
   width: 100vw;
-  overflow: scroll;
+  overflow-x: hidden;
   
 }
 
