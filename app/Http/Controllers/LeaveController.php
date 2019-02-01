@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Leave;
 use App\LeaveType;
+use App\Role;
+use App\UserLeave;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
@@ -46,6 +48,28 @@ class LeaveController extends Controller
 
         Auth::user()->leave_credits = Auth::user()->leave_credits - $hours_diff;
         Auth::user()->save();
+
+        $roles_ex_agent = Role::where('id', '!=', 4)->get();
+        foreach($roles_ex_agent as $rea){
+            foreach( $rea->user_roles()->get() as $ur){
+                if( $ur->user->department_id == Auth::user()->department_id && $ur->user->id != Auth::user()->id ){
+                    $new_user_leave = new UserLeave;
+                    $new_user_leave->user_id = Auth::user()->id;
+                    $new_user_leave->direct_approver_id = $ur->user->id;
+                    $new_user_leave->leave_id = $new_leave->id;
+                    $new_user_leave->is_owner = false;
+                    $new_user_leave->save();
+
+                }
+                elseif ( $ur->user->department_id == Auth::user()->department_id && $ur->user->id == Auth::user()->id ){
+                    $new_user_leave = new UserLeave;
+                    $new_user_leave->user_id = Auth::user()->id;
+                    $new_user_leave->leave_id = $new_leave->id;
+                    $new_user_leave->is_owner = true;
+                    $new_user_leave->save();
+                }
+            }
+        }
 
         return redirect()->back()->with([
             'success_msg' => 'Leave Successfully requested!'
