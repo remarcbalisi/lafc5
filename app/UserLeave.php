@@ -11,4 +11,8 @@ class UserLeave extends Model
     protected $fillable = [
         'user_id','direct_approver','leave_id'
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User','user_id');
+    }
 }

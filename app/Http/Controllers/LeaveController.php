@@ -6,6 +6,7 @@ use App\Leave;
 use App\LeaveType;
 use App\Role;
 use App\UserLeave;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
@@ -73,6 +74,12 @@ class LeaveController extends Controller
 
         return redirect()->back()->with([
             'success_msg' => 'Leave Successfully requested!'
+        ]);
+    }
+
+    public function list(){
+        return view('leave-lists')->with([
+            'leave_requests' => Leave::get(),
         ]);
     }
 }
