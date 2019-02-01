@@ -82,4 +82,10 @@ class LeaveController extends Controller
             'leave_requests' => Leave::get(),
         ]);
     }
+
+    public function view($leave_request_id){
+        return view('single-leave-request')->with([
+            'leave_request' => Leave::where('id', $leave_request_id)->first(),
+        ]);
+    }
 }

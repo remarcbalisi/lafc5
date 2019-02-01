@@ -32,7 +32,7 @@
                                     <td>{{$leave_request->getOwner($leave_request->id)->department->name}}</td>
                                     <td>{{$leave_request->leave_status->name}}</td>
                                     <td>
-                                        <a><button type="button" class="btn btn-info btn-sm">View</button></a>
+                                        <a href="{{route('leave-view', ['leave_request_id'=>$leave_request->id])}}"><button type="button" class="btn btn-info btn-sm">View</button></a>
                                     </td>
                                 </tr>
                                 @endforeach
