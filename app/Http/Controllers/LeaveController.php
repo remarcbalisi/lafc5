@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Leave;
+use App\LeaveStatus;
 use App\LeaveType;
 use App\Notification;
 use App\Role;
@@ -95,6 +96,22 @@ class LeaveController extends Controller
     public function view($leave_request_id){
         return view('single-leave-request')->with([
             'leave_request' => Leave::where('id', $leave_request_id)->first(),
+            'leave_status' => LeaveStatus::get(),
+        ]);
+    }
+
+    public function changeStatus(Request $request, $leave_id){
+
+        $request->validate([
+            'leave_status' => ['required'],
+        ]);
+
+        $leave = Leave::where('id', $leave_id)->first();
+        $leave->leave_status_id = $request->input('leave_status');
+        $leave->save();
+
+        return redirect()->back()->with([
+           'success_msg' => 'Successfully changed status!'
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\User;
 use App\Role;
+use App\UserLeave;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
@@ -87,6 +88,15 @@ class UserPolicy
     public function update_leave_credits(User $user){
         $super_admin = Role::where(['id' => 1])->first();
         if( $user->hasRole($super_admin) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function update_leave_status(User $user, UserLeave $user_leave){
+        $super_admin = Role::where(['id' => 1])->first();
+        if( $user->hasRole($super_admin) && $user->id != $user_leave->user_id ){
             return true;
         }else{
             return false;
