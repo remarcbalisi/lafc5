@@ -17,7 +17,8 @@
                             <ul class="list-group">
                                 @foreach($notifications as $notification)
                                     <li class="list-group-item">
-                                        <a style="{{(!$notification->is_read) ? 'color:darkblue' : 'color:burlywood'}}" href="#"><p>{{$notification->body}}</p></a>
+                                        <a href="{{route('notification-view', ['notification_id'=>$notification->id])}}" style="{{(!$notification->is_read) ? 'color:darkblue' : 'color:burlywood'}}" href="#"><p>{{$notification->body}}</p></a>
+                                        <small>{{$notification->dateFormat($notification->created_at)}}</small>
                                     </li>
                                 @endforeach
                             </ul>

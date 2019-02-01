@@ -115,5 +115,6 @@ Route::group(
     Route::get('/leave-lists', 'LeaveController@list')->name('leave-lists');
     Route::get('/leave-view/{leave_request_id}', 'LeaveController@view')->name('leave-view');
     Route::get('/notifications', 'NotificationController@list')->name('notification-list');
+    Route::get('/notification-view/{notification_id}', 'NotificationController@view')->name('notification-view');
 
 });
