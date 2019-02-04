@@ -27,7 +27,8 @@ button{
   text-transform: uppercase;
   cursor: pointer;
   margin-left:37%;
-  margin-top:6%;   
+  margin-top:6%;  
+  margin-bottom:6%;   
   letter-spacing:5px; 
 
 }
@@ -58,6 +59,15 @@ button{
         Aplly leave
       </div>
 
+      <div class="form-group" >
+      <label>Leave Type</label>
+      <select class="form-control input-lg">
+        <option>Sick Leave</option>
+        <option>Vacation Leave</option>
+        <option>3</option>
+      </select>
+      </div>
+
       <div class="grid-container">
           <div class="grid-item">
             <label>Start Date</label>
@@ -70,17 +80,8 @@ button{
           </div>  
       </div>
 
-      <div class="form-group" >
-      <label>Type of Leave</label>
-      <select class="form-control input-lg">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
-      </div>
-
       <div class="form-group">
-        <label>Leave Address</label>
+        <label>Address</label>
         <input type="text" class="form-control input-lg">
       </div>
 
@@ -88,7 +89,7 @@ button{
       <label>Contact number</label>
         <input type="number" class="form-control input-lg">
       </div>
-      <button type="submit" >Submit</button>
+      <button type="submit" >Apply</button>
   </form>
 
 
