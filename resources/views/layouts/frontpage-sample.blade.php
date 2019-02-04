@@ -341,7 +341,7 @@ p {
                           <label for="pwd">Password</label>
                           <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                           </div>
-                          <button type="submit" >Submit</button>
+                          <button type="submit" >Log In</button>
                       </form>
                 </div>
             </div>  
