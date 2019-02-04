@@ -96,7 +96,7 @@ body {
 .logo {
   position: absolute;
   top: 20px;
-  left: 5%;
+  left:3%;
 }
 .logo img {
   display: inline-block;
@@ -124,9 +124,9 @@ body {
   z-index: -1;
 }
 
-  tbody tr:hover {
-      background-color: #ddd;
-    }
+tbody tr:hover {
+    background-color: #ddd;
+  }
 
   table.greenTable {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -239,7 +239,7 @@ table.greenTable tfoot .links a:hover{
   <div class="topnav-right">
     <a><i class="fas fa-envelope"></i>fiercecommail@mail.com</a>
     <a><i class="fas fa-phone-square"></i>+123 456 789</a>
-    <a><i class="fas fa-map-marked-alt"></i>434 Street, JY</a>
+    <a><i class="fas fa-map-marked-alt"></i>11th Flr, JY Square IT Center, Cebu City</a>
   </div>
 </div>
 <div class="bottomnav">

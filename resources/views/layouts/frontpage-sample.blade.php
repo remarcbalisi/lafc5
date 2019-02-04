@@ -6,15 +6,15 @@
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
       <!-- Styles -->
-      <!-- Styles -->
-    <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
+     
+    <!-- Styles -->
+    <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
@@ -94,7 +94,7 @@ body {
 .logo {
   position: absolute;
   top: 20px;
-  left: 5%;
+  left:3%;
 }
 .logo img {
   display: inline-block;
@@ -163,30 +163,6 @@ label{
   text-transform: uppercase;
   letter-spacing: .2em;
 }
-
-/* input{
- outline: none;
-  display: block;
-  background: rgba(0, 0, 0, 0.1);
-  width: 100%;
-  padding:9px;
-  font-size:18px;
-  text-align:left;
-  border-width:2px;
-  border-radius:6px;
-  border-style:outset;
-  border-color:#0db520;
-  opacity:76%;
-  
-  box-sizing: border-box;
-  padding: 12px 20px;
-  color: rgba(0, 0, 0, 0.6);
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 600;
-  line-height: inherit;
-  transition: 0.3s ease;
-} */
 
  .form-control{
   padding:15px;
@@ -294,6 +270,9 @@ p {
   overflow-x: hidden;
 } */
 
+
+
+
 </style>
 
 </head>
@@ -304,7 +283,7 @@ p {
   <div class="topnav-right">
     <a><i class="fas fa-envelope"></i>fiercecommail@mail.com</a>
     <a><i class="fas fa-phone-square"></i>+123 456 789</a>
-    <a><i class="fas fa-map-marked-alt"></i>434 Street, JY</a>
+    <a><i class="fas fa-map-marked-alt"></i>11th Flr, JY Square IT Center, Cebu City</a>
   </div>
 </div>
 <div class="bottomnav">

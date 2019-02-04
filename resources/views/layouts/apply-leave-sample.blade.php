@@ -7,20 +7,18 @@
 
       <!-- form style -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-     
-      <!-- Styles -->
-    <link href="{{ asset('css/apply-leave-sample.css') }}" rel="stylesheet">
-
+  
     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+    <!-- Styles -->
+    <link href="{{ asset('css/apply-leave-sample.css') }}" rel="stylesheet">
 
 <style>
 body {
@@ -101,7 +99,7 @@ body {
 .logo {
   position: absolute;
   top: 20px;
-  left: 5%;
+  left:3%;
 }
 .logo img {
   display: inline-block;
@@ -122,48 +120,12 @@ body {
 .black-bar {
   position: absolute;
   width: 50%;
-  height: 65px;
+  height: 64px;
   background: #09A603;
   top: 0;
   right: 0;
   z-index: -1;
 }
-/* 
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;} */
-
 </style>
 
 </head>
@@ -174,23 +136,14 @@ body {
   <div class="topnav-right">
     <a><i class="fas fa-envelope"></i>fiercecommail@mail.com</a>
     <a><i class="fas fa-phone-square"></i>+123 456 789</a>
-    <a><i class="fas fa-map-marked-alt"></i>434 Street, JY</a>
+    <a><i class="fas fa-map-marked-alt"></i>11th Flr, JY Square IT Center, Cebu City</a>
   </div>
 </div>
 <div class="bottomnav">
   <div class="bottomnav-left">
     <a href="#" class="">User List</a>
-
-    <!-- <div class="dropdown"> -->
-    <!-- <a href="#" class="dropbtn">Leave</a> -->
     <a href="#">Apply Leave</a>
     <a href="#">Leave Request</a>
-    <!-- <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div> -->
 
 <a href="#">
       <i style="font-size:24px" class="fa">&#xf0f3;</i>

@@ -71,12 +71,12 @@ button{
       <div class="grid-container">
           <div class="grid-item">
             <label>Start Date</label>
-              <input class="date" type="date" name="dateofbirth" id="dateofbirth">
+              <input class="date" type="date">
           </div>
 
           <div class="grid-item">
             <label>End Date</label>
-              <input class="date" type="date" name="dateofbirth" id="dateofbirth">
+              <input class="date" type="date">
           </div>  
       </div>
 
@@ -94,7 +94,7 @@ button{
         <label for="comment">Comment:</label>
         <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
-    
+
       <button type="submit" >Apply</button>
   </form>
 
