@@ -6,7 +6,8 @@
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <!-- Styles -->
   <link href="{{ asset('css/admin-sample.css') }}" rel="stylesheet">
@@ -126,13 +127,17 @@ body {
 .black-bar {
   position: absolute;
   width: 50%;
-  height: 60px;
+  height: 65px;
   background: #09A603;
   top: 0;
   right: 0;
   z-index: -1;
 }
 
+.badge{
+  margin-top:-100%;
+  margin-left:80%;
+}
 </style>
 
 </head>
@@ -153,6 +158,7 @@ body {
         <a href="#">Leave Request</a>
         <a href="#">
           <i style="font-size:24px" class="fa">&#xf0f3;</i>
+          <div class="badge"><span class="w3-badge w3-red">8</span></div>
         </a>
       </div>
     </div>
