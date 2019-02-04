@@ -139,25 +139,23 @@ body {
 
 <body>
 
-<div class="topnav">
-  <div class="topnav-right">
-    <a><i class="fas fa-envelope"></i>fiercecommail@mail.com</a>
-    <a><i class="fas fa-phone-square"></i>+123 456 789</a>
-    <a><i class="fas fa-map-marked-alt"></i>434 Street, JY</a>
-  </div>
-</div>
-<div class="bottomnav">
-  <div class="bottomnav-left">
-    <a href="#" class="">User List</a>
-    <a href="#">Apply Leave</a>
-    <a href="#">Leave Request</a>
-    <!-- <a href="#">Notification</a> -->
-    <a href="#">
-      <i style="font-size:24px" class="fa">&#xf0f3;</i>
-    </a>
-  </div>
-</div>
-
+    <div class="topnav">
+      <div class="topnav-right">
+        <a><i class="fas fa-envelope"></i>fiercecommail@mail.com</a>
+        <a><i class="fas fa-phone-square"></i>+123 456 789</a>
+        <a><i class="fas fa-map-marked-alt"></i>434 Street, JY</a>
+      </div>
+    </div>
+    <div class="bottomnav">
+      <div class="bottomnav-left">
+        <a href="#" class="">User List</a>
+        <a href="#">Apply Leave</a>
+        <a href="#">Leave Request</a>
+        <a href="#">
+          <i style="font-size:24px" class="fa">&#xf0f3;</i>
+        </a>
+      </div>
+    </div>
 
 
 @yield('content')
