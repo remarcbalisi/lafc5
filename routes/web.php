@@ -114,6 +114,8 @@ Route::group(
     Route::post('/store-apply-leave', 'LeaveController@store')->name('store-apply-leave');
     Route::get('/leave-lists', 'LeaveController@list')->name('leave-lists');
     Route::get('/leave-view/{leave_request_id}', 'LeaveController@view')->name('leave-view');
+    Route::put('/leave-update-change-status/{leave_request_id}', 'LeaveController@changeStatus')->name('leave-update-change-status');
+    Route::put('/leave-approve-disapprove/{leave_request_id}', 'LeaveController@approveDisapprove')->name('leave-approve-disapprove');
     Route::get('/notifications', 'NotificationController@list')->name('notification-list');
     Route::get('/notification-view/{notification_id}', 'NotificationController@view')->name('notification-view');
 

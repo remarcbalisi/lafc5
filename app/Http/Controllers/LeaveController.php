@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Leave;
+use App\LeaveStatus;
 use App\LeaveType;
 use App\Notification;
 use App\Role;
@@ -95,6 +96,53 @@ class LeaveController extends Controller
     public function view($leave_request_id){
         return view('single-leave-request')->with([
             'leave_request' => Leave::where('id', $leave_request_id)->first(),
+            'leave_status' => LeaveStatus::get(),
+        ]);
+    }
+
+    public function changeStatus(Request $request, $leave_id){
+
+        $request->validate([
+            'leave_status' => ['required'],
+        ]);
+
+        $leave = Leave::where('id', $leave_id)->first();
+        $leave->leave_status_id = $request->input('leave_status');
+        $leave->save();
+
+        return redirect()->back()->with([
+           'success_msg' => 'Successfully changed status!'
+        ]);
+    }
+
+    public function approveDisapprove(Request $request, $leave_id){
+        $request->validate([
+            'approve_disapprove' => ['required'],
+        ]);
+
+        $user_leave = UserLeave::where([
+            'leave_id' => $leave_id,
+            'direct_approver_id' => Auth::user()->id
+        ])->first();
+
+        $user_leave->approved_by = $request->input('approve_disapprove') == 1 ? Auth::user()->id : null;
+        $user_leave->approved_at = $request->input('approve_disapprove') == 1 ? Carbon::now() : null;
+        $user_leave->disapproved_by = $request->input('approve_disapprove') == 1 ? null : Auth::user()->id;
+        $user_leave->disapproved_at = $request->input('approve_disapprove') == 1 ? null : Carbon::now();
+        $user_leave->note = $request->input('note') ? $request->input('note') : null;
+        $user_leave->save();
+        $message =  ($user_leave->approved_by != null) ? 'Approved' : 'Disapproved' ."!";
+
+        $new_notification = new Notification;
+        $new_notification->title = "Leave request $message";
+        $new_notification->body = "Your leave request was " . $message . " by " . Auth::user()->fname . " " . Auth::user()->lname;
+        $new_notification->row_id = $leave_id;
+        $new_notification->table_name = 'leave';
+        $new_notification->user_id = $user_leave->user_id;
+        $new_notification->save();
+
+        return redirect()->back()->with([
+            'success_msg' => "Successfully " . $message . "!"
         ]);
     }
 }
