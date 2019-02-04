@@ -89,6 +89,12 @@ button{
       <label>Contact number</label>
         <input type="number" class="form-control input-lg">
       </div>
+
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    
       <button type="submit" >Apply</button>
   </form>
 
