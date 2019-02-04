@@ -154,7 +154,7 @@ body {
 }
 
 label{
-    display: block;
+  display: block;
   margin: 0 0 10px;
   color: rgba(0, 0, 0, 0.6);
   font-size: 12px;
@@ -164,13 +164,20 @@ label{
   letter-spacing: .2em;
 }
 
-input{
+/* input{
  outline: none;
   display: block;
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
-  border: 0;
-  border-radius: 4px;
+  padding:9px;
+  font-size:18px;
+  text-align:left;
+  border-width:2px;
+  border-radius:6px;
+  border-style:outset;
+  border-color:#0db520;
+  opacity:76%;
+  
   box-sizing: border-box;
   padding: 12px 20px;
   color: rgba(0, 0, 0, 0.6);
@@ -178,6 +185,21 @@ input{
   font-size: inherit;
   font-weight: 600;
   line-height: inherit;
+  transition: 0.3s ease;
+} */
+
+ .form-control{
+  padding:15px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  text-align:left;
+  border-width:2px;
+  border-radius:6px;
+  border-style:outset;
+  border-color:#32F581;
+  opacity:76%;
+  /* color: rgba(0, 0, 0, 0.6); */
   transition: 0.3s ease;
 }
 
