@@ -32,6 +32,18 @@ button{
 
 }
 
+ .date, .form-control{
+  padding:9px;
+  font-size:18px;
+  text-align:left;
+  border-width:2px;
+  border-radius:6px;
+  border-style:outset;
+  border-color:#0db520;
+  opacity:76%;
+  
+}
+
 </style>
 
 <div class="logo">
@@ -42,6 +54,9 @@ button{
 
   <form class="form">
       <h2></h2>
+      <div class="flag">
+        Aplly leave
+      </div>
 
       <div class="grid-container">
           <div class="grid-item">
@@ -55,7 +70,7 @@ button{
           </div>  
       </div>
 
-      <div class="form-group">
+      <div class="form-group" >
       <label>Type of Leave</label>
       <select class="form-control input-lg">
         <option>1</option>
