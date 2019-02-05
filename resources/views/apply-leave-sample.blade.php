@@ -4,12 +4,15 @@
 
 <style>
   
-h2{
+h3{
   border:1px solid #4caf50;
   background-color:#4caf50;
   margin-top:0;
-  height:10%;
-  
+  height:7.5%;
+  text-align:left;
+  color:white;
+  padding-top:13px;
+  padding-left:30px;
   
 }
 button{
@@ -54,10 +57,7 @@ button{
 <div class="bg"><div>
 
   <form class="form">
-      <h2></h2>
-      <div class="flag">
-        Aplly leave
-      </div>
+      <h3>Apply Leave</h3>
 
       <div class="form-group" >
       <label>Leave Type</label>
