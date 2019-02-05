@@ -149,9 +149,10 @@
 		<section class="box">
 			<label class="box-title" for="cb1">Regine lala</label>
 			<label class="box-close" for="acc-close"></label>
-			<div class="box-content"><p>Leave Applied<br>
-        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong></p>
+			<div class="box-content"><h3>Leave Applied</h3><br>
+        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
         <div class="container">
+          <br>
         <button type="button" class="btn btn-success">Approved</button>
         <button type="button" class="btn btn-danger">Denied</button>
         </div>
@@ -161,9 +162,10 @@
 		<section class="box">
 			<label class="box-title" for="cb2">Fretzie baba</label>
 			<label class="box-close" for="acc-close"></label>
-			<div class="box-content"><p>Leave Applied<br>
-        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong></p>
+			<div class="box-content"><h3>Leave Applied</h3><br>
+        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
         <div class="container">
+          <br>
         <button type="button" class="btn btn-success">Approved</button>
         <button type="button" class="btn btn-danger">Denied</button>
         </div>
@@ -173,9 +175,10 @@
 		<section class="box">
 			<label class="box-title" for="cb3">Test test</label>
 			<label class="box-close" for="acc-close"></label>
-			<div class="box-content"><p>Leave Applied<br>
-        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong></p>
+			<div class="box-content"><h3>Leave Applied</h3><br>
+        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
         <div class="container">
+          <br>
         <button type="button" class="btn btn-success">Approved</button>
         <button type="button" class="btn btn-danger">Denied</button>
         </div>
