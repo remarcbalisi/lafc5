@@ -114,7 +114,7 @@ body {
 .black-bar {
   position: absolute;
   width: 50%;
-  height: 60px;
+  height: 64px;
   background: #09A603;
   top: 0;
   right: 0;
