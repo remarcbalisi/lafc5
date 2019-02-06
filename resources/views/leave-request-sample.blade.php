@@ -144,19 +144,29 @@
 <nav class="accordion arrows">
 		<header class="box">
 			<label for="acc-close" class="box-title">Leave Request List</label>
-		</header>
+    </header>
+    
 		<input type="radio" name="accordion" id="cb1" />
-		<section class="box">
+		<section class="box">   
 			<label class="box-title" for="cb1">Regine lala</label>
 			<label class="box-close" for="acc-close"></label>
 			<div class="box-content"><h3>Leave Applied</h3><br>
         <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
         <div class="container">
-          <br>
-        <button type="button" class="btn btn-success">Approved</button>
-        <button type="button" class="btn btn-danger">Denied</button>
+            <br> 
+          <button type="button" class="btn btn-success ">Approved</button>
+          <button type="button" class="btn btn-danger  btn-dialog" >Denied</button>
+
+            <div class="awsm-dialog animated bounceIn">
+              <div class="awd-content">
+                <p class="awd-message">Are you sure?</p>
+                <button class="btn awd-ok">Yes</button>
+                <button class="btn awd-cancel">No</button>
+              </div>
+            </div>
         </div>
       </div>
+      
 		</section>
 		<input type="radio" name="accordion" id="cb2" />
 		<section class="box">
@@ -171,7 +181,8 @@
         </div>
       </div>
 		</section>
-		<input type="radio" name="accordion" id="cb3" />
+    <input type="radio" name="accordion" id="cb3" />
+    
 		<section class="box">
 			<label class="box-title" for="cb3">Test test</label>
 			<label class="box-close" for="acc-close"></label>
@@ -183,8 +194,7 @@
         <button type="button" class="btn btn-danger">Denied</button>
         </div>
       </div>
-		</section>
-
+    </section>
 		<input type="radio" name="accordion" id="acc-close" />
 	</nav>
 
