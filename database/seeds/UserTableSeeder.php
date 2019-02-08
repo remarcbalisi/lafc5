@@ -39,5 +39,19 @@ class UserTableSeeder extends Seeder
             'password' => bcrypt('admin'),
         ]);
 
+        DB::table('users')->insert([
+            'fname' => 'Regine',
+            'mname' => 'Ramirez',
+            'lname' => 'Laguting',
+            'email' => 'regine091998@gmail.com',
+            'b_day' => date("Y-m-d"),
+            'gender_id' => 2,
+            'date_hired' => date("Y-m-d"),
+            'employee_id' => '123-regine',
+            'department_id' => 1,
+            'username' => 'regine09',
+            'password' => bcrypt('hrmanager'),
+        ]);
+
     }
 }

@@ -58,6 +58,10 @@
                                     <label for="{{$contact->slug}}-contact">{{$contact->contact_type->name}} Contact</label>
                                     <input type="text" name="contact" value="{{$contact->country_code . ' ' . $contact->number}}" class="form-control" id="{{$contact->slug}}-contact" placeholder="{{$contact->slug}} Contact" >
                                 </div>
+                                <div class="form-group">
+                                    <label for="note">Note</label>
+                                    <textarea class="form-control" name="note" id="note" rows="3"></textarea>
+                                </div>
                                 <button type="submit" class="btn btn-success">Apply</button>
                             </form>
 
