@@ -5,7 +5,7 @@
 <style>
  
   .accordion {
-    margin-top:10%;
+    margin-top:5%;
     margin-bottom:10%;
     margin-left:15%;
     width: 70%;
@@ -102,7 +102,7 @@
   /* pagination */
   .pagination {
   display: inline-block;
-  float:right;
+  margin-left:40%;
   padding-right:17%;
   padding-bottom:10%;
   margin-top:-5%;
@@ -132,6 +132,7 @@
   border-radius: 25px;
 }
 
+
 </style>
 
 
@@ -153,19 +154,16 @@
 			<div class="box-content"><h3>Leave Applied</h3><br>
         <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
         <div class="container">
-            <br> 
-          <button type="button" class="btn btn-success ">Approved</button>
-          <button type="button" class="btn btn-danger  btn-dialog" >Denied</button>
-
-            <div class="awsm-dialog animated bounceIn">
-              <div class="awd-content">
-                <p class="awd-message">Are you sure?</p>
-                <button class="btn awd-ok">Yes</button>
-                <button class="btn awd-cancel">No</button>
-              </div>
-            </div>
-        </div>
+            <br>   
+          
+            <button type="button" class="btn btn-success ">
+              <span class="glyphicon glyphicon-ok"></span> &nbsp;Approved</button>
+            <button type="button" class="btn btn-danger ">
+              <span class="glyphicon glyphicon-trash"></span>&nbsp;Denied</button>
+          
       </div>
+
+      
       
 		</section>
 		<input type="radio" name="accordion" id="cb2" />
@@ -192,6 +190,7 @@
           <br>
         <button type="button" class="btn btn-success">Approved</button>
         <button type="button" class="btn btn-danger">Denied</button>
+        
         </div>
       </div>
     </section>
@@ -212,6 +211,7 @@
 
 </div>
 </div>
+
 
 
 @endsection

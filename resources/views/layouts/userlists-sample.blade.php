@@ -137,7 +137,7 @@ tbody tr:hover {
   text-align: center;
   border-collapse: collapse;
   margin-left:15%;
-  margin-top:7%;
+  margin-top:5%;
   margin-bottom:10%;
   box-shadow:  0 30px 40px 0 rgba(0,0,0,0.25);
 }
