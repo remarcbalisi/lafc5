@@ -48,7 +48,7 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{route('create-new-user')}}">Add New</a>
+                                <a href="{{route('hrm-create-new-user')}}">Add New</a>
                             </li>
                             <li>
                                 <a href="{{route('hrm-user-lists')}}">
