@@ -120,3 +120,21 @@ Route::group(
     Route::get('/notification-view/{notification_id}', 'NotificationController@view')->name('notification-view');
 
 });
+
+
+Route::group(
+
+    [
+        'prefix' => 'hrm',
+        'middleware' => [
+            'auth:web',
+            'user_stat',
+            'hrm_acc',
+        ]
+
+    ],
+
+    function () {
+        Route::get('/home', 'Hrm\HomeController@home')->name('hrm-home');
+
+    });
