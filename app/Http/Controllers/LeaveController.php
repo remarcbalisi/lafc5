@@ -77,6 +77,7 @@ class LeaveController extends Controller
                     $new_user_leave->user_id = Auth::user()->id;
                     $new_user_leave->leave_id = $new_leave->id;
                     $new_user_leave->is_owner = true;
+                    $new_user_leave->note = $request->input('note') ? $request->input('note') : null;
                     $new_user_leave->save();
                 }
             }
