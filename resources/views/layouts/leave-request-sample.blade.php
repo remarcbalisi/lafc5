@@ -2,12 +2,22 @@
 <head>
     <title>Leave Request page</title>
 
+     <!-- Styles -->
+     <link href="{{ asset('css/leave-request-sample.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-       <!-- Styles -->
-       <link href="{{ asset('css/leave-request-sample.css') }}" rel="stylesheet">
+    <!-- action button style -->
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+ <!-- dialog -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 <style>
 body {
@@ -108,41 +118,12 @@ body {
 .black-bar {
   position: absolute;
   width: 50%;
-  height: 60px;
+  height: 64px;
   background: #09A603;
   top: 0;
   right: 0;
   z-index: -1;
 }
-
-#user-table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 70%;
-    box-shadow:  0 30px 40px 0 rgba(0,0,0,0.25);
-    margin-left:15%;
-    margin-top:7%;
-    margin-bottom:10%;
-    background-color:white;
-  }
-  
-  #user-table td, #user-table th {
-    padding: 8px;
-  }
-  
-  #user-table tr:hover {
-      background-color: #ddd;
-    }
-  
-  #user-table th {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-    
-    
-  }
 
 </style>
 
@@ -173,5 +154,9 @@ body {
 
 
 @yield('content')
+
+<!-- Scripts -->
+<script src="{{ asset('js/leave-request.js') }}"></script>
+
 </body>
 </html>
