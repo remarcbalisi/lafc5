@@ -51,7 +51,7 @@
                                 <a href="{{route('create-new-user')}}">Add New</a>
                             </li>
                             <li>
-                                <a href="{{route('user-lists')}}">
+                                <a href="{{route('hrm-user-lists')}}">
                                     View Users
                                 </a>
                             </li>

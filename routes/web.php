@@ -136,5 +136,6 @@ Route::group(
 
     function () {
         Route::get('/home', 'Hrm\HomeController@home')->name('hrm-home');
+        Route::get('/user-lists', 'UserController@lists')->name('hrm-user-lists');
 
     });
