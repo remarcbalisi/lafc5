@@ -140,4 +140,5 @@ Route::group(
         Route::get('/user-create', 'Hrm\UserController@createUser')->name('hrm-create-new-user');
         Route::post('/user-store','Hrm\UserController@storeUser')->name('hrm-store-new-user');
         Route::get('/user-leave-apply', 'Hrm\LeaveController@apply')->name('hrm-leave-apply');
+        Route::post('/user-leave-apply-store', 'Hrm\LeaveController@store')->name('hrm-leave-apply-store');
     });
