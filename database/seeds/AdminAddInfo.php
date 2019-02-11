@@ -11,7 +11,7 @@ class AdminAddInfo extends Seeder
      */
     public function run()
     {
-         DB::table('contact')->insert([
+            DB::table('contact')->insert([
                 'number' => '9675842177',
                 'contact_type_id' => 1,
                 'user_id' => 1,
@@ -49,6 +49,25 @@ class AdminAddInfo extends Seeder
                 'postal_code' => '6000',
                 'address_type_id' => 1,
                 'user_id' => 2
+            ]);
+
+            DB::table('contact')->insert([
+                'number' => '9675842176',
+                'contact_type_id' => 1,
+                'user_id' => 3,
+                'country_code' => '+63'
+
+            ]);
+
+            DB::table('address')->insert([
+                'street' => 'lahug',
+                'unit_no' => '1108',
+                'barangay' => 'lahug',
+                'city' => 'cebu',
+                'province' => 'central visayas',
+                'postal_code' => '6000',
+                'address_type_id' => 1,
+                'user_id' => 3
             ]);
 
     }
