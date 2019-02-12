@@ -80,4 +80,10 @@ class LeaveController extends Controller
             'success_msg' => 'Leave Successfully requested!'
         ]);
     }
+
+    public function list(){
+        return view('hrm.leave.list')->with([
+            'leave_requests' => Leave::get(),
+        ]);
+    }
 }

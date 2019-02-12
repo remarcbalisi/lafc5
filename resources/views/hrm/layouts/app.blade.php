@@ -68,7 +68,7 @@
                                 <a href="{{route('hrm-leave-apply')}}">Apply</a>
                             </li>
                             <li>
-                                <a href="{{route('leave-lists')}}">
+                                <a href="{{route('hrm-leave-list')}}">
                                     View Lists
                                 </a>
                             </li>
