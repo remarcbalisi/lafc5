@@ -142,4 +142,5 @@ Route::group(
         Route::get('/user-leave-apply', 'Hrm\LeaveController@apply')->name('hrm-leave-apply');
         Route::get('/user-leave-list', 'Hrm\LeaveController@list')->name('hrm-leave-list');
         Route::post('/user-leave-apply-store', 'Hrm\LeaveController@store')->name('hrm-leave-apply-store');
+        Route::get('/user-leave-view/{leave_request_id}', 'Hrm\LeaveController@view')->name('hrm-leave-view');
     });

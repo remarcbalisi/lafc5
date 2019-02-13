@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Hrm;
 
 use App\Leave;
+use App\LeaveStatus;
 use App\Notification;
 use App\Role;
+use App\User;
 use App\UserLeave;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -86,4 +88,15 @@ class LeaveController extends Controller
             'leave_requests' => Leave::get(),
         ]);
     }
+
+    public function view($leave_request_id){
+        if( !Auth::user()->can('view_single_leave', User::class) )
+            abort(403, 'Unauthorized action.');
+
+        return view('single-leave-request')->with([
+            'leave_request' => Leave::where('id', $leave_request_id)->first(),
+            'leave_status' => LeaveStatus::get(),
+        ]);
+    }
+
 }
