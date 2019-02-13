@@ -159,4 +159,5 @@ Route::group(
 
     function () {
         Route::get('/home', 'Agent\HomeController@home')->name('agent-home');
+        Route::get('/user-leave-apply', 'Agent\LeaveController@apply')->name('agent-leave-apply');
     });

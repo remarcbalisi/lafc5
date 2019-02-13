@@ -48,7 +48,7 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{route('apply-leave')}}">Apply</a>
+                                <a href="{{route('agent-leave-apply')}}">Apply</a>
                             </li>
                             <li>
                                 <a href="{{route('leave-lists')}}">
