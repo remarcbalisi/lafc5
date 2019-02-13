@@ -8,6 +8,7 @@ use App\Notification;
 use App\Role;
 use App\UserLeave;
 use Carbon\Carbon;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -88,6 +89,18 @@ class LeaveController extends Controller
                 'user_id' => Auth::user()->id,
                 'is_owner' => 1
             ])->get(),
+        ]);
+    }
+
+    public function view($leave_request_id){
+        $user_leave = UserLeave::where([
+            'user_id' => Auth::user()->id,
+            'leave_id' => $leave_request_id,
+            'is_owner' => 1
+        ])->first();
+
+        return view('agent.leave.single')->with([
+            'leave_request' => $user_leave->leave,
         ]);
     }
 

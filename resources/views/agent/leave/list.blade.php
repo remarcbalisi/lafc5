@@ -30,7 +30,7 @@
                                     <td style="max-width: 20px;">{{$leave_request->leave->dateFormat($leave_request->leave_start_date)}} - {{$leave_request->leave->dateFormat($leave_request->leave_end_date)}}</td>
                                     <td>{{$leave_request->leave->leave_status->name}}</td>
                                     <td>
-                                        <a href="{{route('hrm-leave-view', ['leave_request_id'=>$leave_request->leave->id])}}"><button type="button" class="btn btn-info btn-sm">View</button></a>
+                                        <a href="{{route('agent-leave-view', ['leave_request_id'=>$leave_request->leave->id])}}"><button type="button" class="btn btn-info btn-sm">View</button></a>
                                     </td>
                                 </tr>
                             @endforeach

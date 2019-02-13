@@ -162,4 +162,5 @@ Route::group(
         Route::get('/user-leave-apply', 'Agent\LeaveController@apply')->name('agent-leave-apply');
         Route::post('/user-leave-apply-store', 'Agent\LeaveController@store')->name('agent-leave-apply-store');
         Route::get('/my-leave-list', 'Agent\LeaveController@list')->name('agent-leave-list');
+        Route::get('/my-leave-view/{leave_request_id}', 'Agent\LeaveController@view')->name('agent-leave-view');
     });
