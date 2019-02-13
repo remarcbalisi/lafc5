@@ -61,6 +61,7 @@ class Kernel extends HttpKernel
         'user_stat' => \App\Http\Middleware\CheckUserStatus::class,
         'admin_acc' => \App\Http\Middleware\AdminAcc::class,
         'hrm_acc' => \App\Http\Middleware\HrmAcc::class,
+        'agent_acc' => \App\Http\Middleware\AgentAcc::class,
         'CORS' => \App\Http\Middleware\CORS::class,
     ];
 }

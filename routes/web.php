@@ -152,7 +152,7 @@ Route::group(
         'middleware' => [
             'auth:web',
             'user_stat',
-//            'hrm_acc',
+            'agent_acc',
         ]
 
     ],
