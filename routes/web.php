@@ -144,3 +144,19 @@ Route::group(
         Route::post('/user-leave-apply-store', 'Hrm\LeaveController@store')->name('hrm-leave-apply-store');
         Route::get('/user-leave-view/{leave_request_id}', 'Hrm\LeaveController@view')->name('hrm-leave-view');
     });
+
+Route::group(
+
+    [
+        'prefix' => 'agent',
+        'middleware' => [
+            'auth:web',
+            'user_stat',
+//            'hrm_acc',
+        ]
+
+    ],
+
+    function () {
+        Route::get('/home', 'Agent\HomeController@home')->name('agent-home');
+    });

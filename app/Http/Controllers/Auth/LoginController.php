@@ -68,9 +68,9 @@ class LoginController extends Controller
         if ( $user->hasRole($hr) ) {// do your margic here
             return redirect()->route('hrm-home');
         }
-//        if ( $user->hasRole($agent) ) {// do your margic here
-//            return redirect()->route('agent-home');
-//        }
+        if ( $user->hasRole($agent) ) {// do your margic here
+            return redirect()->route('agent-home');
+        }
 
         return redirect('/home');
     }
