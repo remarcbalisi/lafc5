@@ -160,4 +160,6 @@ Route::group(
     function () {
         Route::get('/home', 'Agent\HomeController@home')->name('agent-home');
         Route::get('/user-leave-apply', 'Agent\LeaveController@apply')->name('agent-leave-apply');
+        Route::post('/user-leave-apply-store', 'Agent\LeaveController@store')->name('agent-leave-apply-store');
+        Route::get('/my-leave-list', 'Agent\LeaveController@list')->name('agent-leave-list');
     });

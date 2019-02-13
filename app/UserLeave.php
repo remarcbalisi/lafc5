@@ -19,4 +19,8 @@ class UserLeave extends Model
     public function direct_approver(){
         return $this->belongsTo('App\User','direct_approver_id');
     }
+
+    public function leave(){
+        return $this->belongsTo('App\Leave', 'leave_id');
+    }
 }

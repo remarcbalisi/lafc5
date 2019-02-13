@@ -30,7 +30,7 @@
                             </div>
                         @endif
 
-                        <form action="{{route('hrm-leave-apply-store')}}" method="POST">
+                        <form action="{{route('agent-leave-apply-store')}}" method="POST">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="leave_type">Leave Type</label>

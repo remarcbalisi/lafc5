@@ -51,7 +51,7 @@
                                 <a href="{{route('agent-leave-apply')}}">Apply</a>
                             </li>
                             <li>
-                                <a href="{{route('leave-lists')}}">
+                                <a href="{{route('agent-leave-list')}}">
                                     My Leave Requests
                                 </a>
                             </li>
