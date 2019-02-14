@@ -51,41 +51,51 @@ Route::get('/aboutus-page-sample', function () {
 });
 
 
+//Route::get('/', function () {
+//    // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
+//    // return view('welcome');
+//    // $user->hasRole($super_admin);
+//    // $roles = Role::where(['id'=>2, 'id'=>3, 'id'=>4])->get();
+//    return $roles;
+//    $super_admin = Role::where(['id' => 2])->first();
+//    return Auth::user()->hasRole($super_admin) ? 'True' : 'False';
+//    $auth_user = Auth::user();
+//    $auth_user->roles()->where(['role_id'=>1])->first();
+//
+//    $roles = Role::where([
+//        'id' => 1
+//    ])->get();
+//
+//    $array_of_users = [];
+//
+//    foreach( $roles as $role ){
+//        return $role->user_roles()->get();
+//        foreach( $role->user_roles()->get() as $user_role ){
+//            if( $auth_user->department_id == $user_role->user->first()->department_id ){
+//                array_push($array_of_users, $user_role->user);
+//            }
+//            // array_push($array_of_users, $user_role->user);
+//            // return $user_role->user;
+//        }
+//    }
+//
+//    return $array_of_users;
+//
+//});
+
 Route::get('/', function () {
-    // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
-    // return view('welcome');
-    // $user->hasRole($super_admin);
-    // $roles = Role::where(['id'=>2, 'id'=>3, 'id'=>4])->get();
-    return $roles;
-    $super_admin = Role::where(['id' => 2])->first();
-    return Auth::user()->hasRole($super_admin) ? 'True' : 'False';
-    $auth_user = Auth::user();
-    $auth_user->roles()->where(['role_id'=>1])->first();
 
-    $roles = Role::where([
-        'id' => 1
-    ])->get();
+    return view('frontpage');
 
-    $array_of_users = [];
+})->name('landing-page');
 
-    foreach( $roles as $role ){
-        return $role->user_roles()->get();
-        foreach( $role->user_roles()->get() as $user_role ){
-            if( $auth_user->department_id == $user_role->user->first()->department_id ){
-                array_push($array_of_users, $user_role->user);
-            }
-            // array_push($array_of_users, $user_role->user);
-            // return $user_role->user;
-        }
-    }
-
-    return $array_of_users;
-
-});
+Route::get('/login', function () {
+    return view('frontpage');
+})->name('login');
 
 
 
-Auth::routes();
+//Auth::routes();
 
 Route::group(
     
