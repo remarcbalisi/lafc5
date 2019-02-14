@@ -20,7 +20,13 @@
 <tfoot>
 <tr>
 <td colspan="4">
-<div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+<div class="links"><a href="#">&laquo;</a> 
+  <a class="active" href="#">1</a> 
+  <a href="#">2</a> 
+  <a href="#">3</a> 
+  <a href="#">4</a> 
+  <a href="#">&raquo;</a>
+</div>
 </td>
 </tr>
 </tfoot>
@@ -43,8 +49,8 @@
   </td>
 </tr>
 <tr>
-<td>cell1_2</td
-><td>cell2_2</td>
+<td>cell1_2</td>
+<td>cell2_2</td>
 <td>cell3_2</td>
 <td><span class="glyphicon glyphicon-option-vertical"></span></td>
 </tr>
