@@ -119,8 +119,15 @@
   background-color: #4CAF50;
   color: white;
 }
+.nxt{
+border:1px solid white;
+background-color: white;
+}
 
-.pagination a:hover:not(.active) {background-color: #4CAF50;}
+.pagination a:hover:not(.active) {
+  background-color: #4CAF50;
+  color:white;
+}
 
 /* action button */
 .btn-circle.btn-lg {
@@ -193,14 +200,14 @@
 	</nav>
 
   <div class="pagination">
-  <a href="#">&laquo;</a>
+  <a href="#" class="nxt">Prev</a>
   <a class="active"  href="#">1</a>
   <a href="#">2</a>
   <a href="#">3</a>
   <a href="#">4</a>
   <a href="#">5</a>
   <a href="#">6</a>
-  <a href="#">&raquo;</a>
+  <a href="#" class="nxt">Next</a>
 </div>
 
 @endsection

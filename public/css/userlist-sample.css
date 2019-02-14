@@ -128,6 +128,11 @@
   text-align: left;
   padding: 20px;
 }
+
+.reportwrapper__table table tbody tr:hover{
+  background-color: rgb(231, 238, 231);
+}
+
 .reportwrapper__table table tbody tr .item .g,
 .reportwrapper__table table tbody tr .item .i {
   display: inline-block;

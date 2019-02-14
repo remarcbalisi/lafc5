@@ -205,7 +205,10 @@ border:1px solid white;
 background-color: white;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a:hover:not(.active) {
+  background-color:#4CAF50;
+  color:white;
+}
 </style>
 
   

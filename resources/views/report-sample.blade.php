@@ -52,7 +52,7 @@
       <tbody>
         <tr class="t-row">
           <td> 
-            <div class="item">
+            <div class="item">  
               <div class="i">
                 <p class="name">Regine Laguting</p>
                 <p class="designation">IT department</p>
