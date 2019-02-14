@@ -125,11 +125,12 @@ body {
 
 .report {
   background-color:#FFEEAD;
+  background-repeat: no-repeat;
   background-size: cover;
+  /* height: calc(100vh - 120px); */
   width: 100vw;
-  height:100%;
-  overflow: scroll;
   overflow-x: hidden;
+  
 }
 
 .black-bar {
