@@ -21,5 +21,10 @@ class UserStatusTableSeeder extends Seeder
             'status_id' => 1,
         ]);
 
+        DB::table('user_status')->insert([
+            'user_id' => 3,
+            'status_id' => 1,
+        ]);
+
     }
 }

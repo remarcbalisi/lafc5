@@ -21,7 +21,8 @@ class UserPolicy
     public function view(User $user, User $model)
     {
         $super_admin = Role::where(['id' => 1])->first();
-        if( $user->hasRole($super_admin) ){
+        $hr = Role::where(['id' => 2])->first();
+        if( $user->hasRole($super_admin ) || $user->hasRole($hr) ){
             return true;
         }else{
             return $user->id === $model->id;
@@ -40,6 +41,18 @@ class UserPolicy
         
     }
 
+    public function view_single_leave(User $user)
+    {
+        $super_admin = Role::where(['id' => 1])->first();
+        $hr = Role::where(['id' => 2])->first();
+        if( $user->hasRole($hr) || $user->hasRole($super_admin)){
+            return true;
+        }
+
+        return false;
+
+    }
+
     /**
      * Determine whether the user can create models.
      *
@@ -49,7 +62,8 @@ class UserPolicy
     public function create(User $user)
     {
         $super_admin = Role::where(['id' => 1])->first();
-        if( $user->hasRole($super_admin) ){
+        $hr = Role::where(['id' => 2])->first();
+        if( $user->hasRole($super_admin) || $user->hasRole($hr) ){
             return true;
         }else{
             return false;

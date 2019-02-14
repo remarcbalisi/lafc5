@@ -54,41 +54,65 @@ Route::get('/report-sample', function () {
 });
 
 
+//Route::get('/', function () {
+//    // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
+//    // return view('welcome');
+//    // $user->hasRole($super_admin);
+//    // $roles = Role::where(['id'=>2, 'id'=>3, 'id'=>4])->get();
+//    return $roles;
+//    $super_admin = Role::where(['id' => 2])->first();
+//    return Auth::user()->hasRole($super_admin) ? 'True' : 'False';
+//    $auth_user = Auth::user();
+//    $auth_user->roles()->where(['role_id'=>1])->first();
+//
+//    $roles = Role::where([
+//        'id' => 1
+//    ])->get();
+//
+//    $array_of_users = [];
+//
+//    foreach( $roles as $role ){
+//        return $role->user_roles()->get();
+//        foreach( $role->user_roles()->get() as $user_role ){
+//            if( $auth_user->department_id == $user_role->user->first()->department_id ){
+//                array_push($array_of_users, $user_role->user);
+//            }
+//            // array_push($array_of_users, $user_role->user);
+//            // return $user_role->user;
+//        }
+//    }
+//
+//    return $array_of_users;
+//
+//});
+
 Route::get('/', function () {
-    // return User::where(['id'=>Auth::user()->id])->first()->user_status()->where(['status_id'=>1])->get();
-    // return view('welcome');
-    // $user->hasRole($super_admin);
-    // $roles = Role::where(['id'=>2, 'id'=>3, 'id'=>4])->get();
-    return $roles;
-    $super_admin = Role::where(['id' => 2])->first();
-    return Auth::user()->hasRole($super_admin) ? 'True' : 'False';
-    $auth_user = Auth::user();
-    $auth_user->roles()->where(['role_id'=>1])->first();
 
-    $roles = Role::where([
-        'id' => 1
-    ])->get();
+    return view('frontpage');
 
-    $array_of_users = [];
+})->name('landing-page');
 
-    foreach( $roles as $role ){
-        return $role->user_roles()->get();
-        foreach( $role->user_roles()->get() as $user_role ){
-            if( $auth_user->department_id == $user_role->user->first()->department_id ){
-                array_push($array_of_users, $user_role->user);
-            }
-            // array_push($array_of_users, $user_role->user);
-            // return $user_role->user;
-        }
-    }
+// Authentication Routes...
+Route::get('/login', function () {
+    return view('frontpage');
+})->name('login');
 
-    return $array_of_users;
+$this->post('login', 'Auth\LoginController@login');
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
-});
+// Registration Routes...
+$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+$this->post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+$this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 
-Auth::routes();
+//Auth::routes();
 
 Route::group(
     
@@ -123,3 +147,47 @@ Route::group(
     Route::get('/notification-view/{notification_id}', 'NotificationController@view')->name('notification-view');
 
 });
+
+
+Route::group(
+
+    [
+        'prefix' => 'hrm',
+        'middleware' => [
+            'auth:web',
+            'user_stat',
+            'hrm_acc',
+        ]
+
+    ],
+
+    function () {
+        Route::get('/home', 'Hrm\HomeController@home')->name('hrm-home');
+        Route::get('/user-lists', 'Hrm\UserController@lists')->name('hrm-user-lists');
+        Route::get('/user-create', 'Hrm\UserController@createUser')->name('hrm-create-new-user');
+        Route::post('/user-store','Hrm\UserController@storeUser')->name('hrm-store-new-user');
+        Route::get('/user-leave-apply', 'Hrm\LeaveController@apply')->name('hrm-leave-apply');
+        Route::get('/user-leave-list', 'Hrm\LeaveController@list')->name('hrm-leave-list');
+        Route::post('/user-leave-apply-store', 'Hrm\LeaveController@store')->name('hrm-leave-apply-store');
+        Route::get('/user-leave-view/{leave_request_id}', 'Hrm\LeaveController@view')->name('hrm-leave-view');
+    });
+
+Route::group(
+
+    [
+        'prefix' => 'agent',
+        'middleware' => [
+            'auth:web',
+            'user_stat',
+            'agent_acc',
+        ]
+
+    ],
+
+    function () {
+        Route::get('/home', 'Agent\HomeController@home')->name('agent-home');
+        Route::get('/user-leave-apply', 'Agent\LeaveController@apply')->name('agent-leave-apply');
+        Route::post('/user-leave-apply-store', 'Agent\LeaveController@store')->name('agent-leave-apply-store');
+        Route::get('/my-leave-list', 'Agent\LeaveController@list')->name('agent-leave-list');
+        Route::get('/my-leave-view/{leave_request_id}', 'Agent\LeaveController@view')->name('agent-leave-view');
+    });
