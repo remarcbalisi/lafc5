@@ -49,6 +49,9 @@ Route::get('/admin-info-sample', function () {
 Route::get('/aboutus-page-sample', function () {
     return view('aboutus-page-sample');
 });
+Route::get('/report-sample', function () {
+    return view('report-sample');
+});
 
 
 //Route::get('/', function () {

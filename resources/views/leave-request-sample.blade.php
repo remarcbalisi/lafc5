@@ -119,8 +119,15 @@
   background-color: #4CAF50;
   color: white;
 }
+.nxt{
+border:1px solid white;
+background-color: white;
+}
 
-.pagination a:hover:not(.active) {background-color: #4CAF50;}
+.pagination a:hover:not(.active) {
+  background-color: #4CAF50;
+  color:white;
+}
 
 /* action button */
 .btn-circle.btn-lg {
@@ -143,75 +150,64 @@
 <div class="bg"><div>
     
 <nav class="accordion arrows">
-		<header class="box">
-			<label for="acc-close" class="box-title">Leave Request List</label>
-    </header>
-    
-		<input type="radio" name="accordion" id="cb1" />
-		<section class="box">   
-			<label class="box-title" for="cb1">Regine lala</label>
-			<label class="box-close" for="acc-close"></label>
-			<div class="box-content"><h3>Leave Applied</h3><br>
-        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
-        <div class="container">
-            <br>   
-          
-            <button type="button" class="btn btn-success ">
-              <span class="glyphicon glyphicon-ok"></span> &nbsp;Approved</button>
-            <button type="button" class="btn btn-danger ">
-              <span class="glyphicon glyphicon-trash"></span>&nbsp;Denied</button>
-          
-      </div>
-
-      
-      
-		</section>
-		<input type="radio" name="accordion" id="cb2" />
-		<section class="box">
-			<label class="box-title" for="cb2">Fretzie baba</label>
-			<label class="box-close" for="acc-close"></label>
-			<div class="box-content"><h3>Leave Applied</h3><br>
-        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
-        <div class="container">
-          <br>
-        <button type="button" class="btn btn-success">Approved</button>
-        <button type="button" class="btn btn-danger">Denied</button>
-        </div>
-      </div>
-		</section>
-    <input type="radio" name="accordion" id="cb3" />
-    
-		<section class="box">
-			<label class="box-title" for="cb3">Test test</label>
-			<label class="box-close" for="acc-close"></label>
-			<div class="box-content"><h3>Leave Applied</h3><br>
-        <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
-        <div class="container">
-          <br>
-        <button type="button" class="btn btn-success">Approved</button>
-        <button type="button" class="btn btn-danger">Denied</button>
+        <header class="box">
+          <label for="acc-close" class="box-title">Leave Request List</label>
+        </header>
         
-        </div>
-      </div>
-    </section>
-		<input type="radio" name="accordion" id="acc-close" />
+        <input type="radio" name="accordion" id="cb1" />
+        <section class="box">   
+          <label class="box-title" for="cb1">Regine lala</label>
+          <label class="box-close" for="acc-close"></label>
+          <div class="box-content"><h3>Leave Applied</h3><br>
+            <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
+            <div class="container">
+                <br>   
+                <button type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-ok"></span> &nbsp;Approved</button>
+                <button type="button" class="btn btn-danger ">
+                <span class="glyphicon glyphicon-trash" id="btn1"></span>&nbsp;Denied</button>
+          </div>  
+
+        </section>
+        <input type="radio" name="accordion" id="cb2" />
+        <section class="box">
+            <label class="box-title" for="cb2">Fretzie baba</label>
+            <label class="box-close" for="acc-close"></label>
+            <div class="box-content"><h3>Leave Applied</h3><br>
+                <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
+                <div class="container">
+                  <br>
+                  <button type="button" class="btn btn-success">Approved</button>
+                  <button type="button" class="btn btn-danger">Denied</button>
+                </div>
+            </div>
+        </section>
+        <input type="radio" name="accordion" id="cb3" />
+        
+        <section class="box">
+          <label class="box-title" for="cb3">Test test</label>
+          <label class="box-close" for="acc-close"></label>
+          <div class="box-content"><h3>Leave Applied</h3><br>
+              <strong>From: feb 6, 2019 - To: feb 8, 2019 </strong>
+              <div class="container">
+                <br>
+                <button type="button" class="btn btn-success">Approved</button>
+                <button type="button" class="btn btn-danger">Denied</button>
+              </div>
+          </div>
+        </section>
+        <input type="radio" name="accordion" id="acc-close" />
 	</nav>
 
   <div class="pagination">
-  <a href="#">&laquo;</a>
+  <a href="#" class="nxt">Prev</a>
   <a class="active"  href="#">1</a>
   <a href="#">2</a>
   <a href="#">3</a>
   <a href="#">4</a>
   <a href="#">5</a>
   <a href="#">6</a>
-  <a href="#">&raquo;</a>
+  <a href="#" class="nxt">Next</a>
 </div>
-
-
-</div>
-</div>
-
-
 
 @endsection

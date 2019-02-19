@@ -264,15 +264,6 @@ p {
   font-weight:bolder;
 
 }
-
-/* .container{
-  overflow: scroll;
-  overflow-x: hidden;
-} */
-
-
-
-
 </style>
 
 </head>
