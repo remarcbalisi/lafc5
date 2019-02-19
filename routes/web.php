@@ -163,6 +163,7 @@ Route::group(
 
     function () {
         Route::get('/home', 'Hrm\HomeController@home')->name('hrm-home');
+        Route::get('/view-user/{user_id}', 'Hrm\UserController@viewSingleUser')->name('hrm-view-single-user');
         Route::get('/user-lists', 'Hrm\UserController@lists')->name('hrm-user-lists');
         Route::get('/user-create', 'Hrm\UserController@createUser')->name('hrm-create-new-user');
         Route::post('/user-store','Hrm\UserController@storeUser')->name('hrm-store-new-user');

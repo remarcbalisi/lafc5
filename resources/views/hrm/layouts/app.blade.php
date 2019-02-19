@@ -91,7 +91,7 @@
 
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{{route('view-single-user', ['user_id'=>Auth::user()->id])}}">Profile</a>
+                                    <a href="{{route('hrm-view-single-user', ['user_id'=>Auth::user()->id])}}">Profile</a>
                                 </li>
                                 <li>
                                     <a href="{{route('hrm-notification-list')}}">

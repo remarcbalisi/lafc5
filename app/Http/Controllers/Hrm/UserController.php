@@ -42,6 +42,19 @@ class UserController extends Controller
         ]);
     }
 
+    public function viewSingleUser($id){
+
+        $selected_user = User::where(['id'=>$id])->first();
+        if( Auth::user()->can('view', $selected_user ) ){
+            return view('hrm.users.view')->with([
+                'user' => $selected_user
+            ]);
+        }else{
+            abort(403, 'Unauthorized action.');
+        }
+
+    }
+
     public function storeUser(Request $request){
 
         if( !Auth::user()->can('create', User::class) )
