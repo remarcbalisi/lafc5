@@ -34,7 +34,7 @@
                                         @endforeach
                                     </td>
                                     <td>
-                                        <a href="{{route('view-single-user', ['user_id'=>$user->id])}}">
+                                        <a href="{{route('hrm-view-single-user', ['user_id'=>$user->id])}}">
                                             <button type="button" class="btn btn-primary btn-sm">Preview</button>
                                         </a>
 
