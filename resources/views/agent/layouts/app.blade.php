@@ -77,7 +77,7 @@
                                     <a href="{{route('view-single-user', ['user_id'=>Auth::user()->id])}}">Profile</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('notification-list')}}">
+                                    <a href="{{route('agent-notification-list')}}">
                                         Notifications
                                         <span class="badge badge-success">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span>
                                     </a>
