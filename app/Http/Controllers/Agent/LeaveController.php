@@ -84,20 +84,45 @@ class LeaveController extends Controller
     }
 
     public function list(){
-        return view('agent.leave.list')->with([
-            'leave_requests' => UserLeave::where([
+
+        $user_leave = null;
+
+        if( Auth::user()->hasRole(Role::where(['id' => 3])->first()) ){
+            $user_leave = UserLeave::where([
                 'user_id' => Auth::user()->id,
                 'is_owner' => 1
-            ])->get(),
+            ])->orWhere('direct_approver_id', Auth::user()->id)
+                ->get();
+        }else{
+            $user_leave = UserLeave::where([
+                'user_id' => Auth::user()->id,
+                'is_owner' => 1
+            ])->get();
+        }
+
+        return view('agent.leave.list')->with([
+            'leave_requests' => $user_leave,
         ]);
     }
 
     public function view($leave_request_id){
-        $user_leave = UserLeave::where([
-            'user_id' => Auth::user()->id,
-            'leave_id' => $leave_request_id,
-            'is_owner' => 1
-        ])->first();
+
+        $user_leave = null;
+
+        if( Auth::user()->hasRole(Role::where(['id' => 3])->first()) ){
+            $user_leave = UserLeave::where([
+                'user_id' => Auth::user()->id,
+                'is_owner' => 1,
+                'leave_id' => $leave_request_id,
+            ])->orWhere('direct_approver_id', Auth::user()->id)
+                ->first();
+        }else{
+            $user_leave = UserLeave::where([
+                'user_id' => Auth::user()->id,
+                'is_owner' => 1,
+                'leave_id' => $leave_request_id,
+            ])->first();
+        }
 
         return view('agent.leave.single')->with([
             'leave_request' => $user_leave->leave,

@@ -55,6 +55,13 @@
                                     My Leave Requests
                                 </a>
                             </li>
+                            @if(Auth::user()->hasRole(\App\Role::where('id', 3)->first()))
+                            <li>
+                                <a href="{{route('agent-leave-list')}}">
+                                    View Lists
+                                </a>
+                            </li>
+                            @endif
                         </ul>
                     </li>
 
