@@ -171,6 +171,7 @@ Route::group(
         Route::get('/user-leave-list', 'Hrm\LeaveController@list')->name('hrm-leave-list');
         Route::post('/user-leave-apply-store', 'Hrm\LeaveController@store')->name('hrm-leave-apply-store');
         Route::get('/user-leave-view/{leave_request_id}', 'Hrm\LeaveController@view')->name('hrm-leave-view');
+        Route::put('/leave-approve-disapprove/{leave_request_id}', 'Hrm\LeaveController@approveDisapprove')->name('hrm-leave-approve-disapprove');
         Route::get('/notifications', 'Hrm\NotificationController@list')->name('hrm-notification-list');
         Route::get('/notification-view/{notification_id}', 'Hrm\NotificationController@view')->name('hrm-notification-view');
     });

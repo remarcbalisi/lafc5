@@ -86,7 +86,7 @@
                             </form>
 
                             <!-- Approve/Disapprove Modal -->
-                            <form action="{{route('leave-approve-disapprove', ['leave_request_id'=>$leave_request->id])}}" method="POST">
+                            <form action="{{route('hrm-leave-approve-disapprove', ['leave_request_id'=>$leave_request->id])}}" method="POST">
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                                 <div class="modal fade" id="approve-disapprove" tabindex="-1" role="dialog" aria-labelledby="Approve/Disapprove" aria-hidden="true">
