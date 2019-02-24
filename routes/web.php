@@ -197,4 +197,5 @@ Route::group(
         Route::get('/my-leave-view/{leave_request_id}', 'Agent\LeaveController@view')->name('agent-leave-view');
         Route::get('/notifications', 'Agent\NotificationController@list')->name('agent-notification-list');
         Route::get('/notification-view/{notification_id}', 'Agent\NotificationController@view')->name('agent-notification-view');
+        Route::put('/leave-approve-disapprove/{leave_request_id}', 'Agent\LeaveController@approveDisapprove')->name('agent-leave-approve-disapprove');
     });
