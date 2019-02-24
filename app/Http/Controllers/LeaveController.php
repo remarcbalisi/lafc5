@@ -132,6 +132,13 @@ class LeaveController extends Controller
         $user_leave->disapproved_at = $request->input('approve_disapprove') == 1 ? null : Carbon::now();
         $user_leave->note = $request->input('note') ? $request->input('note') : null;
         $user_leave->save();
+
+        if( !empty($user_leave->disapproved_by) ){
+            $leave = Leave::where('id', $leave_id)->first();
+            $leave->leave_status_id = 2;
+            $leave->save();
+        }
+
         $message =  ($user_leave->approved_by != null) ? 'Approved' : 'Disapproved' ."!";
 
         $new_notification = new Notification;
