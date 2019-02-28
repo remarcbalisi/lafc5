@@ -103,11 +103,11 @@ body {
   vertical-align: center; 
 }
 .img {
-  background: black url("https://finoraconsulting.com/wp-content/uploads/2018/09/cropped-shutterstock_368205530-5386x2693-1.jpg") no-repeat center;
+  background: black url("images/agreement.jpg") no-repeat center;
   background-size: cover;
-  height: calc(100vh - 120px);
+  /* height: calc(100vh - 120px); */
   width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   
 }
 
@@ -123,8 +123,7 @@ body {
 .black-img {
   height: 100%;
   width: 100%;
-  /* background-color: rgba(255, 255, 255, 0.3); */
-  display: flex;
+ 
   align-items: center;
   justify-content: center;
   font-size: 3em;
@@ -216,15 +215,17 @@ button{
 .title2{
     font-weight:bolder;
     margin-top:-35%;
-    color:#2A2E33;
+    color:#6F777D;
     /* display: inline-block; */
     font-family: "Francois One", sans-serif;
     font-size: 3rem;
     line-height: 1.2;
     font-weight:20%;
     /* margin: 0 0 .8rem 0; */
-    border-bottom: 4px solid #31d47d;
-    width:24%;
+    /* border-bottom: 4px solid #31d47d; */
+    /* width:24%; */
+    margin-left:25%;  
+
 }
 
 form{
@@ -234,7 +235,7 @@ form{
 }
 
 .modal-body{
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 
     /* border-right:50px solid #09A603;
     height:80%; */
@@ -378,7 +379,7 @@ color:#6F777D;
                     </div>
                   
                 </div>
-            </div>  
+            </div>    
           </div>
       </div>
   </div>
@@ -393,7 +394,7 @@ color:#6F777D;
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
 
-              <div class="modal-body" style="overflow:scroll; overflow-x:hidden;">
+              <div class="modal-body" style="overflow:hidden; overflow-x:hidden;">
                   <div class="container">
                     <p class="p">Feircecom</p>
                       <h1 class="title2">ACCOUNT SIGNUP</h1>
@@ -405,7 +406,7 @@ color:#6F777D;
                                     <div class="form-group">
                                       <label for="fname">First name</label>
                                       <input type="text" class="form-control" id="fname"  name="fname">
-                                    </div>
+                                    </div>    
                                   </div>
 
                                   <div class="col-sm-3">
