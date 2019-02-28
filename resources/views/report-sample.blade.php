@@ -19,7 +19,7 @@
         </div>
 
         <div class="grid-item">
-          <label>To Date</label><br>
+          <label>To Date</label><br>                                       
             <input class="date" type="date">
         </div>  
         <button type="button" class="btn btn-primary">Filter</button>

@@ -94,7 +94,7 @@ body {
 .logo {
   position: absolute;
   top: 20px;
-  left:3%;
+  left:1%;
 }
 .logo img {
   display: inline-block;
@@ -165,11 +165,11 @@ label{
 }
 
  .form-control{
-  padding:15px;
+  /* padding:15px; */
   font-family: inherit;
   font-size: inherit;
   font-weight: 600;
-  text-align:left;
+  /* text-align:right; */
   border-width:2px;
   border-radius:6px;
   border-style:outset;
@@ -199,19 +199,19 @@ button{
 
 }
 
-.title1{
+/* .title1{
     font-weight:bolder;
     margin-top:-35%;
     color:#2A2E33;
-    /* display: inline-block; */
+    
     font-family: "Francois One", sans-serif;
     font-size: 3rem;
     line-height: 1.2;
     font-weight:20%;
-    /* margin: 0 0 .8rem 0; */
+   
     border-bottom: 4px solid #31d47d;
     width:22.5%;
-}
+} */
 
 .title2{
     font-weight:bolder;
@@ -234,12 +234,11 @@ form{
 }
 
 .modal-body{
-    /* margin-top:3%; */
-    border-right:50px solid #09A603;
-    height:80%;
-    /* overflow: scroll;
-    overflow-x: hidden;
-    */
+  box-sizing: border-box;
+
+    /* border-right:50px solid #09A603;
+    height:80%; */
+    
 }
 
 
@@ -252,7 +251,8 @@ form{
     font-size:30px;
 }
 
-p {
+
+.p {
   writing-mode: vertical-rl;
   text-orientation: upright;
   text-transform: uppercase;
@@ -264,6 +264,56 @@ p {
   font-weight:bolder;
 
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+
+.col-4 {
+  width: 33.33%;
+  background-color:#09A603;
+  height:100%;
+  margin-top:-8.2%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.signin{
+text-align:center;
+font-weight:bolder;
+color:#6F777D;
+}
+
+.form-signin{
+  margin-left:23%;
+}
+
+.left-text{
+  margin-top:15%;
+  color:white;
+  font-weight:bolder;
+  text-align:center;
+}
+
+.content{
+  color:white;
+  margin-top:10%;
+}
+
 </style>
 
 </head>
@@ -299,20 +349,34 @@ p {
             </div>
 
             <div class="modal-body">
-                <div class="container">
-                  <p>Feircecom</p>
-                    <h1 class="title1">ACCOUNT LOGIN</h1>
-                      <form>
-                          <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                          </div>
-                          <div class="form-group">
-                          <label for="pwd">Password</label>
-                          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                          </div>
-                          <button type="submit" >Log In</button>
-                      </form>
+                <!-- <div class="container"> -->
+                    <div class="row">
+                      <div class="col-4 menu">
+                          <h1 class="left-text">Fiercecom</h1>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                          Donec gravida elit mi, eget condimentum nulla faucibus vitae. 
+                         </p>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida
+                           elit mi, eget condimentum nulla faucibus vitae.</p>
+                      </div>
+
+                      <div class="col-8">
+                        <h1 class="signin">Log In</h1>
+                        <div class="row">
+                        <form class="form-signin">
+                            <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email"  name="email">
+                            </div>
+                            <div class="form-group">
+                            <label for="pwd">Password</label>
+                            <input type="password" class="form-control" id="pwd" name="pwd">
+                            </div>
+                            <button type="submit" >Log In</button>
+                        </form> 
+                      </div>
+                    </div>
+                  
                 </div>
             </div>  
           </div>
@@ -331,7 +395,7 @@ p {
 
               <div class="modal-body" style="overflow:scroll; overflow-x:hidden;">
                   <div class="container">
-                    <p>Feircecom</p>
+                    <p class="p">Feircecom</p>
                       <h1 class="title2">ACCOUNT SIGNUP</h1>
                         <form>
                             <!-- <div class="container-fluid"> -->

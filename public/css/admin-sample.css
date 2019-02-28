@@ -32,107 +32,6 @@
   background: transparent;
 }
 
-/* .badge{
-  
-  margin-left:50px;
-}
-a{
-  text-decoration:none;
-}
-
-#notifications.item {
-  position: relative;
-  cursor: pointer;
-}
-#notifications.item i {
-  margin: 0;
-  font-size: 1.5em;
-}
-#notifications.item > div {
-  position: absolute;
-  width: 1px;
-  left: 50%;
-  right: 50%;
-  bottom: 0;
-  cursor: default;
-}
-#notifications.item > div > div {
-  position: absolute;
-  width:300px;  
-  left: calc(-1 * 300px / 2);
-  height: 0;
-  transition: height 0.3s;
-  overflow: hidden;
-  z-index: 50;
-}
-#notifications.item > div > div > div {
-  position: absolute;
-  width: 100%;
-  top: 24px;
-  background-color: rgb(247, 241, 220);
- 
-}
-#notifications.item > div > div::before {
-  position: absolute; 
-  content: '';
-  top: 0;
-  margin: auto;
-  z-index: 51;
-  left: 0;
-  right: 0;
-  border-bottom: 25px solid #2BFF2A;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  width: 10%;
-}
-#notifications.item, a:hover {
-  background-color:red;
-}
-#notifications.item:hover > div > div {
-  height: 325px;
-}
-
-
-#centeredUselessExampleButton {
-  width: 90px;
-  height: auto;
-  margin-left:70%;
-}
-#centeredUselessExampleButton > .item {
-  border-radius: 50%;
-  background-color:rgb(21, 216, 47);
-  height: 64px;
-  width: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-
-}
-#centeredUselessExampleButton > .item i {
-  font-size: 30px;
-  display: inline-block;
-}
-.content-wrapper{
-  overflow-y:scroll;
-  overflow-x:hide;
- 
-}
-
-.content{
-border-bottom: 1px white;
-background-color: white;
--webkit-box-shadow: 1px 4px 15px 4px rgba(0,0,0,0.61); 
-box-shadow: 1px 2px 5px 2px rgba(230, 227, 227, 0.61);
-
-}
-
-.top{
-  border:20px solid #2BFF2A;
-} */
-
-
-
 /* ////////////////////////////////////// */
 .drpdwn {
   z-index:1;
@@ -143,7 +42,7 @@ box-shadow: 1px 2px 5px 2px rgba(230, 227, 227, 0.61);
 .drpdwn__point{
   border:1px solid white;
   background-color: white;
-  border-bottom:10px solid #09A603;
+  /* border-bottom:10px solid #09A603; */
   padding:20px;
   text-decoration: none;
   margin-left:80%;
