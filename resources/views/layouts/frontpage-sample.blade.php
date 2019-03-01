@@ -438,6 +438,7 @@ color:#6F777D;
                                     <div class="form-group">
                                       <label for="birthdate">Birthdate</label>
                                       <input type="text" class="form-control" name="birthday" value="10/24/1984" />
+
                                           <script>
                                           $(function() {
                                             $('input[name="birthday"]').daterangepicker({
@@ -498,7 +499,7 @@ color:#6F777D;
                                               maxYear: parseInt(moment().format('YYYY'),10)
                                             }, function(start, end, label) {
                                               var years = moment().diff(start, 'years');
-                                              alert("You are now " + years + " years in the company");
+                                              alert("You are " + years + " years old!");
                                             });
                                           });
                                           </script>
