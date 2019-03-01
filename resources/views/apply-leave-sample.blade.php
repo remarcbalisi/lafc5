@@ -4,16 +4,17 @@
 
 <style>
   
-h3{
-  border:1px solid #4caf50;
+h1{
+  /* border:1px solid #4caf50;
   background-color:#4caf50;
   margin-top:0;
-  height:7.5%;
-  text-align:left;
+  height:15%;
+  text-align:center;
   color:white;
-  padding-top:13px;
-  padding-left:30px;
-  
+  font-weight:bolder;
+  padding-top:50px; */
+  margin-bottom:10%;
+ 
 }
 button{
   outline: none;
@@ -40,12 +41,9 @@ button{
   padding:9px;
   font-size:18px;
   text-align:left;
-  border-width:2px;
-  border-radius:6px;
-  border-style:outset;
-  border-color:#0db520;
-  opacity:76%;
-  
+  -webkit-box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69); 
+  box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69);
+    
 }
 
 </style>
@@ -57,7 +55,7 @@ button{
 <div class="bg"><div>
 
   <form class="form">
-      <h3>Apply Leave</h3>
+      <h1></h1>
 
       <div class="form-group" >
       <label>Leave Type</label>
@@ -93,12 +91,6 @@ button{
           });
           </script>
       </div>
-
-          <!-- <div class="grid-item">
-            <label>End Date</label>
-              <input class="date" type="date">
-          </div>   -->
-      
 
       <div class="form-group">
         <label>Address</label>
