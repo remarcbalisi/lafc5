@@ -214,18 +214,18 @@ button{
 
 .title2{
     font-weight:bolder;
-    margin-top:-35%;
-    color:#6F777D;
+    /* margin-top:-35%; */
+    color:white;
     /* display: inline-block; */
     font-family: "Francois One", sans-serif;
     font-size: 3rem;
     line-height: 1.2;
-    font-weight:20%;
+   
     /* margin: 0 0 .8rem 0; */
     /* border-bottom: 4px solid #31d47d; */
     /* width:24%; */
-    margin-left:25%;  
-
+    margin-left:46%;  
+    
 }
 
 form{
@@ -245,11 +245,13 @@ form{
 
 .modal-header{
     border-style:none;
+   
 }
 
 .modal-header .close{
     margin-right:-14%;
     font-size:30px;
+    
 }
 
 
@@ -314,6 +316,7 @@ color:#6F777D;
   color:white;
   margin-top:10%;
 }
+
 
 </style>
 
@@ -389,15 +392,14 @@ color:#6F777D;
   <div class="modal fade" id="Modal" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
+            <div class="modal-content" style="overflow:scroll; overflow-x:hidden;">
+              <div class="modal-header" style=" background-color:#09A603;">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="title2">Sign Up</h1>
               </div>
 
-              <div class="modal-body" style="overflow:hidden; overflow-x:hidden;">
+              <div class="modal-body">
                   <div class="container">
-                    <p class="p">Feircecom</p>
-                      <h1 class="title2">ACCOUNT SIGNUP</h1>
                         <form>
                             <!-- <div class="container-fluid"> -->
 
@@ -428,13 +430,13 @@ color:#6F777D;
                                   <div class="col-sm-3">
                                     <div class="form-group">
                                       <label for="birthdate">Birthdate</label>
-                                      <input type="date" class="form-control" id="birthdate"  name="birthdate">
+                                      <input type="date" class="form-control"   name="birthdate">
                                     </div>
                                   </div>
 
                                   <div class="col-sm-3">
                                     <div class="form-group">
-                                    <label for="gender">Gender</label>
+                                    <label>Gender</label>
                                         <select class="form-control">
                                             <option>Male</option>
                                             <option>Famle</option>
