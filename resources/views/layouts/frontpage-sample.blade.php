@@ -12,6 +12,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
      
+     <!-- date picker style -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- Styles -->
     <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
 
@@ -377,6 +383,7 @@ color:#6F777D;
                             <input type="password" class="form-control" id="pwd" name="pwd">
                             </div>
                             <button type="submit" >Log In</button>
+                            
                         </form> 
                       </div>
                     </div>
@@ -430,7 +437,20 @@ color:#6F777D;
                                   <div class="col-sm-3">
                                     <div class="form-group">
                                       <label for="birthdate">Birthdate</label>
-                                      <input type="date" class="form-control"   name="birthdate">
+                                      <input type="text" class="form-control" name="birthday" value="10/24/1984" />
+                                          <script>
+                                          $(function() {
+                                            $('input[name="birthday"]').daterangepicker({
+                                              singleDatePicker: true,
+                                              showDropdowns: true,
+                                              minYear: 1901,
+                                              maxYear: parseInt(moment().format('YYYY'),10)
+                                            }, function(start, end, label) {
+                                              var years = moment().diff(start, 'years');
+                                              alert("You are " + years + " years old!");
+                                            });
+                                          });
+                                          </script>
                                     </div>
                                   </div>
 
@@ -468,7 +488,20 @@ color:#6F777D;
                                   <div class="col-sm-3">
                                     <div class="form-group">
                                         <label for="datehired">Date Hired</label>
-                                        <input type="date" class="form-control" id="datehired"  name="datehired">
+                                        <input type="text" class="form-control" name="birthday" value="10/24/1984" />
+                                          <script>
+                                          $(function() {
+                                            $('input[name="birthday"]').daterangepicker({
+                                              singleDatePicker: true,
+                                              showDropdowns: true,
+                                              minYear: 1901,
+                                              maxYear: parseInt(moment().format('YYYY'),10)
+                                            }, function(start, end, label) {
+                                              var years = moment().diff(start, 'years');
+                                              alert("You are now " + years + " years in the company");
+                                            });
+                                          });
+                                          </script>
                                       </div>
                                   </div>
 
