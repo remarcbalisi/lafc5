@@ -36,7 +36,7 @@ button{
 
 }
 
- .date, .form-control{
+ .form-control{
   padding:9px;
   font-size:18px;
   text-align:left;
@@ -68,17 +68,37 @@ button{
       </select>
       </div>
 
-      <div class="grid-container">
-          <div class="grid-item">
-            <label>Start Date</label>
-              <input class="date" type="date">
-          </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control  input-lg" name="datefilter" value="" />
 
-          <div class="grid-item">
+          <script type="text/javascript">
+          $(function() {
+
+            $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+
+          });
+          </script>
+      </div>
+
+          <!-- <div class="grid-item">
             <label>End Date</label>
               <input class="date" type="date">
-          </div>  
-      </div>
+          </div>   -->
+      
 
       <div class="form-group">
         <label>Address</label>
@@ -91,7 +111,7 @@ button{
       </div>
 
       <div class="form-group">
-        <label for="comment">Comment:</label>
+        <label for="comment">Note:</label>
         <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
 
