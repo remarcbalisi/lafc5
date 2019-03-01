@@ -71,6 +71,7 @@ body {
 .topnav-right {
   float: right;
   position: relative;
+  color:white;
 }
 .bottomnav-left{
     margin-left:30%;
@@ -116,7 +117,7 @@ body {
   vertical-align: center;
 }
 .bg {
-  background: black url("https://finoraconsulting.com/wp-content/uploads/2018/09/cropped-shutterstock_368205530-5386x2693-1.jpg") no-repeat center;
+  background: black url("images/agreement.jpg") no-repeat center;
   background-size: cover;
   height: calc(100vh - 120px);
   width: 100vw;

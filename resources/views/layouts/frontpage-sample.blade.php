@@ -111,9 +111,7 @@ body {
 .img {
   background: black url("images/agreement.jpg") no-repeat center;
   background-size: cover;
-  /* height: calc(100vh - 120px); */
   width: 100vw;
-  /* overflow-x: hidden; */
   
 }
 
@@ -170,17 +168,11 @@ label{
 }
 
  .form-control{
-  /* padding:15px; */
   font-family: inherit;
   font-size: inherit;
   font-weight: 600;
-  /* text-align:right; */
-  border-width:2px;
-  border-radius:6px;
-  border-style:outset;
-  border-color:#32F581;
-  opacity:76%;
-  /* color: rgba(0, 0, 0, 0.6); */
+  -webkit-box-shadow: 1px 6px 15px 5px rgba(186,186,186,0.67); 
+  box-shadow: 1px 6px 15px 5px rgba(186,186,186,0.67);
   transition: 0.3s ease;
 }
 
@@ -204,34 +196,14 @@ button{
 
 }
 
-/* .title1{
-    font-weight:bolder;
-    margin-top:-35%;
-    color:#2A2E33;
-    
-    font-family: "Francois One", sans-serif;
-    font-size: 3rem;
-    line-height: 1.2;
-    font-weight:20%;
-   
-    border-bottom: 4px solid #31d47d;
-    width:22.5%;
-} */
 
 .title2{
     font-weight:bolder;
-    /* margin-top:-35%; */
     color:white;
-    /* display: inline-block; */
     font-family: "Francois One", sans-serif;
     font-size: 3rem;
     line-height: 1.2;
-   
-    /* margin: 0 0 .8rem 0; */
-    /* border-bottom: 4px solid #31d47d; */
-    /* width:24%; */
     margin-left:46%;  
-    
 }
 
 form{
@@ -240,13 +212,6 @@ form{
     
 }
 
-.modal-body{
-  /* box-sizing: border-box; */
-
-    /* border-right:50px solid #09A603;
-    height:80%; */
-    
-}
 
 
 .modal-header{
