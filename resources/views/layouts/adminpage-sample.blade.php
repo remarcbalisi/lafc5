@@ -20,6 +20,12 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
+    <!-- date picker style -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 
     <!-- Styles -->
     <link href="{{ asset('css/admin-sample.css') }}" rel="stylesheet">
@@ -125,7 +131,7 @@ body {
 }
 
 .report {
-  background-color:#FFEEAD;
+  background-color:#FAF2E1;
   background-repeat: no-repeat;
   background-size: cover;
   /* height: calc(100vh - 120px); */

@@ -5,14 +5,6 @@
 <style>
   
 h1{
-  /* border:1px solid #4caf50;
-  background-color:#4caf50;
-  margin-top:0;
-  height:15%;
-  text-align:center;
-  color:white;
-  font-weight:bolder;
-  padding-top:50px; */
   margin-bottom:10%;
  
 }

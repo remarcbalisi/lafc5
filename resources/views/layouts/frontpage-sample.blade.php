@@ -490,7 +490,7 @@ color:#6F777D;
                                       <label for="Department">Department</label>
                                         <select class="form-control">
                                             <option>IT</option>
-                                            <option>Human Resource</option>
+                                            <option>Human Resource</option> 
                                         </select>
                                       </div>
                                   </div>
