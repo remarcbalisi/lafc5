@@ -4,16 +4,9 @@
 
 <style>
   
-h3{
-  border:1px solid #4caf50;
-  background-color:#4caf50;
-  margin-top:0;
-  height:7.5%;
-  text-align:left;
-  color:white;
-  padding-top:13px;
-  padding-left:30px;
-  
+h1{
+  margin-bottom:10%;
+ 
 }
 button{
   outline: none;
@@ -36,16 +29,13 @@ button{
 
 }
 
- .date, .form-control{
+ .form-control{
   padding:9px;
   font-size:18px;
   text-align:left;
-  border-width:2px;
-  border-radius:6px;
-  border-style:outset;
-  border-color:#0db520;
-  opacity:76%;
-  
+  -webkit-box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69); 
+  box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69);
+    
 }
 
 </style>
@@ -57,7 +47,7 @@ button{
 <div class="bg"><div>
 
   <form class="form">
-      <h3>Apply Leave</h3>
+      <h1></h1>
 
       <div class="form-group" >
       <label>Leave Type</label>
@@ -68,16 +58,30 @@ button{
       </select>
       </div>
 
-      <div class="grid-container">
-          <div class="grid-item">
-            <label>Start Date</label>
-              <input class="date" type="date">
-          </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control  input-lg" name="datefilter" value="" />
 
-          <div class="grid-item">
-            <label>End Date</label>
-              <input class="date" type="date">
-          </div>  
+          <script type="text/javascript">
+          $(function() {
+
+            $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+
+          });
+          </script>
       </div>
 
       <div class="form-group">
@@ -91,7 +95,7 @@ button{
       </div>
 
       <div class="form-group">
-        <label for="comment">Comment:</label>
+        <label for="comment">Note:</label>
         <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
 

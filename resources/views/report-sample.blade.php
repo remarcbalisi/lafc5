@@ -13,15 +13,38 @@
   <div class="reportwrapper__role">
     <p>Reports</p>
     <div class="grid-container">
-        <div class="grid-item">
+    <label>Date</label>
+        <input type="text" class="form-control  input-lg" name="datefilter" value="" />
+
+          <script type="text/javascript">
+          $(function() {
+
+            $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+
+          });
+          </script>
+        <!-- <div class="grid-item">
           <label>From Date</label><br>
             <input class="date" type="date">
         </div>
 
         <div class="grid-item">
-          <label>To Date</label><br>
+          <label>To Date</label><br>                                       
             <input class="date" type="date">
-        </div>  
+        </div>   -->
         <button type="button" class="btn btn-primary">Filter</button>
   </div>
   </div>

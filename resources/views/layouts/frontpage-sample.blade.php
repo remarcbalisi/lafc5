@@ -12,6 +12,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
      
+     <!-- date picker style -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- Styles -->
     <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
 
@@ -94,7 +100,7 @@ body {
 .logo {
   position: absolute;
   top: 20px;
-  left:3%;
+  left:1%;
 }
 .logo img {
   display: inline-block;
@@ -103,11 +109,9 @@ body {
   vertical-align: center; 
 }
 .img {
-  background: black url("https://finoraconsulting.com/wp-content/uploads/2018/09/cropped-shutterstock_368205530-5386x2693-1.jpg") no-repeat center;
+  background: black url("images/agreement.jpg") no-repeat center;
   background-size: cover;
-  height: calc(100vh - 120px);
   width: 100vw;
-  overflow-x: hidden;
   
 }
 
@@ -123,8 +127,7 @@ body {
 .black-img {
   height: 100%;
   width: 100%;
-  /* background-color: rgba(255, 255, 255, 0.3); */
-  display: flex;
+ 
   align-items: center;
   justify-content: center;
   font-size: 3em;
@@ -165,17 +168,11 @@ label{
 }
 
  .form-control{
-  padding:15px;
   font-family: inherit;
   font-size: inherit;
   font-weight: 600;
-  text-align:left;
-  border-width:2px;
-  border-radius:6px;
-  border-style:outset;
-  border-color:#32F581;
-  opacity:76%;
-  /* color: rgba(0, 0, 0, 0.6); */
+  -webkit-box-shadow: 1px 6px 15px 5px rgba(186,186,186,0.67); 
+  box-shadow: 1px 6px 15px 5px rgba(186,186,186,0.67);
   transition: 0.3s ease;
 }
 
@@ -199,32 +196,14 @@ button{
 
 }
 
-.title1{
-    font-weight:bolder;
-    margin-top:-35%;
-    color:#2A2E33;
-    /* display: inline-block; */
-    font-family: "Francois One", sans-serif;
-    font-size: 3rem;
-    line-height: 1.2;
-    font-weight:20%;
-    /* margin: 0 0 .8rem 0; */
-    border-bottom: 4px solid #31d47d;
-    width:22.5%;
-}
 
 .title2{
     font-weight:bolder;
-    margin-top:-35%;
-    color:#2A2E33;
-    /* display: inline-block; */
+    color:white;
     font-family: "Francois One", sans-serif;
     font-size: 3rem;
     line-height: 1.2;
-    font-weight:20%;
-    /* margin: 0 0 .8rem 0; */
-    border-bottom: 4px solid #31d47d;
-    width:24%;
+    margin-left:46%;  
 }
 
 form{
@@ -233,26 +212,21 @@ form{
     
 }
 
-.modal-body{
-    /* margin-top:3%; */
-    border-right:50px solid #09A603;
-    height:80%;
-    /* overflow: scroll;
-    overflow-x: hidden;
-    */
-}
 
 
 .modal-header{
     border-style:none;
+   
 }
 
 .modal-header .close{
     margin-right:-14%;
     font-size:30px;
+    
 }
 
-p {
+
+.p {
   writing-mode: vertical-rl;
   text-orientation: upright;
   text-transform: uppercase;
@@ -264,6 +238,57 @@ p {
   font-weight:bolder;
 
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+
+.col-4 {
+  width: 33.33%;
+  background-color:#09A603;
+  height:100%;
+  margin-top:-8.2%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.signin{
+text-align:center;
+font-weight:bolder;
+color:#6F777D;
+}
+
+.form-signin{
+  margin-left:23%;
+}
+
+.left-text{
+  margin-top:15%;
+  color:white;
+  font-weight:bolder;
+  text-align:center;
+}
+
+.content{
+  color:white;
+  margin-top:10%;
+}
+
+
 </style>
 
 </head>
@@ -299,22 +324,37 @@ p {
             </div>
 
             <div class="modal-body">
-                <div class="container">
-                  <p>Feircecom</p>
-                    <h1 class="title1">ACCOUNT LOGIN</h1>
-                      <form>
-                          <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                          </div>
-                          <div class="form-group">
-                          <label for="pwd">Password</label>
-                          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                          </div>
-                          <button type="submit" >Log In</button>
-                      </form>
+                <!-- <div class="container"> -->
+                    <div class="row">
+                      <div class="col-4 menu">
+                          <h1 class="left-text">Fiercecom</h1>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                          Donec gravida elit mi, eget condimentum nulla faucibus vitae. 
+                         </p>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida
+                           elit mi, eget condimentum nulla faucibus vitae.</p>
+                      </div>
+
+                      <div class="col-8">
+                        <h1 class="signin">Log In</h1>
+                        <div class="row">
+                        <form class="form-signin">
+                            <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email"  name="email">
+                            </div>
+                            <div class="form-group">
+                            <label for="pwd">Password</label>
+                            <input type="password" class="form-control" id="pwd" name="pwd">
+                            </div>
+                            <button type="submit" >Log In</button>
+                            
+                        </form> 
+                      </div>
+                    </div>
+                  
                 </div>
-            </div>  
+            </div>    
           </div>
       </div>
   </div>
@@ -324,15 +364,14 @@ p {
   <div class="modal fade" id="Modal" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
+            <div class="modal-content" style="overflow:scroll; overflow-x:hidden;">
+              <div class="modal-header" style=" background-color:#09A603;">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="title2">Sign Up</h1>
               </div>
 
-              <div class="modal-body" style="overflow:scroll; overflow-x:hidden;">
+              <div class="modal-body">
                   <div class="container">
-                    <p>Feircecom</p>
-                      <h1 class="title2">ACCOUNT SIGNUP</h1>
                         <form>
                             <!-- <div class="container-fluid"> -->
 
@@ -341,7 +380,7 @@ p {
                                     <div class="form-group">
                                       <label for="fname">First name</label>
                                       <input type="text" class="form-control" id="fname"  name="fname">
-                                    </div>
+                                    </div>    
                                   </div>
 
                                   <div class="col-sm-3">
@@ -363,13 +402,27 @@ p {
                                   <div class="col-sm-3">
                                     <div class="form-group">
                                       <label for="birthdate">Birthdate</label>
-                                      <input type="date" class="form-control" id="birthdate"  name="birthdate">
+                                      <input type="text" class="form-control" name="birthday" value="10/24/1984" />
+
+                                          <script>
+                                          $(function() {
+                                            $('input[name="birthday"]').daterangepicker({
+                                              singleDatePicker: true,
+                                              showDropdowns: true,
+                                              minYear: 1901,
+                                              maxYear: parseInt(moment().format('YYYY'),10)
+                                            }, function(start, end, label) {
+                                              var years = moment().diff(start, 'years');
+                                              alert("You are " + years + " years old!");
+                                            });
+                                          });
+                                          </script>
                                     </div>
                                   </div>
 
                                   <div class="col-sm-3">
                                     <div class="form-group">
-                                    <label for="gender">Gender</label>
+                                    <label>Gender</label>
                                         <select class="form-control">
                                             <option>Male</option>
                                             <option>Famle</option>
@@ -401,7 +454,20 @@ p {
                                   <div class="col-sm-3">
                                     <div class="form-group">
                                         <label for="datehired">Date Hired</label>
-                                        <input type="date" class="form-control" id="datehired"  name="datehired">
+                                        <input type="text" class="form-control" name="birthday" value="10/24/1984" />
+                                          <script>
+                                          $(function() {
+                                            $('input[name="birthday"]').daterangepicker({
+                                              singleDatePicker: true,
+                                              showDropdowns: true,
+                                              minYear: 1901,
+                                              maxYear: parseInt(moment().format('YYYY'),10)
+                                            }, function(start, end, label) {
+                                              var years = moment().diff(start, 'years');
+                                              alert("You are " + years + " years old!");
+                                            });
+                                          });
+                                          </script>
                                       </div>
                                   </div>
 
@@ -424,7 +490,7 @@ p {
                                       <label for="Department">Department</label>
                                         <select class="form-control">
                                             <option>IT</option>
-                                            <option>Human Resource</option>
+                                            <option>Human Resource</option> 
                                         </select>
                                       </div>
                                   </div>

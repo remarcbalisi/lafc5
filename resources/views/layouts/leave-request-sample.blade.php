@@ -109,7 +109,7 @@ body {
   vertical-align: center;
 }
 .bg {
-  background-color:#FFEEAD;
+  background-color:#FAF2E1;
   background-repeat: no-repeat;
   background-size: cover;
   /* height: calc(100vh - 120px); */

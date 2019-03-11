@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   
+ <!-- date picker style -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- Styles -->
     <link href="{{ asset('css/apply-leave-sample.css') }}" rel="stylesheet">
 
@@ -108,7 +114,7 @@ body {
   vertical-align: center;
 }
 .bg {
-  background-color:#FFEEAD;
+  background-color:#FAF2E1;
   background-repeat: no-repeat;
   background-size: cover;
   /* height: calc(100vh - 120px); */
