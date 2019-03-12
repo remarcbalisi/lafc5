@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\UserRole;
 
 class UserController extends Controller
 {
@@ -15,7 +16,9 @@ class UserController extends Controller
     }
     
     public function me(){
-        return response()->json(auth()->user());
+        $user = auth()->user();
+        $user['roles'] = UserRole::where('user_id',$user->id)->get();
+        return response()->json($user);
     }
 
     public function userList(){
