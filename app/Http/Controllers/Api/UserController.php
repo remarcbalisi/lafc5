@@ -20,6 +20,7 @@ class UserController extends Controller
         $user['roles'] = UserRole::where('user_id',$user->id)->get();
         $user['department'] = $user->department;
         $user['contacts'] = $user->contacts()->get();
+        $user['address'] = $user->concatAddress();
         return response()->json($user);
     }
 
