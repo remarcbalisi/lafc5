@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\UserRole;
 
 class UserController extends Controller
 {
@@ -15,7 +16,22 @@ class UserController extends Controller
     }
     
     public function me(){
-        return response()->json(auth()->user());
+        $user = auth()->user();
+        $user['roles'] = UserRole::where('user_id',$user->id)->get();
+        $user['department'] = $user->department;
+        $user['contacts'] = $user->contacts()->get();
+        $user['address'] = $user->concatAddress();
+        return response()->json($user);
+    }
+
+    public function my_roles(){
+        $user = auth()->user();
+        $roles = UserRole::where('user_id',$user->id)->get();
+        $myrole = '';
+        foreach( $roles as $role ){
+            $myrole .= $role->role->name . ', ';
+        }
+        return response()->json($myrole);
     }
 
     public function userList(){
