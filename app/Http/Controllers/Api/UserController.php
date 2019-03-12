@@ -28,8 +28,7 @@ class UserController extends Controller
         foreach( $roles as $role ){
             $myrole .= $role->role->name . ', ';
         }
-        return $myrole;
-        return response()->json($user);
+        return response()->json($myrole);
     }
 
     public function userList(){
