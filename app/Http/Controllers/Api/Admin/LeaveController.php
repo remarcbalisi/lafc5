@@ -10,6 +10,9 @@ class LeaveController extends Controller
 {
     public function list(){
         $leaves = Leave::get();
+        foreach( $leaves as $leave ) {
+            $leave['owner'] = $leave->getOwner($leave->id);
+        }
         return response()->json($leaves);
     }
 }
