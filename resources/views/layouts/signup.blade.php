@@ -23,3 +23,21 @@
 
 </body>
 </html>
+
+
+
+
+                    <p>Feircecom</p>
+                    <h1 class="title1">ACCOUNT LOGIN</h1>
+                    <form method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" id="email" placeholder="Enter email/username" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                        </div>
+                        <button type="submit" >Log In</button>
+                    </form>
