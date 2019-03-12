@@ -18,6 +18,7 @@ class UserController extends Controller
     public function me(){
         $user = auth()->user();
         $user['roles'] = UserRole::where('user_id',$user->id)->get();
+        $user['department'] = $user->department;
         return response()->json($user);
     }
 
