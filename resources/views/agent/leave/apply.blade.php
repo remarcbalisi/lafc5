@@ -110,7 +110,7 @@
 
                 <div class="form-group">
                     <label>Contact number</label>
-                    <input type="text" name="contact" value="{{ ($contact->country_code && $contact->number ) ? $contact->country_code . ' ' . $contact->number : 'N/A'}}" class="form-control input-lg">
+                    <input type="text" name="contact" value="{{ (!empty($contact->country_code) && !empty($contact->number) ) ? $contact->country_code . ' ' . $contact->number : 'N/A'}}" class="form-control input-lg">
                 </div>
 
                 <div class="form-group">
