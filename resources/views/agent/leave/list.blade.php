@@ -1,6 +1,11 @@
 @extends('agent.layouts.app')
 
 @section('content')
+<style>
+.container{
+    margin-top:5%;
+}
+    </style>
 
 <div class="logo">
 <img src="/images/logo.png">
