@@ -21,6 +21,17 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    public function my_roles(){
+        $user = auth()->user();
+        $roles = UserRole::where('user_id',$user->id)->get();
+        $myrole = '';
+        foreach( $roles as $role ){
+            $myrole .= $role->role->name . ', ';
+        }
+        return $myrole;
+        return response()->json($user);
+    }
+
     public function userList(){
         if( auth()->user()->can('view_user_list', User::class) ){
             return response()->json(User::paginate(20));
