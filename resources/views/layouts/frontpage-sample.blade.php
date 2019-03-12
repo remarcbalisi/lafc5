@@ -127,7 +127,6 @@ body {
 .black-img {
   height: 100%;
   width: 100%;
- 
   align-items: center;
   justify-content: center;
   font-size: 3em;
