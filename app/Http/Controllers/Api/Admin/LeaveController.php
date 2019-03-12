@@ -12,6 +12,7 @@ class LeaveController extends Controller
         $leaves = Leave::get();
         foreach( $leaves as $leave ) {
             $leave['owner'] = $leave->getOwner($leave->id);
+            $leave['deparment'] = $leave->getOwner($leave->id)->department->name;
         }
         return response()->json($leaves);
     }
