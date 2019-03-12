@@ -105,7 +105,7 @@
 
                 <div class="form-group">
                     <label>Address</label>
-                    <input name="leave_address" value="{{$user->concatAddress()[0]}}" type="text" class="form-control input-lg">
+                    <input name="leave_address" value="{{($user->concatAddress()) ? $user->concatAddress()[0] : 'N/A'}}" type="text" class="form-control input-lg">
                 </div>
 
                 <div class="form-group">
