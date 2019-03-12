@@ -5,13 +5,15 @@
 .container{
     margin-top:5%;
 }
-    </style>
+</style>
 
 <div class="logo">
 <img src="/images/logo.png">
 </div>
 <div class="black-bar"></div>
 <div class="bg"><div>
+
+
 
     <div class="container">
         <div class="row">
