@@ -23,6 +23,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
+<!-- icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/apply-leave-sample.css') }}" rel="stylesheet">
 
@@ -41,6 +43,7 @@ body {
   position: relative;
   width: 100%;
   background: white;
+  margin-left:20%;
 }
 
 .topnav a,
@@ -72,7 +75,7 @@ body {
   position: relative;
 }
 .bottomnav-left{
-    margin-left:40%;
+    margin-left:0;
 }
 .bottomnav-left a:hover{
   background-color: #09A603;
@@ -80,9 +83,9 @@ body {
 }
 .bottomnav {
   position: static;
-  max-width: 900px;
+  max-width:1064px;
   padding: 0px 15px;
-  margin: 0 auto;
+  margin-left: 21%;
 }
 .topnav-right:before {
   position: absolute;
@@ -147,13 +150,11 @@ body {
 </div>
 <div class="bottomnav">
   <div class="bottomnav-left">
-    <a href="#" class="">User List</a>
     <a href="#">Apply Leave</a>
     <a href="#">Leave Request</a>
-
-<a href="#">
-      <i style="font-size:24px" class="fa">&#xf0f3;</i>
-    </a>
+    <a href="#"><i style="font-size:24px" class="fa">&#xf0f3;</i></a>
+    <a href="#" style="margin-left:53%"><i class="material-icons">&#xe7fd;</i></a>
+    <a href="#" ><i class="material-icons">&#xe890;</i></a>
   </div>
 </div>
 

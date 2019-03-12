@@ -10,9 +10,8 @@
 
 
 <header>
-  <img class="img" src="{{ asset('images/img.jpg') }}">
-  <div class="header">
-    <h2 style="margin-left:6%;font-weight:bold;">Regine Laguting</h2>
+  <div style="padding-left:10%">
+    <h2 style="padding-top:3%;font-weight:bold;">Regine Laguting</h2>
      <p style="margin-left:6%">Status : <strong>Active</strong></p>
      <h4 style="margin-left:6%"> Id no:</h4>
      <h4 style="margin-left:6%"> Phone no:</h4>
@@ -21,8 +20,7 @@
     <h4 style="margin-left:6%"> Job Title:</h4>
     <h4 style="margin-left:6%"> Department:</h4>
     <h4 style="margin-left:6%"> Email:</h4>
-  </div>
-
+    </div>
 </header>
 <section>
   <h1></h1>
