@@ -43,6 +43,7 @@ Route::group([
     Route::get('user-list', 'Api\UserController@userList');
     Route::get('user-info/{id}', 'Api\UserController@viewInfo');
     Route::get('admin/leave-requests', 'Api\Admin\LeaveController@list');
+    Route::post('admin/apply', 'Api\Admin\LeaveController@apply');
     Route::get('admin/approve-disapprove/{leave_id}/{user_id}/{action}/{note}', 'Api\Admin\LeaveController@approveDisapprove');
 
 });
@@ -50,3 +51,4 @@ Route::group([
 
 Route::get('roles', 'Api\RoleController@get');
 Route::get('gender', 'Api\GenderController@get');
+Route::get('leave_type', 'Api\LeaveTypeController@get');
