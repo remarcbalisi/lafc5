@@ -43,7 +43,7 @@ Route::group([
     Route::get('user-list', 'Api\UserController@userList');
     Route::get('user-info/{id}', 'Api\UserController@viewInfo');
     Route::get('admin/leave-requests', 'Api\Admin\LeaveController@list');
-    Route::get('admin/approve-disapprove/{leave_id}/{action}/{note}', 'Api\Admin\LeaveController@approveDisapprove');
+    Route::get('admin/approve-disapprove/{leave_id}/{user_id}/{action}/{note}', 'Api\Admin\LeaveController@approveDisapprove');
 
 });
 
