@@ -17,7 +17,7 @@ class LeaveController extends Controller
 {
     public function apply(){
         $user = Auth::user();
-        return view('agent.leave.apply')->with([
+        return view('agent.home')->with([
             'leave_types' => LeaveType::get(),
             'user' => $user,
             'contact' => $user->contacts()->first()
