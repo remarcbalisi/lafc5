@@ -8,7 +8,7 @@ h1{
   margin-bottom:10%;
  
 }
-button{
+/* .btn-success{
   outline: none;
   background:#09A603;
   width: 30%;
@@ -22,12 +22,13 @@ button{
   line-height: inherit;
   text-transform: uppercase;
   cursor: pointer;
-  margin-left:37%;
+  float:right;
+  /* margin-left:37%; */
   margin-top:6%;  
   margin-bottom:6%;   
   letter-spacing:5px; 
 
-}
+} */
 
  .form-control{
   padding:9px;
@@ -113,15 +114,32 @@ button{
 
       <div class="form-group">
       <label for="{{$contact->slug}}-contact">{{$contact->contact_type->name}} Contact </label>
-        <input type="number" class="form-control input-lg" name="contact" value="{{$contact->country_code . ' ' . $contact->number}}"  id="{{$contact->slug}}-contact" placeholder="{{$contact->slug}} Contact">
+        <input type="number"  id="test" class="form-control input-lg" name="contact" value="{{$contact->country_code . ' ' . $contact->number}}"  id="{{$contact->slug}}-contact" placeholder="{{$contact->slug}} Contact">
       </div>
 
       <div class="form-group">
         <label for="comment">Note:</label>
         <textarea class="form-control" name="note" id="note"></textarea>
     </div>
-
-      <button type="submit" class="btn btn-success">Apply</button>
+      <button type="submit"  class="btn btn-success" 
+      style="outline: none;
+        background:#09A603;
+        width: 30%;
+        border: 0;
+        border-radius: 4px;
+        padding: 12px 20px;
+        color: #FFFFFF;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: 500;
+        line-height: inherit;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-left:37%;
+        margin-top:6%;  
+        margin-bottom:6%;       
+        letter-spacing:5px; "
+      >Apply</button>
   </form>
 
 
