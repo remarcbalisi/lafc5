@@ -97,7 +97,7 @@
   position: relative;
 }
 .reportwrapper__role p::before {
-  content: "+";
+  content: "";
   position: absolute;
   display: block;
   left: -40px;
@@ -213,3 +213,21 @@ p[status]::before {
   margin-bottom: auto;
 }
 
+/* button */
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+
+.button{
+  display: inline;
+  padding-right:5%;
+}
+.text{
+  display: inline-block;
+}
