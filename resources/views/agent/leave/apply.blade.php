@@ -85,30 +85,14 @@ button{
       </div>
 
       <div class="form-group">
-        <label>Date</label>
-        <input type="text" class="form-control  input-lg" name="datefilter" value="" />
-
-          <script type="text/javascript">
-          $(function() {
-
-            $('input[name="datefilter"]').daterangepicker({
-                autoUpdateInput: false,
-                locale: {
-                    cancelLabel: 'Clear'
-                }
-            });
-
-            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-            });
-
-            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                $(this).val('');
-            });
-
-          });
-          </script>
+        <label>Start Date</label>
+        <input type="date" class="form-control  input-lg" name="start_date" value="" />
       </div>
+
+        <div class="form-group">
+            <label>End Date</label>
+            <input type="date" class="form-control  input-lg" name="end_date" value="" />
+        </div>
 
       <div class="form-group">
         <label>Address</label>
