@@ -163,7 +163,7 @@ body {
 
 </head>
 <body>
-
+<div id="app">
 <div class="topnav">
   <div class="topnav-right">
     <a><i class="fas fa-envelope"></i>fiercecommail@mail.com</a>
@@ -327,6 +327,8 @@ body {
        
     </div> -->
  @yield('content')
+</div>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/admin-user-update.js') }}"></script>

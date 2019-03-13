@@ -158,7 +158,7 @@ body {
 </head>
 <body>
 
-<!-- <div id="app"> -->
+<div id="app">
 
 <div class="topnav">
   <div class="topnav-right">
@@ -194,10 +194,9 @@ body {
   </div>
 </div>
 
-
-
-
 @yield('content')
+</div>
+
 <!-- Scripts -->
 {{--<script src="{{ asset('js/app.js') }}"></script>--}}
 <script src="{{ asset('js/admin-user-update.js') }}"></script>
