@@ -2,60 +2,6 @@
 
 @section('content')
 
-<style>
-  
-button{
-  outline: none;
-  background:#09A603;
-  width: 30%;
-  border: 0;
-  border-radius: 4px;
-  padding: 12px 20px;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-left:37%;
-  margin-top:6%;     
-  letter-spacing:5px; 
-
-}
-
- .form-control{
-  padding:9px;
-  font-size:18px;
-  text-align:left;
-  -webkit-box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69); 
-  box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69);
-    
-}
-.leave-form{
-  border:1px solid white;
-  background-color:white;
-  box-shadow:  0 30px 40px 0 rgba(0,0,0,0.25);
-  margin-top:5%;
-  width:70%;
-  margin-left:15%;
-  margin-bottom:5%;
-  height:500px;
-}
-
-.leave-title{
-border-bottom:1px solid #F2DABF;
-background-image: linear-gradient(135deg,#F2DABF,#E8D1B7);
-color:white;
-height:15%;
-text-align:center;
-margin-top:-1%;
-padding-top:2%;
-
-}
-</style>
-
-
-
 <div class="logo">
 <img src="/images/logo.png">
 </div>
@@ -236,7 +182,7 @@ padding-top:2%;
         <label for="leave_increment">Increment</label>
         <input type="number" name="leave_increment" value="{{$user->leave_increment}}" class="form-control input-lg" id="leave_increment" placeholder="Increment">
     </div>
-    <button type="submit" class="btn btn-warning">Update Now</button>
+    <button id="btn" type="submit" class="btn btn-warning">Update Now</button>
   </form>
 
 <!-- <div class="container">
