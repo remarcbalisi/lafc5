@@ -1,6 +1,13 @@
 @extends('hrm.layouts.app')
 
 @section('content')
+<div class="logo">
+<img src="/images/logo.png">
+</div>
+<div class="black-bar"></div>
+<div class="bg"><div>
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
