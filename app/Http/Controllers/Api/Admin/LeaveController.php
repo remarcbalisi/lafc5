@@ -18,6 +18,7 @@ class LeaveController extends Controller
             $leave['owner'] = $leave->getOwner($leave->id);
             $leave['department'] = $leave->getOwner($leave->id)->department->name;
             $leave['address'] = $leave->getOwner($leave->id)->concatAddress();
+            $leave['leave_status'] = $leave->leave_status->name;
         }
         return response()->json($leaves);
     }

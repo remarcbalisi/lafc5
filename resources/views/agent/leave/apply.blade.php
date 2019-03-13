@@ -93,17 +93,17 @@ button{
             <input type="date" class="form-control  input-lg" name="end_date" value="" />
         </div>
 
-      <div class="form-group">
-        <label>Address</label>
-        <input type="text" class="form-control input-lg" type="text" name="test"
-        value="{{!empty($user->concatAddress()) ? $user->concatAddress()[0] : 'N/A'}}" class="form-control" id="leave_address" placeholder="Address">
-      </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control input-lg" type="text" name="leave_address"
+                   value="{{!empty($user->concatAddress()[0]) ? $user->concatAddress()[0] : 'N/A'}}" class="form-control" id="leave_address" placeholder="Address">
+        </div>
 
-      <div class="form-group">
-      <label for="{{!empty($contact) ? $contact->slug : 'none'}}-contact">{{!empty($contact) ? $contact->contact_type->name: 'None'}} Contact</label>
-            <input class="form-control input-lg" type="text" name="contact" value="{{!empty($contact) ? $contact->country_code . ' ' . $contact->number : 'N/A'}}"
-            class="form-control" id="{{!empty($contact) ? $contact->slug : 'none'}}-contact" placeholder="{{!empty($contact) ? $contact->slug : 'none'}} Contact" >
-      </div>
+        <div class="form-group">
+            <label for="contact">Contact</label>
+            <input class="form-control input-lg" type="text" name="contact" value="{{ !empty($contact) ?  $contact->country_code . ' ' . $contact->number : 'N/A'}}"
+                   class="form-control" id="contact" placeholder="Contact" >
+        </div>
 
       <div class="form-group">
         <label for="comment">Note:</label>

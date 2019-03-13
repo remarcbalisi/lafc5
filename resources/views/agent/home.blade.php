@@ -84,42 +84,26 @@ button{
         </select>
       </div>
 
-      <div class="form-group">
-        <label>Date</label>
-        <input type="text" class="form-control  input-lg" name="datefilter" value="" />
+        <div class="form-group">
+            <label>Start Date</label>
+            <input type="date" class="form-control  input-lg" name="start_date" value="" />
+        </div>
 
-          <script type="text/javascript">
-          $(function() {
-
-            $('input[name="datefilter"]').daterangepicker({
-                autoUpdateInput: false,
-                locale: {
-                    cancelLabel: 'Clear'
-                }
-            });
-
-            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-            });
-
-            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                $(this).val('');
-            });
-
-          });
-          </script>
-      </div>
+        <div class="form-group">
+            <label>End Date</label>
+            <input type="date" class="form-control  input-lg" name="end_date" value="" />
+        </div>
 
       <div class="form-group">
         <label>Address</label>
         <input type="text" class="form-control input-lg" type="text" name="leave_address" 
-        value="{{$user->concatAddress()[0]}}" class="form-control" id="leave_address" placeholder="Address">
+        value="{{!empty($user->concatAddress()[0]) ? $user->concatAddress()[0] : 'N/A'}}" class="form-control" id="leave_address" placeholder="Address">
       </div>
 
       <div class="form-group">
-      <label for="{{$contact->slug}}-contact">{{$contact->contact_type->name}} Contact</label>
-            <input class="form-control input-lg" type="text" name="contact" value="{{$contact->country_code . ' ' . $contact->number}}" 
-            class="form-control" id="{{$contact->slug}}-contact" placeholder="{{$contact->slug}} Contact" >
+      <label for="contact">Contact</label>
+            <input class="form-control input-lg" type="text" name="contact" value="{{ !empty($contact) ?  $contact->country_code . ' ' . $contact->number : 'N/A'}}"
+            class="form-control" id="contact" placeholder="Contact" >
       </div>
 
       <div class="form-group">
