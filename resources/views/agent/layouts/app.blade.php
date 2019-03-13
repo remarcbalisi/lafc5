@@ -36,7 +36,8 @@
     <link href="{{ asset('css/apply-leave-sample.css') }}" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/user-info-sample.css') }}" rel="stylesheet">
-
+    <!-- Styles -->
+    <link href="{{ asset('css/userlist-sample.css') }}" rel="stylesheet">
     <!-- CSRF Token -->
     <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
 
@@ -177,10 +178,10 @@ body {
         {{ Auth::user()->fname }} <span class="badge badge-success" style="font-size:20px">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span> <span class="caret"></span>
     </a> -->
 
-    <a  href="{{route('agent-notification-list')}}"><i  class="fa">&#xf0f3;</i>
+    <a  href="{{route('agent-notification-list')}}" style="margin-left:45%"><i  class="fa">&#xf0f3;</i>
     <span class="badge badge-success">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span></a>
 
-    <a href="{{route('agent-view-single-user', ['user_id'=>Auth::user()->id])}}" style="margin-left:45%">
+    <a href="{{route('agent-view-single-user', ['user_id'=>Auth::user()->id])}}">
     <i class="material-icons">&#xe7fd;</i></a>
 
     <a href="{{ route('logout') }}"

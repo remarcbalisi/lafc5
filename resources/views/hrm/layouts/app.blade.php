@@ -182,10 +182,10 @@ body {
         {{ Auth::user()->fname }} <span class="badge badge-success" style="font-size:20px">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span> <span class="caret"></span>
     </a> -->
 
-    <a  href="{{route('hrm-notification-list')}}"><i  class="fa">&#xf0f3;</i>
+    <a  href="{{route('hrm-notification-list')}}" style="margin-left:35%"><i  class="fa">&#xf0f3;</i>
     <span class="badge badge-success">{{Auth::user()->notifications()->where('is_read', false)->get()->count()}}</span></a>
 
-    <a href="{{route('hrm-view-single-user', ['user_id'=>Auth::user()->id])}}" style="margin-left:40%">
+    <a href="{{route('hrm-view-single-user', ['user_id'=>Auth::user()->id])}}" >
     <i class="material-icons">&#xe7fd;</i>
     
     </a>
