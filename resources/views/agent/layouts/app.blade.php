@@ -158,7 +158,7 @@ body {
 </head>
 <body>
 
-<!-- <div id="app"> -->
+<div id="app">
 
 <div class="topnav">
   <div class="topnav-right">
@@ -170,7 +170,7 @@ body {
 <div class="bottomnav">
   <div class="bottomnav-left">
     <a href="{{route('agent-leave-apply')}}">Apply Leave</a>
-    <a href="{{route('agent-leave-list')}}">Leave Request</a>
+    <a href="{{route('agent-leave-list')}}">My Leave Request</a>
 
 
     <!-- <a role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -194,10 +194,9 @@ body {
   </div>
 </div>
 
-
-
-
 @yield('content')
+</div>
+
 <!-- Scripts -->
 {{--<script src="{{ asset('js/app.js') }}"></script>--}}
 <script src="{{ asset('js/admin-user-update.js') }}"></script>

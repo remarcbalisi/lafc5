@@ -1,6 +1,22 @@
 @extends('layouts.app-copy')
 
 @section('content')
+
+<style>
+.container{
+    margin-top:5%;
+}
+.modal-body{
+    width:50%;
+}
+</style>
+
+<div class="logo">
+  <img src="/images/logo.png">
+</div>
+<div class="black-bar"></div>
+<div class="bg"><div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -58,32 +74,34 @@
                         <form action="{{route('leave-update-change-status', ['leave_request_id'=>$leave_request->id])}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
-                            <!-- Change status Modal -->
-                            <div class="modal fade" id="change-status" tabindex="-1" role="dialog" aria-labelledby="Change Status" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Change Status</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+
+
+                        <!-- Change status Modal -->
+                        <div class="modal fade" id="change-status" tabindex="-1" role="dialog" aria-labelledby="Change Status" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content" style="margin-left:-133%">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Change Status</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @foreach($leave_status as $ls)
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" value="{{$ls->id}}" id="leave_status-{{$ls->id}}" name="leave_status" {{($leave_request->leave_status->id == $ls->id) ? 'checked' : ''}} class="custom-control-input">
+                                            <label class="custom-control-label" for="leave_status-{{$ls->id}}">{{$ls->name}}</label>
                                         </div>
-                                        <div class="modal-body">
-                                            @foreach($leave_status as $ls)
-                                            <div class="custom-control custom-radio">
-                                                <input type="radio" value="{{$ls->id}}" id="leave_status-{{$ls->id}}" name="leave_status" {{($leave_request->leave_status->id == $ls->id) ? 'checked' : ''}} class="custom-control-input">
-                                                <label class="custom-control-label" for="leave_status-{{$ls->id}}">{{$ls->name}}</label>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Change</button>
-                                        </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Change</button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </form>
 
                         <!-- Approve/Disapprove Modal -->
                         <form action="{{route('leave-approve-disapprove', ['leave_request_id'=>$leave_request->id])}}" method="POST">
@@ -91,7 +109,7 @@
                             {{ method_field('PUT') }}
                             <div class="modal fade" id="approve-disapprove" tabindex="-1" role="dialog" aria-labelledby="Approve/Disapprove" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
+                                    <div class="modal-content" style="margin-left: -137%;">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
