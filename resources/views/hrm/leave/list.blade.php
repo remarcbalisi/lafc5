@@ -12,7 +12,7 @@
 
 <div class="reportwrapper">
   <div class="reportwrapper__role">
-    <p>My Leave Lists</p>
+    <p>Leave Request Lists</p>
     <div class="grid-container">
     @if (session('status'))
         <div class="alert alert-success">
@@ -74,7 +74,7 @@
 
           <td>
           <a href="{{route('hrm-leave-view', ['leave_request_id'=>$leave_request->id])}}">
-          <button type="button" class="btn btn-info btn-sm">View</button></a>
+          <button type="button" class="btn btn-info btn-m">View</button></a>
           </td>
         </tr>
         @endforeach
