@@ -117,9 +117,9 @@ button{
       </div>
 
       <div class="form-group">
-      <label for="{{$contact->slug}}-contact">{{$contact->contact_type->name}} Contact</label>
-            <input class="form-control input-lg" type="text" name="contact" value="{{$contact->country_code . ' ' . $contact->number}}" 
-            class="form-control" id="{{$contact->slug}}-contact" placeholder="{{$contact->slug}} Contact" >
+      <label for="contact">Contact</label>
+            <input class="form-control input-lg" type="text" name="contact" value="{{ !empty($contact) ?  $contact->country_code . ' ' . $contact->number : 'N/A'}}"
+            class="form-control" id="contact" placeholder="Contact" >
       </div>
 
       <div class="form-group">
