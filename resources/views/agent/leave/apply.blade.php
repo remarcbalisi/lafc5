@@ -96,7 +96,7 @@ button{
 
       <div class="form-group">
         <label>Address</label>
-        <input type="text" class="form-control input-lg" type="text" name="leave_address" 
+        <input type="text" class="form-control input-lg" type="text" name="test"
         value="{{!empty($user->concatAddress()) ? $user->concatAddress()[0] : 'N/A'}}" class="form-control" id="leave_address" placeholder="Address">
       </div>
 
