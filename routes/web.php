@@ -165,6 +165,8 @@ Route::group(
         Route::get('/home', 'Hrm\HomeController@home')->name('hrm-home');
         Route::get('/view-user/{user_id}', 'Hrm\UserController@viewSingleUser')->name('hrm-view-single-user');
         Route::get('/user-lists', 'Hrm\UserController@lists')->name('hrm-user-lists');
+        Route::get('/user-edit/{user_id}/', 'Hrm\UserController@editUser')->name('hrm-edit-user');
+        Route::put('/user-edit/{user_id}/', 'Hrm\UserController@updateUser')->name('hrm-update-user');
         Route::get('/user-create', 'Hrm\UserController@createUser')->name('hrm-create-new-user');
         Route::post('/user-store','Hrm\UserController@storeUser')->name('hrm-store-new-user');
         Route::get('/user-leave-apply', 'Hrm\LeaveController@apply')->name('hrm-leave-apply');
@@ -191,6 +193,8 @@ Route::group(
     function () {
         Route::get('/home', 'Agent\HomeController@home')->name('agent-home');
         Route::get('/view-user/{user_id}', 'Agent\UserController@viewSingleUser')->name('agent-view-single-user');
+        Route::get('/edit-user/{user_id}', 'Agent\UserController@edit')->name('agent-edit-single-user');
+        Route::put('/update/{user_id}', 'Agent\UserController@update')->name('agent-update-user');
         Route::get('/user-leave-apply', 'Agent\LeaveController@apply')->name('agent-leave-apply');
         Route::post('/user-leave-apply-store', 'Agent\LeaveController@store')->name('agent-leave-apply-store');
         Route::get('/my-leave-list', 'Agent\LeaveController@list')->name('agent-leave-list');
