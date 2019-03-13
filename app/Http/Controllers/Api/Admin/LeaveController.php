@@ -23,7 +23,7 @@ class LeaveController extends Controller
         return response()->json($leaves);
     }
 
-    public function approveDisapprove($leave_id, $action, $note=null){
+    public function approveDisapprove($leave_id, $user_id, $action, $note=null){
 
         $user = auth()->user();
 
