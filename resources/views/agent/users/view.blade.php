@@ -60,7 +60,7 @@
 <section>
   <h1 class="bottom"></h1>
 </section>
-<a href="{{route('edit-user', ['user_id'=>$user->id])}}">
+<a href="{{route('agent-edit-single-user', ['user_id'=>$user->id])}}">
     <button type="button" class="btn btn-default btn-circle btn-xl">
     <i class="glyphicon glyphicon-pencil"></i></button></a>
 </div>
