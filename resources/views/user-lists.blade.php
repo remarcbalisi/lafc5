@@ -87,20 +87,6 @@
           </td>
           <td>
           </td>
-          <!-- <td>
-            <div class="extra">
-            <div class="dropdown">
-            <a href="#" class="dropbtn">
-              <span class="glyphicon glyphicon-option-vertical"></span>
-            </a>  
-            <div class="dropdown-content">
-                <a href="#"><span class="glyphicon glyphicon-pencil"></span>&nbsp;View</a>
-                <a href="#"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;Edit</a>
-                <a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Suspend</a>
-            </div>
-          </div>
-            </div>
-          </td> -->
         </tr>
 
         @endforeach
