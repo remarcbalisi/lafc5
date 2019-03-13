@@ -24,7 +24,7 @@ button{
   cursor: pointer;
   margin-left:37%;
   margin-top:6%;  
-  margin-bottom:6%;   
+  margin-bottom:10%;   
   letter-spacing:5px; 
 }
 
@@ -82,7 +82,7 @@ button{
             @endforeach
         </select>
       </div>
-
+    
       <div class="form-group">
         <label>Start Date</label>
         <input type="date" class="form-control  input-lg" name="start_date" value="" />
@@ -110,7 +110,7 @@ button{
         <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
 
-      <button type="submit" class="btn btn-success">Apply</button>
+      <button type="submit" class="btn btn-success" >Apply</button>
   </form>
 
   </div>
