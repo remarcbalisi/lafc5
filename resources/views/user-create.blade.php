@@ -2,12 +2,6 @@
 
 @section('content')
 
-<style>
-.container{
-    margin-top:5%;
-
-}
-</style>
 
 <div class="logo">
 <img src="/images/logo.png">
@@ -15,7 +9,7 @@
 <div class="black-bar"></div>
 <div class="bg"><div>
 
-<div class="container">
+<div class="container" style="margin-top:5%">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -74,7 +68,7 @@
 
                         <div class="form-group form-check">
                         @foreach( $roles as $role )
-                            <input type="checkbox" name="role[]" value="{{$role->id}}" class="form-check-input" onclick="toggleJobTitle(this)">
+                            <input  style="margin-left:-3%" type="checkbox" name="role[]" value="{{$role->id}}" class="form-check-input" onclick="toggleJobTitle(this)">
                             <label class="form-check-label">{{$role->name}}</label>
                         @endforeach
                         </div>
