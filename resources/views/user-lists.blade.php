@@ -1,11 +1,6 @@
 @extends('layouts.app-copy')
 
 @section('content')
-<style>
-.container{
-  margin-top:5%;
-}
-</style>
 
 
 <div class="logo">
@@ -17,7 +12,9 @@
 
 <div class="reportwrapper">
   <div class="reportwrapper__role">
-    <p>User Lists</p>
+  <span class="button"><a href="{{route('create-new-user')}}"><button type="button" class="btn btn-primary btn-circle btn-lg">
+    <i class="glyphicon glyphicon-plus"></i></button></a></span>
+    <span class="text"><p>User Lists</p></span>
     <div class="grid-container">
   </div>
   </div>
