@@ -26,7 +26,6 @@ button{
   margin-top:6%;  
   margin-bottom:6%;   
   letter-spacing:5px; 
-
 }
 
  .form-control{
