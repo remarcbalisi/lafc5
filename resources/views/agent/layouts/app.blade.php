@@ -36,7 +36,8 @@
     <link href="{{ asset('css/apply-leave-sample.css') }}" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/user-info-sample.css') }}" rel="stylesheet">
-
+    <!-- Styles -->
+    <link href="{{ asset('css/userlist-sample.css') }}" rel="stylesheet">
     <!-- CSRF Token -->
     <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
 
