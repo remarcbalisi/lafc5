@@ -62,7 +62,7 @@
 <section>
   <h1 class="bottom"></h1>
 </section>
-<a href="{{route('edit-user', ['user_id'=>$user->id])}}">
+<a href="{{route('hrm-edit-user', ['user_id'=>$user->id])}}">
     <button type="button" class="btn btn-default btn-circle btn-xl" style="margin-top:-30%">
     <i class="glyphicon glyphicon-pencil"></i></button></a>
 </div>
