@@ -97,13 +97,13 @@ button{
       <div class="form-group">
         <label>Address</label>
         <input type="text" class="form-control input-lg" type="text" name="leave_address" 
-        value="{{$user->concatAddress()[0]}}" class="form-control" id="leave_address" placeholder="Address">
+        value="{{!empty($user->concatAddress()[0]) ? $user->concatAddress()[0] : 'N/A'}}" class="form-control" id="leave_address" placeholder="Address">
       </div>
 
       <div class="form-group">
-      <label for="{{$contact->slug}}-contact">{{$contact->contact_type->name}} Contact</label>
-            <input class="form-control input-lg" type="text" name="contact" value="{{$contact->country_code . ' ' . $contact->number}}" 
-            class="form-control" id="{{$contact->slug}}-contact" placeholder="{{$contact->slug}} Contact" >
+      <label for="{{!empty($contact) ? $contact->slug : 'none'}}-contact">{{!empty($contact) ? $contact->contact_type->name: 'None'}} Contact</label>
+            <input class="form-control input-lg" type="text" name="contact" value="{{!empty($contact) ? $contact->country_code . ' ' . $contact->number : 'N/A'}}"
+            class="form-control" id="{{!empty($contact) ? $contact->slug : 'none'}}-contact" placeholder="{{!empty($contact) ? $contact->slug : 'none'}} Contact" >
       </div>
 
       <div class="form-group">
