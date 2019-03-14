@@ -64,7 +64,7 @@
           </td>
           <td>
             <div class="status">
-              <p status="status">{{$leave_request->leave_status->name}}</p>
+              <p status="status">{{$leave_request->getOwner($leave_request->id)->department->name}}</p>
             </div>
           </td>
           <td>
