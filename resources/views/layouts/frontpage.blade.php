@@ -330,7 +330,7 @@ color:#6F777D;
                 <!-- <div class="container"> -->
                     <div class="row">
                       <div class="col-4 menu">
-                          <h1 class="left-text">Fierce<strong style="color:black">com</strong></h1>
+                          <h1 class="left-text">Fierce<strong style="color:black;font-weight:bolder">com</strong></h1>
                         <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                           Donec gravida elit mi, eget condimentum nulla faucibus vitae. 
                          </p>
