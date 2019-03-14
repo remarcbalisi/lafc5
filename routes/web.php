@@ -92,6 +92,10 @@ Route::get('/', function () {
 
 })->name('landing-page');
 
+Route::get('/about-us', function () {
+    return view('about-us');
+})->name('about-us');
+
 // Authentication Routes...
 Route::get('/login', function () {
     return view('frontpage');

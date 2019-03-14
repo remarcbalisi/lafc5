@@ -308,7 +308,7 @@ color:#6F777D;
 <div class="bottomnav">
   <div class="bottomnav-left">
   <div class="button">
-	<a class="btn-open" href="#">About Us</a>
+	<a class="btn-open" href="{{route('about-us')}}">About Us</a>
 </div>
     <!-- <a href="#" class="">About Us</a> -->
     <a href="#" data-toggle="modal" data-target="#myModal">Log In</a>
