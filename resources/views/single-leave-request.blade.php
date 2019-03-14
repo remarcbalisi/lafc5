@@ -2,14 +2,7 @@
 
 @section('content')
 
-<style>
-.container{
-    margin-top:5%;
-}
-.modal-body{
-    width:50%;
-}
-</style>
+
 
 <div class="logo">
   <img src="/images/logo.png">
@@ -17,7 +10,7 @@
 <div class="black-bar"></div>
 <div class="bg"><div>
 
-    <div class="container">
+    <div class="container" style="margin-top:5%">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">

@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
-
+    
 <!-- GOOD LUCK TAPULAN ANG GA CODE ANI HEHEHEH -->
 
 <style>
@@ -110,21 +110,22 @@ body {
   width: auto;
   vertical-align: center; 
 }
-.img {
+.background {
   background: black url("images/agreement.jpg") no-repeat center;
   background-size: cover;
   width: 100vw;
-  
+  height: calc(100vh - 120px);
+  overflow:hidden;
 }
 
-/* .img .black-img {
+.background .black-img {
 	font-size: 10em;
 	line-height: 1em;
 	margin-left: 1%;
 	mix-blend-mode: overlay;
 	text-align: center;
-	text-transform: uppercase;
-} */
+  text-transform: uppercase;
+}
 
 .black-img {
   height: 100%;
@@ -132,6 +133,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 3em;
+  padding-top:10%;
 }
 .black-bar {
   position: absolute;

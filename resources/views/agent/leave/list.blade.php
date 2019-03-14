@@ -1,12 +1,6 @@
 @extends('agent.layouts.app')
 
 @section('content')
-<style>
-.container{
-    margin-top:5%;
-}
-</style>
-
 <div class="logo">
 <img src="/images/logo.png">
 </div>
@@ -14,7 +8,7 @@
 <div class="bg"><div>
 
 
-<div class="reportwrapper">
+<div class="reportwrapper" style="margin-top:5%">
   <div class="reportwrapper__role">
     <p>My Leave Lists</p>
     <div class="grid-container">

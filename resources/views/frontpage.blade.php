@@ -22,7 +22,7 @@
         <img src="images/logo.png">
     </div>
     <div class="black-bar"></div>
-    <div class="img"><div class="black-img"></div></div>
+    <div class="background"><div class="black-img">FIERCECOM</div></div>
 
 
 @endsection
