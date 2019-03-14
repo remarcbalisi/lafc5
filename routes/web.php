@@ -130,6 +130,7 @@ Route::group(
     Route::get('/home', 'HomeController@index')->name('admin-home');
     Route::get('/user-lists', 'UserController@lists')->name('user-lists');
     Route::get('/leave-lists', 'UserController@lists')->name('leave-lists');
+    Route::get('/leave-lists/export', 'LeaveController@export')->name('admin-leave-lists-export');
     Route::get('/view-user/{user_id}', 'UserController@viewSingleUser')->name('view-single-user');
     Route::get('/user-create', 'UserController@createUser')->name('create-new-user');
     Route::post('/user-store','UserController@storeUser')->name('store-new-user');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\LeaveRequestsExports;
 use App\Leave;
 use App\LeaveStatus;
 use App\LeaveType;
@@ -12,6 +13,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
+use Excel;
 
 class LeaveController extends Controller
 {
@@ -152,5 +154,9 @@ class LeaveController extends Controller
         return redirect()->back()->with([
             'success_msg' => "Successfully " . $message . "!"
         ]);
+    }
+
+    public function export(){
+        return Excel::download(new LeaveRequestsExports, 'leave_request.xlsx');
     }
 }
