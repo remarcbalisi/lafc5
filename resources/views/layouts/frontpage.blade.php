@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
-
+    
 <!-- GOOD LUCK TAPULAN ANG GA CODE ANI HEHEHEH -->
 
 <style>
