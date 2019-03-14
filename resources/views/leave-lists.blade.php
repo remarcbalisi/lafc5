@@ -13,8 +13,7 @@
   <div class="reportwrapper__role">
   <span class="button"><a href="{{route('admin-leave-lists-export')}}"><button type="button" class="btn btn-primary btn-circle btn-lg">
     <i class="glyphicon glyphicon-plus"></i></button></a></span>
-    <!-- <a href="{{route('admin-leave-lists-export')}}">Button here</a> -->
-    <p>Leave Request Lists</p>
+    <span class="text"><p>Leave Request Lists</p></span>
     <div class="grid-container">
     @if (session('status'))
     <div class="alert alert-success">
