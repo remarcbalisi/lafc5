@@ -2,42 +2,7 @@
 
 @section('content')
 
-<style>
-  
-h1{
-  margin-bottom:10%;
- 
-}
-button{
-  outline: none;
-  background:#09A603;
-  width: 30%;
-  border: 0;
-  border-radius: 4px;
-  padding: 12px 20px;
-  color: #FFFFFF;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-left:37%;
-  margin-top:6%;  
-  margin-bottom:10%;   
-  letter-spacing:5px; 
-}
 
- .form-control{
-  padding:9px;
-  font-size:18px;
-  text-align:left;
-  -webkit-box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69); 
-  box-shadow: 1px 5px 15px 5px rgba(176,176,176,0.69);
-    
-}
-
-</style>
 
 
 <div class="logo">
@@ -110,7 +75,7 @@ button{
         <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
 
-      <button type="submit" class="btn btn-success" >Apply</button>
+      <button type="submit" class="btn btn-success">Apply</button>
   </form>
 
   </div>
