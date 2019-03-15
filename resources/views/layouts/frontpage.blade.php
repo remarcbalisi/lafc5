@@ -20,7 +20,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/frontpage-sample.css') }}" rel="stylesheet">
-    
+      <!-- Styles -->
+      <link href="{{ asset('css/aboutus.css') }}" rel="stylesheet">
 <!-- GOOD LUCK TAPULAN ANG GA CODE ANI HEHEHEH -->
 
 <style>
@@ -229,18 +230,7 @@ form{
 }
 
 
-.p {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  font-size:30px;
-  margin-left:72%;
-  color:white;
-  letter-spacing:10px;
-  font-weight:bolder;
 
-}
 
 * {
   box-sizing: border-box;
@@ -286,7 +276,7 @@ color:#6F777D;
   text-align:center;
 }
 
-.content{
+.l-content{
   color:white;
   margin-top:10%;
 }
@@ -330,11 +320,11 @@ color:#6F777D;
                 <!-- <div class="container"> -->
                     <div class="row">
                       <div class="col-4 menu">
-                          <h1 class="left-text">Fierce<strong style="color:black;font-weight:bolder">com</strong></h1>
-                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                          <h1 class="left-text">Fierce<strong style="color:black;font-weight:bolder ">com</strong></h1>
+                        <p class="l-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                           Donec gravida elit mi, eget condimentum nulla faucibus vitae. 
                          </p>
-                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida
+                        <p class="l-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida
                            elit mi, eget condimentum nulla faucibus vitae.</p>
                       </div>
 

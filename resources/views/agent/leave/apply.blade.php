@@ -13,7 +13,7 @@
 
 <div>
 @if (session('status'))
-    <div class="alert alert-success">
+    <div class="alert alert-success">qx
         {{ session('status') }}
     </div>
 @endif
@@ -74,7 +74,7 @@
         <label for="comment">Note:</label>
         <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
-
+    <input type="checkbox">
       <button type="submit" class="btn btn-success">Apply</button>
   </form>
 
